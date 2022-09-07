@@ -27,6 +27,6 @@ MUJI: https://muji.ca/
 4. Add/delete/modify quantities for products in the shopping cart (3 features).
 5. Checkout and pay for order (1 feature).
 6. Rating and leave feedback on a product after purchasing it (1 feature).
-7. Receive an order confirmation email once the order has been placed (1 feature).
+7. Receive an confirmation email once the order has been placed (1 feature).
 
 
