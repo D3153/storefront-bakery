@@ -14,18 +14,19 @@ MUJI: https://muji.ca/
 
 ## Features
 ### The seller can ...
-1. Register, login, and logout (these are not new features - they are given in class).
+1. Register, login, logout and authentication (these are not new features - they are given in class).
 2. Add and modify products for sale and track sales of these products (3 features).
 3. Create and modify store profile (1 feature).
 4. View product purchases and mark them as shipped while adding tracking information (2 features).
 5. View client service requests on sales and respond them (2 features).
 
 ### The user can ...
-1. Look up a product catalogue or a certain product (1 feature).
-2. View product information (1 feature).
-3. Add/delete/modify quantities for products in the shopping cart (3 features).
-4. Checkout and pay for order (1 feature).
-5. Rating and leave feedback on a product after purchasing it (1 feature).
-6. Receive an order confirmation email once the order has been placed (1 feature).
+1. Register, login, logout and authentication (these are not new features - they are given in class).
+2. Look up a product catalogue or a certain product (1 feature).
+3. View product information (1 feature).
+4. Add/delete/modify quantities for products in the shopping cart (3 features).
+5. Checkout and pay for order (1 feature).
+6. Rating and leave feedback on a product after purchasing it (1 feature).
+7. Receive an order confirmation email once the order has been placed (1 feature).
 
 
