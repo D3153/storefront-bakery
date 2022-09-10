@@ -1,6 +1,9 @@
 # ECommerce Final Project
 Ecommerce Final project at Vanier
 
+## Team Name
+Pink
+
 ## Team Composition
 * Dinal Patel
 * Jiamin Yuan
