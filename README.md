@@ -2,7 +2,7 @@
 Ecommerce Final project at Vanier
 
 ## Team Name
-Pink
+Team Pink
 
 ## Team Composition
 * Dinal Patel
