@@ -1,9 +1,6 @@
 # ECommerce Final Project
 Ecommerce Final project at Vanier
 
-## Team Name
-Team Pink
-
 ## Team Composition
 * Dinal Patel
 * Jiamin Yuan
@@ -18,9 +15,9 @@ MUJI: https://muji.ca/
 ## Features
 ### The seller can ...
 1. Register, login, logout and authentication (these are not new features - they are given in class).
-2. Add and modify products for sale and track sales of these products (3 features).
+2. Add and modify products for sale and track sales of these products (3 features). **(Delete products?)**
 3. Create and modify store profile (1 feature).
-4. View product purchases and mark them as shipped while adding tracking information (2 features).
+4. View product purchases and mark them as shipped while adding tracking information (2 features). **(You are doing both in the same interaction, so this is one feature)**
 5. View client service requests on sales and respond them (2 features).
 
 ### The user can ...
@@ -32,4 +29,4 @@ MUJI: https://muji.ca/
 6. Rating and leave feedback on a product after purchasing it (1 feature).
 7. Receive an confirmation email once the order has been placed (1 feature).
 
-
+**(This should be in your project repository, I could not find this repo. Invite me (paquettm) to your repository.)**
