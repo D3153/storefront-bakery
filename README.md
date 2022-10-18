@@ -19,7 +19,7 @@ MUJI: https://muji.ca/
 3. Create and modify store profile (1 feature).
 4. View product purchases and mark them as shipped while adding tracking information (1 features).
 5. View client service requests on sales and respond them (2 features).
-6. Customize advertisement which will be display on the users' home page (1 feature).
+6. Customize the advertising that will appear on users' home pages (1 feature).
 
 ### The user can ...
 1. Register, login, logout and authentication (these are not new features - they are given in class).
