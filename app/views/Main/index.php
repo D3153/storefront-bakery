@@ -30,7 +30,6 @@
                     <div class="dropdown">
                       <a class="nav-link" data-bs-toggle="dropdown">Register</a>
                       <div class="dropdown-menu">
-                          <a href="/Seller/register" class="dropdown-item">As Seller</a>
                           <a href="/User/register" class="dropdown-item">As User</a>
                       </div>
                     </div>
