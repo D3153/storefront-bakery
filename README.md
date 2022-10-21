@@ -28,4 +28,4 @@ MUJI: https://muji.ca/
 5. Checkout and pay for order (1 feature).
 6. Rating and leave feedback on a product after purchasing it (1 feature).
 7. Receive an confirmation email once the order has been placed (1 feature).
-8. Customize order with specific sizing, inspire image and descrption(1 feature).
+8. Customize cake with specific sizing, inspire image and descrption(1 feature).
