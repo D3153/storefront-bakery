@@ -16,7 +16,7 @@ MUJI: https://muji.ca/
 ### The seller can ...
 1. Login, logout and authentication (these are not new features - they are given in class).
 2. Add/delete/modify products for sale and track sales of these products (3 features).
-3. Create and modify store profile (1 feature).
+3. Publish new arrivals. It is a category at shop all page and appear only when there is a new arrival.(1 feature).
 4. View product purchases and mark them as shipped while adding tracking information (1 features).
 5. View client service requests on sales and respond them (2 features).
 
