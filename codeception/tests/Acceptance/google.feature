@@ -1,16 +1,16 @@
 Feature: google
   In order to Google terms
-  As a user 
+  As a user
   I need to input search terms on the main google.ca page and get matching results back
 
-  Scenario: try googling "frog"
+  Scenario: try googling "cat"
     Given I am on "http://www.Google.ca"
-    When I enter "frog" in the search box
+    When I enter "cat" in the search box
     And click Search
-    Then I see "frog"
+    Then I see "cat"
 
-  Scenario: try googling "bird"
+  Scenario: try googling "dog"
     Given I am on "http://www.Google.ca"
-    When I enter "bird" in the search box
+    When I enter "dog" in the search box
     And click Search
     Then I see "dog"
