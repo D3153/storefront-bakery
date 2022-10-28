@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2022 at 03:11 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Oct 28, 2022 at 07:00 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,10 +32,10 @@ USE `bakery`;
 DROP TABLE IF EXISTS `cart`;
 CREATE TABLE `cart` (
   `cart_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `custom_cake_id` int(11) NOT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `custom_cake_id` int(11) DEFAULT NULL,
   `quantity` int(100) NOT NULL,
-  `total_price` decimal(6,0) NOT NULL
+  `total_price` decimal(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -77,8 +77,7 @@ CREATE TABLE `custom_cake` (
   `size` enum('small','medium','large') NOT NULL,
   `description` text NOT NULL,
   `image` varchar(50) NOT NULL,
-  `price` decimal(6,0) NOT NULL,
-  `status` tinyint(1) NOT NULL
+  `price` decimal(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -107,7 +106,7 @@ CREATE TABLE `order` (
   `order_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `cart_id` int(11) NOT NULL,
-  `ship_id` int(11) NOT NULL,
+  `ship_id` int(11) DEFAULT NULL,
   `email` varchar(128) NOT NULL,
   `address` varchar(128) NOT NULL,
   `status` tinyint(1) NOT NULL
@@ -126,7 +125,7 @@ CREATE TABLE `product` (
   `name` varchar(50) NOT NULL,
   `description` text NOT NULL,
   `image` varchar(50) NOT NULL,
-  `price` decimal(6,0) NOT NULL
+  `price` decimal(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
