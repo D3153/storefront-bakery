@@ -6,5 +6,5 @@ Feature: user
   Scenario: try create an account
     Given I am the first time using this online bakery
     When I fill the user information
-    And click confirm
+    And click Confirm on register page
     Then I should redirect to Login with a message "I have create a account succesfully"

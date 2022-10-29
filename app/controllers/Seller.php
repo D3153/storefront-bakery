@@ -22,4 +22,12 @@ class Seller extends \app\core\Controller{
 	public function profile(){
 		$this->view('Seller/profile');
 	}
+
+	public function publishNewArrivals(){
+		$this->view('Seller/publishNewArrivals');
+	}
+
+	public function messageCenter(){
+		$this->view('Seller/messageCenter');
+	}
 }

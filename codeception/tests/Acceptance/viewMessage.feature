@@ -4,7 +4,6 @@ Feature: View Message
   I need to login and access the message center
 
   Scenario: try viewing "message"
-    Given I have logged in as a seller
+    Given I have registered seller account to login
     When I navigate to message center
-    Then I see all the "messages" send by the users
-    And I can reply them using "email"
+    Then I see all the messages send by the users

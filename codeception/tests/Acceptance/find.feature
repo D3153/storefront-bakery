@@ -3,8 +3,8 @@ Feature: find
   As a user
   I need to input search terms on Shop All and get matching results back
 
-  Scenario: try finding "bagel"
+  Scenario: try searching an bagel 
     Given I am on Shop All page
-    When I enter "bagel" in the search bar
-    And click Search
-    Then I see "bagel"
+    When I enter "bagel" in search bar
+    And click search
+    Then I see bagel

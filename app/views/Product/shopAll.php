@@ -25,11 +25,16 @@
                     <li class="nav-item">
                       <a class="nav-link" href="/Main/shop" target="_blank">Customize Cake</a>
                     </li>
+                    <form action='' method=''>
+                        <input type="text" placeholder="Search" name="searchItem"/>
+                        <button type="submit" class="btn btn-outline-primary" name="search">Search</button>
+                      </form>
               </ul>
             </div>
         </div>
       </nav>  
     </header>
   </section>
+  <button type="submit" class="btn btn-outline-primary" name="checkout">Check Out</button>
 </body>
 </html>

@@ -40,7 +40,20 @@ class User extends \app\core\Controller{
 		}
 	}
 
-	public function myAccount(){
-		$this->view('User/myAccount');
+
+	public function addProduct(){
+		$this->view('User/addProduct');
+	}
+
+	public function contactUs(){
+		$this->view('User/contactUs');
+	}
+
+	public function checkout(){
+		$this->view('User/checkout');
+	}
+
+	public function cart(){
+		$this->view('User/cart');
 	}
 }

@@ -7,26 +7,22 @@ Feature: purchase
     Given I have logged in as a user
     And I want add a chocolate donut to my shopping cart
     When click add
-    Then I should see "chocolate donut" on "shopAll.php"
-    And the price has been updated
+    Then I should see chocolate donut in my shopping cart and price update
 
   Scenario: try removing "baguette" from shopping cart
     Given I have logged in as a user
-    And I want to remove the "baguette" from my shopping cart
+    And I want to remove the baguette from my shopping cart
     When I click delete
-    Then I should not see "baguette" in my shopping cart
-    And the price has been updated
+    Then I should not see baguette in my shopping cart and price update
 
   Scenario: try add the quantity of "chocolate donut"
     Given I have logged in as a user
-    And I want to add "1" more "chocolate donut"
+    And I want to add 1 more chocolate donut
     When I click plus
-    Then I should see the quantity
-    And the price of "chocolate donut" has been increased in the shopping cart
+    Then I should see the quantity and price increased
 
   Scenario: try minus the quantity of "chocolate donut"
     Given I have logged in as a user
-    And I want to remove "1" "chocolate donut"
+    And I want to remove 1 chocolate donut
     When I click minus
-    Then I should see the quantity 
-    And the price of "chocolate donut" has been reduced in the shopping cart
+    Then I should see the quantity and price reduced

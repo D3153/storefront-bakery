@@ -42,7 +42,7 @@
 
                 <div class="d-flex justify-content-center">
                   <button type="submit"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4" name="action">Register</button>
+                    class="btn btn-success btn-block btn-lg gradient-custom-4" name="register">Register</button>
                 </div>
 
                 <p class="text-center text-muted mt-5 mb-0">Already a user? <a href="/User/login"

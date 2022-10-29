@@ -7,5 +7,5 @@ Feature: recieve a confirmation email
     Given I am on check out page
     When I enter all the order information
     And click place
-    Then I see "Order has been placed!" message on check out page
+    Then I see Order has been placed! on Check Out page
     And I recieve an confirmation email
