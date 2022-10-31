@@ -22,19 +22,61 @@
                   <label class="form-label">Select Picture</label>
                 </div>
 
+                 <div class="form-outline mb-4">
+                  <label for="category">Choose a Category:</label>
+                  <select name="category" id="category">
+                    <?php
+                    $categories=new \app\models\Category();
+                    foreach($categories as $category){
+                      echo "<option value=" . categories.id . ">" .categories.name ."</option>";
+                    }
+                    ?>
+                    <!-- // <option value="1">Breads</option>
+                    // <option value="2">Cookies</option>
+                    // <option value="3">Pies</option>
+                    // <option value="pastries">Pastries</option>
+                    // <option value="cakes">Cakes</option>
+                    // <option value="new_arrivals">New Arrivals</option> -->
+                  </select>
+                </div>
+
                 <div class="form-outline mb-4">
                   <label>Descrption</label>
                   <textarea class="form-control" rows="3" name="description"></textarea>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <label>Size</label>
-                  <input type="text" name="Price">
+                  <label for="size">Size:</label>
+                   <select name="size" id="size">
+                    <optgroup label="Breads">
+                      <option value="smallBread">Small (6x3 inches)</option>
+                      <option value="mediumBread">Medium (8x4 inches)</option>
+                      <option value="largeBread">Large (9x5 inches)</option>
+                    </optgroup>
+                    <optgroup label="Cookies">
+                      <option value="smallCookie">Small (3 inches)</option>
+                      <option value="mediumCookie">Medium (4 inches)</option>
+                      <option value="largeCookie">Large (5 inches)</option>
+                    </optgroup>
+                    <optgroup label="Pies">
+                      <option value="smallPie">Small (4 inches)</option>
+                      <option value="mediumPie">Medium (12 inches)</option>
+                      <option value="largePie">Large (16 inches)</option>
+                    </optgroup>
+                    <optgroup label="Pastries">
+                      <option value="default">Pastry</option>
+                    </optgroup>
+                    <optgroup label="Cakes">
+                      <option value="smallCake">Small (6 inches)</option>
+                      <option value="mediumCake">Medium (8 inches)</option>
+                      <option value="largeCake">Large (10 inches)</option>
+                    </optgroup>
+                  </select>
                 </div>
 
                 <div class="form-outline mb-4">
                   <label>Price</label>
-                  <input type="text" name="Price">
+                  <input type="number" name="Price" step="any" min="0">
                 </div>
                 
                 <div class="d-flex justify-content-center">

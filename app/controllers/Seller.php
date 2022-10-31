@@ -19,9 +19,22 @@ class Seller extends \app\core\Controller{
 		}
 	}
 
-	public function profile(){
-		$this->view('Seller/profile');
+	public function addProduct(){
+		if(isset($_POST['action'])){
+			$product = new \app\models\Product();
+			// $product->category_id = $_SESSION['profile_id'];
+			// $filename = $this->saveFile($_FILES['picture']);
+			// $publication->picture = $filename;
+			// $publication->caption = $_POST['caption'];
+			// $publication->date_time = $_POST['date_time'];
+			// $publication->insert();
+			//header('location:../Main/publication');
+		}else{
+			$this->view('Seller/addProduct');
+		}
+		$this->view("Seller/addProduct");
 	}
+
 
 	public function publishNewArrivals(){
 		$this->view('Seller/publishNewArrivals');
@@ -29,5 +42,11 @@ class Seller extends \app\core\Controller{
 
 	public function messageCenter(){
 		$this->view('Seller/messageCenter');
+	}
+
+	#[\app\filters\Login]
+	public function logout(){
+		session_destroy();
+		header('location:/User/index');
 	}
 }

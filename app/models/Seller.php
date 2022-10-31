@@ -3,18 +3,10 @@ namespace app\models;
 
 class Seller extends \app\core\Model{
 
-	public function get($username){
-		$SQL = "SELECT * from seller WHERE username=:username";
+	public function get(){
+		$SQL = "SELECT * from user WHERE role=seller";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['username'=>$username]);
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Seller');
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\User');
 		return $STMT->fetch();
-	}
-
-	public function insert(){
-		$SQL = "INSERT INTO seller(username, password_hash) VALUES (:username, :password_hash)";
-		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['username'=>$this->username,
-						'password_hash'=>$this->password_hash]);
 	}
 }

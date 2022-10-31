@@ -10,7 +10,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
         <div class="container-fluid">
-          <a class="navbar-brand nav-link"><strong>Website name</strong></a>
+          <a class="navbar-brand nav-link"><strong>Pink Bakery</strong></a>
             <div class="collapse navbar-collapse" id="navbarExample01">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -20,10 +20,22 @@
                       <a class="nav-link" href="/User/login" target="_blank">Login</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/Main/shop" target="_blank">Desserts</a>
+                      <a class="nav-link" href="/Main/shop" target="_blank">Bread</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/Main/shop" target="_blank">Customize Cake</a>
+                      <a class="nav-link" href="/Main/shop" target="_blank">Cookies</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/Main/shop" target="_blank">Pies</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/Main/shop" target="_blank">Pastries</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/Main/shop" target="_blank">Cakes</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/Main/shop" target="_blank">New Arrivals</a>
                     </li>
                     <form action='' method=''>
                         <input type="text" placeholder="Search" name="searchItem"/>

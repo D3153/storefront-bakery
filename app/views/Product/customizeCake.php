@@ -27,14 +27,14 @@
                   <textarea class="form-control" rows="3" name="description"></textarea>
                 </div>
 
-                <!-- <div class="form-outline mb-4">
+                <div class="form-outline mb-4">
                   <label>Size</label>
                   <select name="size" id="size">
                     <option value="small">6 inches</option>
                     <option value="medium">8 inches</option>
                     <option value="big">10 inches</option>
                   </select>
-                </div> -->
+                </div>
 
                 <div class="form-outline mb-4">
                   <label>Price</label>

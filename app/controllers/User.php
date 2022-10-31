@@ -40,6 +40,10 @@ class User extends \app\core\Controller{
 		}
 	}
 
+	public function myAccount(){
+		$this->view('User/myAccount');
+	}
+
 
 	public function addProduct(){
 		$this->view('User/addProduct');

@@ -21,7 +21,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
         <div class="container-fluid">
-          <a class="navbar-brand nav-link"><strong>Website name</strong></a>
+          <a class="navbar-brand nav-link"><strong>Pink Bakery</strong></a>
             <div class="collapse navbar-collapse" id="navbarExample01">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -50,7 +50,7 @@
             <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
               <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-white text-center">
-                  <h1 class="mb-3">Welcome to XXX</h1>
+                  <h1 class="mb-3">Welcome to Pink Bakery</h1>
                   <h5 class="mb-4">By Jiamin Yuan & Dinal Patel</h5>
                   
                 </div>
