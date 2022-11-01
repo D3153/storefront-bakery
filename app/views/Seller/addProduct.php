@@ -22,14 +22,28 @@
                   <label class="form-label">Select Picture</label>
                 </div>
 
+                <?php 
+                      $category=new \app\models\Category();
+                      $categories = $category->getAll();
+                      var_dump($category);
+                ?>
+<!-- 
+                <?php
+                  $user = new \app\models\User();
+                  $user = $user->get('jiamin');
+                  var_dump($user);
+                ?> -->
+
                  <div class="form-outline mb-4">
                   <label for="category">Choose a Category:</label>
                   <select name="category" id="category">
                     <?php
-                    $categories=new \app\models\Category();
-                    foreach($categories as $category){
-                      echo "<option value=" . categories.id . ">" .categories.name ."</option>";
-                    }
+                      $category=new \app\models\Category();
+                      $categories = $category->getAll();
+                      echo $categories;
+                      // foreach($categories as $category){
+                      //   echo "<option value='$category->category_id'>$category->name</option>";
+                      // }
                     ?>
                     <!-- // <option value="1">Breads</option>
                     // <option value="2">Cookies</option>
