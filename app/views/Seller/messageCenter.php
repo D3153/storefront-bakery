@@ -6,34 +6,71 @@
 </head>
 
 <body>
-	<section style="background-image: url('../../images/l.png');">
+<div class="bg-image"style="background-image: url('../../images/p.png');">
 		<nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
         <div class="container-fluid">
           <a class="navbar-brand nav-link"><strong>Pink Bakery</strong></a>
             <div class="collapse navbar-collapse" id="navbarExample01">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <div class="dropdown">
+                      <a class="nav-link" data-bs-toggle="dropdown">Product</a>
+                      <div class="dropdown-menu">
+                          <a href="/Seller/addProduct" class="dropdown-item">Add Product</a>
+                          <a href="/Seller/deleteProduct" class="dropdown-item">Delete Product</a>
+                          <a href="/Seller/modifyProduct" class="dropdown-item">Modify Product</a>
+                          <a href="/Seller/checkProducts" class="dropdown-item">Check Products</a>
+                      </div>
+                    </div>
                     <li class="nav-item">
-                      <a class="nav-link" href="/Product/shopAll" target="_blank">Shop</a>
+                      <a class="nav-link" href="/Seller/viewOrders" target="_blank">View Orders</a>
                     </li>
-                    <div class="dropdown">
-                      <a class="nav-link" data-bs-toggle="dropdown">Register</a>
-                      <div class="dropdown-menu">
-                          <a href="/Seller/register" class="dropdown-item">As Seller</a>
-                          <a href="/User/register" class="dropdown-item">As User</a>
-                      </div>
-                    </div>
-                    <div class="dropdown">
-                      <a class="nav-link" data-bs-toggle="dropdown">Login</a>
-                      <div class="dropdown-menu">
-                          <a href="/Seller/login" class="dropdown-item">As Seller</a>
-                          <a href="/User/login" class="dropdown-item">As User</a>
-                      </div>
-                    </div>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/Seller/messagecenter" target="_blank">Message Center</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/User/logout" target="_blank" id="logout">Logout</a>
+                    </li>
               </ul>
             </div>
         </div>
       </nav>
+
+      <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 20px;">
+            <div class="card-body p-5">
+              <h2 class="text-center mb-5">Message Center</h2>
+
+                <form action='' enctype="multipart/form-data" method='post'>
+                <div class="form-outline mb-4">
+                  <table>
+                    <tr><th>Contact ID</th><th>User ID</th><th>Username</th><th>Email</th><th>Message</th></tr>
+                    <?php
+                      $contact=new \app\models\ContactUs();
+                      $contacts = $contact->getAll();
+                      foreach($data as $contact){
+                        echo "<tr>
+                              <td type=name>$contact->contact_us_id</td>
+                              <td type=name>$contact->user_id</td>
+                              <td type=name>$contact->name</td>
+                              <td type=name>$contact->email</td>
+                              <td type=name>$contact->message</td>
+                              </tr>";
+                      }
+                    ?>
+                  </table>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
       
-	</section>
+</div>
 </body>
 </html>

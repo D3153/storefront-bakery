@@ -25,8 +25,8 @@
                     <div class="dropdown">
                       <a class="nav-link" data-bs-toggle="dropdown">Login</a>
                       <div class="dropdown-menu">
-                          <a href="/Seller/login" class="dropdown-item">As Seller</a>
-                          <a href="/User/login" class="dropdown-item">As User</a>
+                          <a href="/Seller/index" class="dropdown-item">As Seller</a>
+                          <a href="/User/index" class="dropdown-item">As User</a>
                       </div>
                     </div>
               </ul>

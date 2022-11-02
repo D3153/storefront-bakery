@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2022 at 05:02 PM
+-- Generation Time: Nov 02, 2022 at 03:29 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -77,6 +77,14 @@ CREATE TABLE `contact_us` (
   `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `contact_us`
+--
+
+INSERT INTO `contact_us` (`contact_us_id`, `user_id`, `name`, `email`, `message`) VALUES
+(1, 2, 'Mimi', 'mimi@gmail.com', 'Hi!This is a message.'),
+(2, 2, 'Mimi', 'mimi@gmail.com', 'This is the second message');
+
 -- --------------------------------------------------------
 
 --
@@ -141,6 +149,14 @@ CREATE TABLE `product` (
   `price` decimal(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`product_id`, `category_id`, `name`, `description`, `image`, `size`, `price`) VALUES
+(1, 1, 'matcha bread', 'new bread', 'abc.jpg', '5 inch', '3.33'),
+(2, 5, 'cheese cake', 'new cake', 'cake.jpg', '5 inches', '39.33');
+
 -- --------------------------------------------------------
 
 --
@@ -173,7 +189,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `username`, `password_hash`, `role`) VALUES
-(1, 'jiamin', '$2y$10$l4cjJzx.gmnimTMOchP0/OnyNo.8odtHgAKu27j6zfFyPGKli9Tci', 'seller');
+(1, 'jiamin', '$2y$10$l4cjJzx.gmnimTMOchP0/OnyNo.8odtHgAKu27j6zfFyPGKli9Tci', 'seller'),
+(2, 'mimi', '$2y$10$pJGdhHXasC17oR7zlGv.P.7TClzRAKD6cIqXbOuWLfsSXojP44chG', 'user');
 
 --
 -- Indexes for dumped tables
@@ -228,6 +245,7 @@ ALTER TABLE `order`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`),
+  ADD UNIQUE KEY `name` (`name`),
   ADD KEY `category_to_product` (`category_id`);
 
 --
@@ -262,7 +280,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `contact_us_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `contact_us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `custom_cake`
@@ -286,7 +304,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `shipping`
@@ -298,7 +316,7 @@ ALTER TABLE `shipping`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

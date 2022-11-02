@@ -11,7 +11,7 @@ class User extends \app\core\Controller{
                     $user->username = $_POST['username'];
                     $user->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
                     $user->insert();
-                    header('location:/User/login');
+                    header('location:/User/index');
                 }else{
                     header('location:/User/register?error=The username "'.$_POST['username'].'" is already in use. Select another.');
                 }
@@ -24,7 +24,7 @@ class User extends \app\core\Controller{
 
 	}
 
-	public function login(){
+	public function index(){//login
 		if(isset($_POST['action'])){
 			$user = new \app\models\User();
 			$user = $user->get($_POST['username']);
@@ -33,10 +33,10 @@ class User extends \app\core\Controller{
 				$_SESSION['username'] = $user->username;
 				header('location:/User/myAccount');
 			}else{
-				header('location:/User/login?error=Wrong username/password combination!');
+				header('location:/User/index?error=Wrong username/password combination!');
 			}
 		}else{
-			$this->view('User/login');
+			$this->view('User/index');
 		}
 	}
 

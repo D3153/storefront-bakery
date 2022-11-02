@@ -72,7 +72,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iAmOnLoginPage()
      {
-         $this->amOnPage("User/login");
+         $this->amOnPage("User/index");
      }
 
     /**
@@ -157,7 +157,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iShouldSeeOnLoginWarning($arg1, $arg2)
      {
-         $this->amOnPage("User/login");
+         $this->amOnPage("User/index");
      }
 
     /**
@@ -367,7 +367,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iShouldRedirectToLoginWithAMessage($arg1)
      {
-         $this->amOnPage("User/login");
+         $this->amOnPage("User/index");
      }
 
     /**
@@ -490,7 +490,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iHaveRegisteredSellerAccountToLogin()
      {
-         $this->amOnPage("User/login");
+         $this->amOnPage("User/index");
      }
 
     /**
@@ -515,7 +515,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iHaveAnAccount()
      {
-         $this->amOnPage("User/login");
+         $this->amOnPage("User/index");
      }
 
     /**

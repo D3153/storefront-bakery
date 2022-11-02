@@ -17,7 +17,7 @@
                       <a class="nav-link" href="/User/register" target="_blank">Register</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/User/login" target="_blank">Login</a>
+                      <a class="nav-link" href="/User/index" target="_blank">Login</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/Main/shop" target="_blank">Bread</a>
@@ -36,6 +36,9 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/Main/shop" target="_blank">New Arrivals</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/User/logout" target="_blank" id="logout">Logout</a>
                     </li>
                     <form action='' method=''>
                         <input type="text" placeholder="Search" name="searchItem"/>

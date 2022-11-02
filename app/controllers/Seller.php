@@ -3,50 +3,80 @@ namespace app\controllers;
 
 class Seller extends \app\core\Controller{
 	
-	public function login(){
+	public function index(){
 		if(isset($_POST['action'])){
 			$seller = new \app\models\Seller();
 			$seller = $seller->get($_POST['username']);
 			if(password_verify($_POST['password'], $seller->password_hash)){
 				$_SESSION['user_id'] = $seller->user_id;
 				$_SESSION['username'] = $seller->username;
-				header('location:/Seller/profile');
+				$_SESSION['role'] = $seller->role;
+				if($_SESSION['role']=="seller"){
+					header('location:/Seller/home');		
+				}else{
+					header('location:/Seller/index?error=Invalid seller info!');
+				}
 			}else{
-				header('location:/Seller/login?error=Wrong username/password combination!');
+				header('location:/Seller/index?error=Wrong username/password combination!');
 			}
 		}else{
-			$this->view('Seller/login');
+			$this->view('Seller/index');
 		}
+	}
+
+	public function home(){
+		$this->view('Seller/home');
 	}
 
 	public function addProduct(){
 		if(isset($_POST['action'])){
-			//$product = new \app\models\Product();
-			$category = new \app\models\Category();
-			$categories = $category->getAll();
-			$this->view("Seller/addProduct",$categories);
-			// $product->category_id = $_SESSION['profile_id'];
-			// $filename = $this->saveFile($_FILES['picture']);
-			// $publication->picture = $filename;
-			// $publication->caption = $_POST['caption'];
-			// $publication->date_time = $_POST['date_time'];
-			// $publication->insert();
-			// header('location:../Main/publication');
+			$product = new \app\models\Product();
 		}else{
 			$category = new \app\models\Category();
 			$categories = $category->getAll();
+
 			$this->view("Seller/addProduct",$categories);
 		}
 		
 	}
-
-
-	public function publishNewArrivals(){
-		$this->view('Seller/publishNewArrivals');
+	public function deleteProduct(){
+		if(isset($_POST['action'])){
+			$product = new \app\models\Product();
+			
+		}else{
+			$product = new \app\models\Product();
+			$products = $product->getAll();
+			$this->view("Seller/deleteProduct",$products);
+		}
+		
 	}
 
+	public function modifyProduct(){
+		if(isset($_POST['action'])){
+			$product = new \app\models\Product();
+		}else{
+			$category = new \app\models\Category();
+			$categories = $category->getAll();
+			$this->view("Seller/modifyProduct",$categories);
+		}
+		
+	}
+
+	public function checkProducts(){
+		$product = new \app\models\Product();
+		$products = $product->getAll();
+		$this->view("Seller/checkProducts",$products);
+	}
+
+	public function viewOrders(){
+		$this->view('Seller/viewOrders');
+	}
+
+
 	public function messageCenter(){
-		$this->view('Seller/messageCenter');
+		$contact = new \app\models\ContactUs();
+		$contacts = $contact->getAll();
+		$this->view("Seller/messageCenter",$contacts);
 	}
 
 	#[\app\filters\Login]
