@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="file" name="image" class="form-control form-control-lg" />
+                  <input type="file" name="image" id="image" class="form-control form-control-lg" />
                   <label class="form-label">Select Picture</label>
                 </div>
 

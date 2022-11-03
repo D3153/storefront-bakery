@@ -13,19 +13,19 @@ class Product extends \app\core\Controller{
 	public function addProduct(){
 		if(isset($_POST['action'])){
 			$product = new \app\models\Product();
-			$category = new \app\models\Category();
-			$categories = $category->getAll();
-			$this->view("Seller/addProduct",$categories);
-			// $product->category_id = $_SESSION['profile_id'];
-			// $filename = $this->saveFile($_FILES['picture']);
-			// $publication->picture = $filename;
-			// $publication->caption = $_POST['caption'];
-			// $publication->date_time = $_POST['date_time'];
-			// $publication->insert();
-			// header('location:../Main/publication');
+			$product->category_id = $_POST['category_id'];
+			$product->name = $_POST['name'];
+			// $product->image = $_POST['image'];
+			$product->description = $_POST['description'];
+			$product->size = $_POST['size'];
+			$product->price = $_POST['price'];
+			$filename = $this->saveFile($_FILES['image']);
+			$product->image = $filename;
+			$product->insert();
+			header('location:/Product/shopAll');
 		}else{
-			$category = new \app\models\Category();
-			$categories = $category->getAll();
+			// $category = new \app\models\Category();
+			// $categories = $category->getAll();
 			$this->view("Seller/addProduct",$categories);
 		}
 		

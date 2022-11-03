@@ -28,17 +28,6 @@ class Seller extends \app\core\Controller{
 		$this->view('Seller/home');
 	}
 
-	public function addProduct(){
-		if(isset($_POST['action'])){
-			$product = new \app\models\Product();
-		}else{
-			$category = new \app\models\Category();
-			$categories = $category->getAll();
-
-			$this->view("Seller/addProduct",$categories);
-		}
-		
-	}
 	public function deleteProduct(){
 		if(isset($_POST['action'])){
 			$product = new \app\models\Product();
