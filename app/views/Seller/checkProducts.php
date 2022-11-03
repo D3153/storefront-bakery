@@ -18,8 +18,8 @@
 
                 <form action='' enctype="multipart/form-data" method='post'>
                   <div class="form-outline mb-4">
-                    <table>
-                    <tr><th>Product ID</th><th>Name</th></tr>
+                    <table width="100%" border="1" cellpadding="5" cellspacing="5">
+                    <tr><th>Product ID</th><th>Name</th><th>Image</th></tr>
                     <?php
                       $product=new \app\models\Product();
                       $products = $product->getAll();
@@ -27,6 +27,7 @@
                         echo "<tr>
                               <td type=name>$product->product_id</td>
                               <td type=name>$product->name</td>
+                              
                               </tr>";
                       }
                     ?>

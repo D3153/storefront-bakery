@@ -45,15 +45,13 @@
 
                 <form action='' enctype="multipart/form-data" method='post'>
                 <div class="form-outline mb-4">
-                  <table>
-                    <tr><th>Contact ID</th><th>User ID</th><th>Username</th><th>Email</th><th>Message</th></tr>
+                  <table width="100%" border="1" cellpadding="5" cellspacing="5">
+                    <tr><th>Username</th><th>Email</th><th>Message</th></tr>
                     <?php
                       $contact=new \app\models\ContactUs();
                       $contacts = $contact->getAll();
                       foreach($data as $contact){
                         echo "<tr>
-                              <td type=name>$contact->contact_us_id</td>
-                              <td type=name>$contact->user_id</td>
                               <td type=name>$contact->name</td>
                               <td type=name>$contact->email</td>
                               <td type=name>$contact->message</td>
