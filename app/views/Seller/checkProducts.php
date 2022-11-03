@@ -27,10 +27,19 @@
                         echo "<tr>
                               <td type=name>$product->product_id</td>
                               <td type=name>$product->name</td>
-                              
+                              <td <img src='/images/blank.jpg' style='max-width:200px;max-height:200px'id='image_preview'/></td>
                               </tr>";
+
+                              // <img src="/images/blank.jpg" style="max-width:200px;max-height:200px" id="profile_pic_preview" />
                       }
                     ?>
+
+                    <!-- <script>
+                      file = "" + "<?= $data['product']->images ?>"
+                      if (file != "") {
+                        document.getElementById("image_preview").src = "/images/" + file;
+                      }
+                    </script> -->
                   </table>
                 </div>
                 

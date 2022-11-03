@@ -23,8 +23,9 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="file" name="image" id="image" class="form-control form-control-lg" />
-                  <label class="form-label">Select Picture</label>
+                  <!-- <input type="file" name="image" id="image" class="form-control form-control-lg" /> -->
+                  <label class="form-label">Select Picture<input type="file" name="image" id="image" class="form-control form-control-lg"/></label><img id='image_preview' src='/images/blank.jpg' style="max-width:200px;max-height:200px" />
+                  <!-- <label>Profile Picture:<input type="file" name="profile_pic" id="profile_pic" /></label><img id='profile_pic_preview' src='/images/blank.jpg' style="max-width:200px;max-height:200px" /><br> -->
                 </div>
 
                  <div class="form-outline mb-4">
