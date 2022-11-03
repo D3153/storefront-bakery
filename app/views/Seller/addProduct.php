@@ -3,6 +3,12 @@
   <title>Add product</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<style>
+  body{
+      background-color: lightpink;
+  }
+</style>
+
 </head>
 
 <body>
@@ -13,8 +19,6 @@
         </div>
 <?php }
 ?>
-<div class="bg-image"style="background-image: url('../../images/p.png');">
-
 <header>
       <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
         <div class="container-fluid">
@@ -60,10 +64,16 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                  <!-- <input type="file" name="image" id="image" class="form-control form-control-lg" /> -->
-                  <label class="form-label">Select Picture<input type="file" name="image" id="image" class="form-control form-control-lg"/></label><img id='image_preview' src='/images/blank.jpg' style="max-width:200px;max-height:200px" />
-                  <!-- <label>Profile Picture:<input type="file" name="profile_pic" id="profile_pic" /></label><img id='profile_pic_preview' src='/images/blank.jpg' style="max-width:200px;max-height:200px" /><br> -->
+                  <label class="form-label">Select Picture<input type="file" name="image" id="image" class="form-control form-control-lg"/></label><img id='image_preview' src='/images/blank.jpg' style="max-width:200px;max-height:200px" id="product_image_preview" />
                 </div>
+               <script>
+                  image.onchange = evt => {
+                  const [file] = image.files
+                    if (file) {
+                      image_preview.src = URL.createObjectURL(file)
+                    }
+                  }
+                </script>
 
                  <div class="form-outline mb-4">
                   <label for="category">Choose a Category:</label>
@@ -78,6 +88,7 @@
                     ?>
                   </select>
                 </div>
+
 
                 <div class="form-outline mb-4">
                   <label>Descrption</label>
@@ -129,7 +140,5 @@
       </div>
     </div>
   </div>
-</div>
-
 </body>
 </html>

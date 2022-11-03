@@ -71,9 +71,14 @@ class Seller extends \app\core\Controller{
 	}
 
 	public function modifyProduct(){
+		if(isset($_POST['search'])){
+			$product_search = new \app\models\Product();
+			$product = $product_search->get($_POST['product_id']);
+
+		}
 		if(isset($_POST['action'])){
 			$product = new \app\models\Product();
-			$product=$product->get($_POST['product_id']);
+			$product->$product_id=$_POST['product_id'];
 			$filename = $this->saveFile($_FILES['image']);
 			if($filename){
 				unlink("images/$product->image");
