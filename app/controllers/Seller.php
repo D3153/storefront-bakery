@@ -30,16 +30,24 @@ class Seller extends \app\core\Controller{
 
 	public function addProduct(){
 		if(isset($_POST['action'])){
-			$product = new \app\models\Product();
-			$product->category_id = $_POST['category_id'];
-			$product->name = $_POST['name'];
-			$product->description = $_POST['description'];
-			$product->size = $_POST['size'];
-			$product->price = $_POST['price'];
-			$filename = $this->saveFile($_FILES['image']);
-			$product->image = $filename;
-			$product->insert();
-			header('location:/Seller/checkProducts');
+			$allProduct = new \app\models\Product();
+			$check = $allProduct->getName($_POST['name']);
+			if(!$check){
+				$product = new \app\models\Product();
+				$product->category_id = $_POST['category_id'];
+				$product->name = $_POST['name'];
+				$product->description = $_POST['description'];
+				$product->size = $_POST['size'];
+				$product->price = $_POST['price'];
+				$filename = $this->saveFile($_FILES['image']);
+				$product->image = $filename;
+				$product->insert();
+				header('location:/Seller/checkProducts');
+			}else{
+				header('location:/Seller/addProduct?error=The product name "'.$_POST['name'].'" is already in use. Select another.');
+			}
+				
+			
 		}else{
 			$category = new \app\models\Category();
 			$categories = $category->getAll();

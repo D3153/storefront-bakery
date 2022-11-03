@@ -11,6 +11,14 @@ class Product extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
+	public function getName($name){
+		$SQL = "SELECT * from product where name=:name";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['name'=>$name]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Product');
+		return $STMT->fetch();
+	}
+
 	public function get($product_id){
 		$SQL = "SELECT * FROM product WHERE product_id=:product_id";
 		$STMT = self::$_connection->prepare($SQL);
