@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2022 at 03:29 AM
+-- Generation Time: Nov 03, 2022 at 03:14 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -154,8 +154,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `category_id`, `name`, `description`, `image`, `size`, `price`) VALUES
-(1, 1, 'matcha bread', 'new bread', 'abc.jpg', '5 inch', '3.33'),
-(2, 5, 'cheese cake', 'new cake', 'cake.jpg', '5 inches', '39.33');
+(6, 2, 'Strawberry Macaroon', 'new flavor macaroon', '6363230c805d7.jpg', 'smallCookie', '2.99'),
+(7, 5, 'Black forest', 'Delicious cake', '63632336db9e4.jpg', 'mediumCake', '39.98');
 
 -- --------------------------------------------------------
 
@@ -304,7 +304,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `shipping`

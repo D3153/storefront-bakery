@@ -28,6 +28,26 @@ class Seller extends \app\core\Controller{
 		$this->view('Seller/home');
 	}
 
+	public function addProduct(){
+		if(isset($_POST['action'])){
+			$product = new \app\models\Product();
+			$product->category_id = $_POST['category_id'];
+			$product->name = $_POST['name'];
+			$product->description = $_POST['description'];
+			$product->size = $_POST['size'];
+			$product->price = $_POST['price'];
+			$filename = $this->saveFile($_FILES['image']);
+			$product->image = $filename;
+			$product->insert();
+			header('location:/Seller/checkProducts');
+		}else{
+			$category = new \app\models\Category();
+			$categories = $category->getAll();
+			$this->view("Seller/addProduct",$categories);
+		}
+	}
+
+
 	public function deleteProduct(){
 		if(isset($_POST['action'])){
 			$product = new \app\models\Product();

@@ -11,8 +11,8 @@ class Product extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
-	protected function insert(){
-		$SQL = "INSERT INTO seller(category_id, name, description, image, size, price) VALUES (:category_id, :description, :image ,:size, :price)";
+	public function insert(){
+		$SQL = "INSERT INTO product(category_id, name, description, image, size, price) VALUES (:category_id, :name, :description, :image ,:size, :price)";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['category_id'=>$this->category_id,
 						'name'=>$this->name,
@@ -21,5 +21,6 @@ class Product extends \app\core\Model{
 						'size'=>$this->size,
 						'price'=>$this->price]);
 	}
+
 
 }
