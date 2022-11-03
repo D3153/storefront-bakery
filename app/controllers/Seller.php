@@ -73,6 +73,19 @@ class Seller extends \app\core\Controller{
 	public function modifyProduct(){
 		if(isset($_POST['action'])){
 			$product = new \app\models\Product();
+			$product=$product->get($_POST['product_id']);
+			$filename = $this->saveFile($_FILES['image']);
+			if($filename){
+				unlink("images/$product->image");
+				$product->image = $filename;
+			}
+			$product->category_id= $_POST['category_id'];
+			$product->name= $_POST['name'];
+			$product->description= $_POST['description'];
+			$product->size= $_POST['size'];
+			$product->price= $_POST['price'];
+			$product->edit();
+
 		}else{
 			$category = new \app\models\Category();
 			$categories = $category->getAll();
@@ -80,6 +93,8 @@ class Seller extends \app\core\Controller{
 		}
 		
 	}
+
+	
 
 	public function checkProducts(){
 		$product = new \app\models\Product();

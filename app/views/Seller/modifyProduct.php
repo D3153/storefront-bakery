@@ -45,10 +45,15 @@
               <h2 class="text-center mb-5">Modify Product</h2>
 
                 <form action='' enctype="multipart/form-data" method='post'>
+                  <div class="form-outline mb-4">
+                  <label class="form-label">Product ID</label>
+                  <input type="text" name="product_id">
+                  <button><a class="nav-link" href="/Seller/checkProducts">Check Products</a></button>
+                </div>
+
                  <div class="form-outline mb-4">
                   <label class="form-label">Name</label>
                   <input type="text" name="name">
-                  <button><a class="nav-link" href="/Seller/checkProducts">Check Products</a></button>
                 </div>
 
                 <div class="form-outline mb-4">
