@@ -81,7 +81,6 @@
                     <?php
                       $category=new \app\models\Category();
                       $categories = $category->getAll();
-                      echo $categories;
                       foreach($data as $category){
                         echo "<option value='$category->category_id'>$category->name</option>";
                       }
@@ -91,7 +90,7 @@
 
 
                 <div class="form-outline mb-4">
-                  <label>Descrption</label>
+                  <label>Description</label>
                   <textarea class="form-control" rows="3" name="description"></textarea>
                 </div>
 

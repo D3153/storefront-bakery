@@ -70,12 +70,10 @@ class Seller extends \app\core\Controller{
 		
 	}
 
-	public function modifyProduct(){
-		if(isset($_POST['search'])){
-			$product_search = new \app\models\Product();
-			$product = $product_search->get($_POST['product_id']);
+	public function modifyProduct($product_id){
+		$product = new \app\models\Product();
+		$product = $product->get($product_id);
 
-		}
 		if(isset($_POST['action'])){
 			$product = new \app\models\Product();
 			$product->$product_id=$_POST['product_id'];
@@ -94,7 +92,7 @@ class Seller extends \app\core\Controller{
 		}else{
 			$category = new \app\models\Category();
 			$categories = $category->getAll();
-			$this->view("Seller/modifyProduct",$categories);
+			$this->view("Seller/modifyProduct",['categories'=>$categories,'product'=>$product]);
 		}
 		
 	}

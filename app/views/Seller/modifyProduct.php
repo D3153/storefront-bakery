@@ -49,20 +49,20 @@
               <h2 class="text-center mb-5">Modify Product</h2>
 
                 <form action='' enctype="multipart/form-data" method='post'>
-                  <div class="form-outline mb-4">
-                  <label class="form-label">Product ID</label>
-                  <input type="text" name="product_id">
-                  <button type="submit" name="search">Search</button>
-                  <button><a class="nav-link" href="/Seller/checkProducts">Check Products</a></button>
-                </div>
+                  <!-- <div class="form-outline mb-4"> -->
+                  <!-- <label class="form-label">Product ID</label> -->
+                  <!-- <input type="text" name="product_id"> -->
+                  <!-- <button type="submit" name="search">Search</button> -->
+                  <!-- <button><a class="nav-link" href="/Seller/checkProducts">Check Products</a></button> -->
+                <!-- </div> -->
 
                  <div class="form-outline mb-4">
                   <label class="form-label">Name</label>
-                  <input type="text" name="name">
+                  <input type="text" name="name" value="<?= $data['product']->name ?>">
                 </div>
 
                 <div class="form-outline mb-4">
-                  <label class="form-label">Select Picture<input type="file" name="image" id="image" class="form-control form-control-lg"/></label><img id='image_preview' src='/images/blank.jpg' style="max-width:200px;max-height:200px" id="product_image_preview" />
+                  <label class="form-label">Select Picture<input type="file" name="image" id="image"class="form-control form-control-lg"/></label><img id='image_preview' src='/images/<?= $data['product']->image ?>' value="<?= $data['product']->image ?>" style="max-width:200px;max-height:200px" id="product_image_preview" />
                 </div>
 
                 <script>
@@ -76,12 +76,14 @@
 
                  <div class="form-outline mb-4">
                   <label for="category">Choose a Category:</label>
-                  <select name="category_id" id="category">
+                  <select name="category_id" id="category" value=" ">
                     <?php
                       $category=new \app\models\Category();
                       $categories = $category->getAll();
-                      echo $categories;
-                      foreach($data as $category){
+                      foreach($data['categories'] as $category){
+                        if($category->category_id == $data['product']->category_id){
+                          echo "<option value='$category->category_id' selected='selected'>$category->name</option>";
+                        }
                         echo "<option value='$category->category_id'>$category->name</option>";
                       }
                     ?>
@@ -89,13 +91,13 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                  <label>Descrption</label>
-                  <textarea class="form-control" rows="3" name="description"></textarea>
+                  <label>Description</label>
+                  <textarea class="form-control" rows="3" name="description" ><?= $data['product']->description ?></textarea>
                 </div>
 
                 <div class="form-outline mb-4">
                   <label for="size">Size:</label>
-                   <select name="size" id="size">
+                   <select name="size" id="size" value="<?= $data['product']->size ?>">
                     <optgroup label="Breads">
                       <option value="smallBread">Small (6x3 inches)</option>
                       <option value="mediumBread">Medium (8x4 inches)</option>
@@ -124,7 +126,7 @@
 
                 <div class="form-outline mb-4">
                   <label>Price</label>
-                  <input type="number" name="price" step="any" min="0">
+                  <input type="number" name="price" step="any" min="0" value="<?= $data['product']->price ?>">
                 </div>
                 
                 <div class="d-flex justify-content-center">
