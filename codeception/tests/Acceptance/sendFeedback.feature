@@ -3,14 +3,17 @@ Feature: send feedback
   As a user
   I need to have order history
 
-  Scenario: try send "feedback" without purchase it
-    Given I am on Shop All page
-    When I write the feedback with rating
-    And click post
-    Then I see Make a purchase! alertbox on shop all page
+  Scenario: try send feedback without purchase it
+    Given I am on "Product/shopAll"
+    When I select "4 star" in "rate"
+    And I input "Fresh product, will repurchase!" in "comment"
+    And I click "post"
+    Then I see "Make a purchase!" on "Product/shopAll"
 
-  Scenario: try send "feedback" with purchase history
-    Given I am on Shop All page
-    When I write the feedback with rating
-    And click post
-    Then I see current product feedback on shop all page
+  Scenario: try send feedback with purchase history
+    Given I am on "Product/shopAll"
+    When I select "4 star" in "rate"
+    And I input "Fresh product, will repurchase!" in "comment"
+    And I click "post"
+    Then I see "rate:4 star"
+    And I see "comment:Fresh product, will repurchase!" on "Product/shopAll"

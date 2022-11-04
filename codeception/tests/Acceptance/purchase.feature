@@ -3,26 +3,20 @@ Feature: purchase
   As a user
   I can add or remove or modify the products in my shopping cart
 
-  Scenario: try adding "chocolate donut" to shopping cart
-    Given I have logged in as a user
-    And I want add a chocolate donut to my shopping cart
-    When click add
-    Then I should see chocolate donut in my shopping cart and price update
+  Scenario: try adding a chocolate donut to shopping cart
+    Given I am on "Product/shopAll"
+    And I want to add a "chocolate donut"
+    When I click "add"
+    Then I should see "chocolate donut" in "User/shoppingCart"
 
-  Scenario: try removing "baguette" from shopping cart
-    Given I have logged in as a user
-    And I want to remove the baguette from my shopping cart
-    When I click delete
-    Then I should not see baguette in my shopping cart and price update
+  Scenario: try removing baguette from shopping cart
+    Given I am on "Product/shopAll"
+    And I want to remove the "baguette"
+    When I click "delete"
+    Then I should not see "baguette" in "User/shoppingCart"
 
-  Scenario: try add the quantity of "chocolate donut"
-    Given I have logged in as a user
-    And I want to add 1 more chocolate donut
-    When I click plus
-    Then I should see the quantity and price increased
-
-  Scenario: try minus the quantity of "chocolate donut"
-    Given I have logged in as a user
-    And I want to remove 1 chocolate donut
-    When I click minus
-    Then I should see the quantity and price reduced
+  Scenario: try reduce the quantity of chocolate donut to negative
+    Given I am on "Product/shopAll"
+    And I do not have "chocolate donut" in "User/shoppingCart"
+    When I click "minus"
+    Then I should see "quantity can't be negative"

@@ -4,8 +4,10 @@ Feature: contact us
   I need to fill out the contact us form
 
   Scenario: try sending an message
-    Given I am on contact us page
-    When I enter "message" in form
-    And click send
-    Then the seller see "message" in message center
+    Given I am on "/User/contactUs"
+    When I input "John" in "name"
+    And I input "john@example.com" in "email"
+    And I input "10" in "message"    
+    And I click "submit"
+    Then the seller see "message" in "/Seller/messageCenter"
 

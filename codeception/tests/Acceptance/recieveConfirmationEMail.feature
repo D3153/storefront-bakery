@@ -4,8 +4,7 @@ Feature: recieve a confirmation email
   I need to place an order
 
   Scenario: try placing an order
-    Given I am on check out page
-    When I enter all the order information
-    And click place
-    Then I see Order has been placed! on Check Out page
-    And I recieve an confirmation email
+    Given I am on "User/checkOut"
+    When I click "Place order"
+    Then I see "Order has been placed!"
+    And I see "an confirmation email" in "email"

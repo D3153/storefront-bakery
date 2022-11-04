@@ -26,6 +26,12 @@
                  <input type="email" class="form-control" id="emailaddress" placeholder="john@example.com" name="emailaddress">
             </div>
 
+            <div class="form-group form-inline">
+                 <label for="message">Message</label>
+                 <textarea name="message" rows="4" cols="50"></textarea>
+
+            </div>
+
             <button type="reset" class="btn btn-danger" id="resetBtn">Reset</button>
             <button type="submit"  name="action" class="btn btn-primary" id="submitBtn">Submit</button>
         </form>
