@@ -86,19 +86,6 @@ class Seller extends \app\core\Controller{
 			$product->price= $_POST['price'];
 			$product->edit();
 			header('location:/Seller/checkProducts');
-			// if(isset($_POST['action'])){
-			// $filename = $this->saveFile($_FILES['profile_pic']);
-			// if($filename){
-			// 	//delete the old picture
-			// 	unlink("images/$animal->profile_pic");
-			// 	//save the reference to the new one
-			// 	$animal->profile_pic = $filename;
-			// }
-			// $animal->name = $_POST['name'];
-			// $animal->dob = $_POST['dob'];
-			// $animal->update();
-			// //redirect
-			// header('location:/Animal/index/' . $owner_id);
 		}else{
 			$category = new \app\models\Category();
 			$categories = $category->getAll();

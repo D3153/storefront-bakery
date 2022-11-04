@@ -46,7 +46,7 @@ class Product extends \app\core\Model{
 	}
 
 	public function edit(){
-		$SQL = "UPDATE product SET category_id=:category_id, name=:name, description=:description, image=:image,  size=:size, price=:price,  WHERE product_id=:product_id";
+		$SQL = "UPDATE product SET category_id=:category_id, name=:name, description=:description, image=:image,  size=:size, price=:price  WHERE product_id=:product_id";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['category_id'=>$this->category_id,
 						'name'=>$this->name,
