@@ -3,7 +3,7 @@ namespace app\controllers;
 
 class Seller extends \app\core\Controller{
 	
-	public function index(){
+	public function index(){//login
 		if(isset($_POST['action'])){
 			$seller = new \app\models\Seller();
 			$seller = $seller->get($_POST['username']);

@@ -31,7 +31,12 @@ class User extends \app\core\Controller{
 			if(password_verify($_POST['password'], $user->password_hash)){
 				$_SESSION['user_id'] = $user->user_id;
 				$_SESSION['username'] = $user->username;
-				header('location:/User/myAccount');
+				$_SESSION['role'] = $user->role;
+				if($_SESSION['role']=="user"){
+					header('location:/User/myAccount');		
+				}else{
+					header('location:/User/index?error=Invalid User info!');
+				}
 			}else{
 				header('location:/User/index?error=Wrong username/password combination!');
 			}
