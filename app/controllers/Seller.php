@@ -73,10 +73,7 @@ class Seller extends \app\core\Controller{
 	public function modifyProduct($product_id){
 		$product = new \app\models\Product();
 		$product = $product->get($product_id);
-
 		if(isset($_POST['action'])){
-			$product = new \app\models\Product();
-			$product->$product_id=$_POST['product_id'];
 			$filename = $this->saveFile($_FILES['image']);
 			if($filename){
 				unlink("images/$product->image");
@@ -88,7 +85,20 @@ class Seller extends \app\core\Controller{
 			$product->size= $_POST['size'];
 			$product->price= $_POST['price'];
 			$product->edit();
-
+			header('location:/Seller/checkProducts');
+			// if(isset($_POST['action'])){
+			// $filename = $this->saveFile($_FILES['profile_pic']);
+			// if($filename){
+			// 	//delete the old picture
+			// 	unlink("images/$animal->profile_pic");
+			// 	//save the reference to the new one
+			// 	$animal->profile_pic = $filename;
+			// }
+			// $animal->name = $_POST['name'];
+			// $animal->dob = $_POST['dob'];
+			// $animal->update();
+			// //redirect
+			// header('location:/Animal/index/' . $owner_id);
 		}else{
 			$category = new \app\models\Category();
 			$categories = $category->getAll();
