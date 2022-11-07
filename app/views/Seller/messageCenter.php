@@ -17,7 +17,6 @@
                       <div class="dropdown-menu">
                           <a href="/Seller/addProduct" class="dropdown-item">Add Product</a>
                           <a href="/Seller/deleteProduct" class="dropdown-item">Delete Product</a>
-                          <a href="/Seller/modifyProduct" class="dropdown-item">Modify Product</a>
                           <a href="/Seller/checkProducts" class="dropdown-item">Check Products</a>
                       </div>
                     </div>

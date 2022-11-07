@@ -24,9 +24,6 @@
           <a class="navbar-brand nav-link"><strong>Pink Bakery</strong></a>
             <div class="collapse navbar-collapse" id="navbarExample01">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                      <a class="nav-link" href="/Product/shopAll" target="_blank">Shop</a>
-                    </li>
                     <div class="dropdown">
                       <a class="nav-link" data-bs-toggle="dropdown">Register</a>
                       <div class="dropdown-menu">

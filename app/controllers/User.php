@@ -33,7 +33,7 @@ class User extends \app\core\Controller{
 				$_SESSION['username'] = $user->username;
 				$_SESSION['role'] = $user->role;
 				if($_SESSION['role']=="user"){
-					header('location:/User/myAccount');		
+					header('location:/User/home');		
 				}else{
 					header('location:/User/index?error=Invalid User info!');
 				}
@@ -45,17 +45,26 @@ class User extends \app\core\Controller{
 		}
 	}
 
+	public function home(){
+		$this->view("User/home");
+	}
+
 	public function myAccount(){
 		$this->view('User/myAccount');
 	}
 
-
-	public function addProduct(){
-		$this->view('User/addProduct');
-	}
-
 	public function contactUs(){
-		$this->view('User/contactUs');
+		if(isset($_POST['action'])){
+			$contact = new \app\models\ContactUs();
+			$contact->user_id = $_SESSION['user_id'];
+			$contact->name = $_POST['name'];
+			$contact->email = $_POST['email'];
+			$contact->message = $_POST['message'];
+			$contact->insert();
+			header('location:/User/home');		
+		}else{
+			$this->view('User/contactUs');
+		}
 	}
 
 	public function checkout(){
