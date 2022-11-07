@@ -97,65 +97,27 @@
                 <div class="form-outline mb-4">
                   <label for="size">Size:</label>
                    <select name="size" id="size" value="<?= $data['product']->size ?>">
-                    <!-- if($category->category_id == $data['product']->category_id){
-                          echo "<option value='$category->category_id' selected='selected'>$category->name</option>"; -->
 
                     <optgroup label="Breads">
-                      <?php 
-                      if($data['product']->size == 'smallBread'){
-                            echo "<option value='smallBread' selected='selected'>Small (6x3 inches)</option>";
+                      <?php
+                      foreach(bread_sizes as $key=>$text){
+                        echo "<option value='$text'" . ($data['product']->size == $key?" selected":"") . ">$text</option>";
                       }
-                      else echo "<option value='smallBread'>Small (6x3 inches)</option>";
-
-                      if($data['product']->size == 'mediumBread'){
-                            echo "<option value='mediumBread' selected='selected'>Medium (8x4 inches)</option>";
-                      }
-                      else echo "<option value='mediumBread'>Medium (8x4 inches)</option>";
-
-                      if($data['product']->size == 'largeBread'){
-                            echo "<option value='largeBread' selected='selected'>Large (9x5 inches)</option>";
-                      }
-                      else echo "<option value='largeBread'>Large (9x5 inches)</option>";
-                        // echo "<option value='smallBread'>Small (6x3 inches)</option>";
-                        // echo "<option value='mediumBread'>Medium (8x4 inches)</option>";
-                        // echo "<option value='largeBread'>Large (9x5 inches)</option>";
                       
                       ?>
                     </optgroup>
                     <optgroup label="Cookies">
                       <?php
-                      if($data['product']->size == 'smallCookie'){
-                        echo "<option value='smallCookie' selected='selected'>Small (3 inches)</option>";
+                      foreach(cookie_sizes as $key=>$text){
+                        echo "<option value='$text'" . ($data['product']->size == $key?" selected":"") . ">$text</option>";
                       }
-                      else echo "<option value='smallCookie'>Small (3 inches)</option>";
-
-                      if ($data['product']->size == 'mediumCookie'){
-                        echo "<option value='mediumCookie' selected='selected'>Medium (4 inches)</option>";
-                      }
-                      else echo "<option value='mediumCookie'>Medium (4 inches)</option>";
-
-                      if ($data['product']->size == 'largeCookie'){
-                        echo "<option value='largeCookie' selected='selected'>Large (5 inches)</option>";
-                      }
-                      else echo "<option value='largeCookie'>Large (5 inches)</option>";
                       ?>
                     </optgroup>
                     <optgroup label="Pies">
                       <?php
-                      if($data['product']->size == 'smallPie'){
-                        echo "<option value='smallPie' selected='selected'>Small (4 inches)</option>";
+                      foreach(pie_sizes as $key=>$text){
+                        echo "<option value='$text'" . ($data['product']->size == $key?" selected":"") . ">$text</option>";
                       }
-                      else echo "<option value='smallPie'>Small (4 inches)</option>";
-
-                      if($data['product']->size == 'mediumPie'){
-                        echo "<option value='mediumPie' selected='selected'>Medium (12 inches)</option>";
-                      }
-                      else echo "<option value='mediumPie'>Medium (12 inches)</option>";
-
-                      if($data['product']->size == 'largePie'){
-                        echo "<option value='largePie' selected='selected'>Large (16 inches)</option>";
-                      }
-                      else echo "<option value='largePie'>Large (16 inches)</option>";
                       ?>
                     </optgroup>
                     <optgroup label="Pastries">
@@ -168,20 +130,9 @@
                     </optgroup>
                     <optgroup label="Cakes">
                       <?php
-                        if($data['product']->size == 'smallCake'){
-                          echo "<option value='smallCake' selected='selected'>Small (6 inches)</option>";
-                        }
-                        else echo "<option value='smallCake'>Small (6 inches)</option>";
-
-                        if($data['product']->size == 'mediumCake'){
-                          echo "<option value='mediumCake' selected='selected'>Medium (8 inches)</option>";
-                        }
-                        else echo "<option value='mediumCake'>Medium (8 inches)</option>";
-
-                        if($data['product']->size == 'largeCake'){
-                          echo "<option value='largeCake' selected='selected'>Large (10 inches)</option>";
-                        }
-                        else echo "<option value='largeCake'>Large (10 inches)</option>";
+                      foreach(cake_sizes as $key=>$text){
+                        echo "<option value='$text'" . ($data['product']->size == $key?" selected":"") . ">$text</option>";
+                      }
                       ?>
                     </optgroup>
                   </select>

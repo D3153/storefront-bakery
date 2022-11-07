@@ -97,27 +97,35 @@
                   <label for="size">Size:</label>
                    <select name="size" id="size">
                     <optgroup label="Breads">
-                      <option value="smallBread">Small (6x3 inches)</option>
-                      <option value="mediumBread">Medium (8x4 inches)</option>
-                      <option value="largeBread">Large (9x5 inches)</option>
+                      <?php 
+                        foreach (bread_sizes as $key=>$size) {
+                          echo "<option value=$key>$size</option>";
+                        }
+                       ?>
                     </optgroup>
                     <optgroup label="Cookies">
-                      <option value="smallCookie">Small (3 inches)</option>
-                      <option value="mediumCookie">Medium (4 inches)</option>
-                      <option value="largeCookie">Large (5 inches)</option>
+                      <?php 
+                        foreach (cookie_sizes as $key=>$size) {
+                          echo "<option value=$key>$size</option>";
+                        }
+                       ?>
                     </optgroup>
                     <optgroup label="Pies">
-                      <option value="smallPie">Small (4 inches)</option>
-                      <option value="mediumPie">Medium (12 inches)</option>
-                      <option value="largePie">Large (16 inches)</option>
+                      <?php 
+                        foreach (pie_sizes as $key=>$size) {
+                          echo "<option value=$key>$size</option>";
+                        }
+                       ?>
                     </optgroup>
                     <optgroup label="Pastries">
                       <option value="default">Pastry</option>
                     </optgroup>
                     <optgroup label="Cakes">
-                      <option value="smallCake">Small (6 inches)</option>
-                      <option value="mediumCake">Medium (8 inches)</option>
-                      <option value="largeCake">Large (10 inches)</option>
+                     <?php 
+                        foreach (cake_sizes as $key=>$size) {
+                          echo "<option value=$key>$size</option>";
+                        }
+                     ?> 
                     </optgroup>
                   </select>
                 </div>

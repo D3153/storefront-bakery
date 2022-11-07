@@ -1,6 +1,15 @@
 <?php
 namespace app\controllers;
 
+//arrays for the sizes
+define("bread_sizes", ["smallBread"=>"Small (6x3 inches)", "mediumBread"=>"Medium (8x4 inches)", "largeBread"=>"Large (9x5 inches)"]);
+
+define("cookie_sizes", ["smallCookie"=>"Small (3 inches)", "mediumCookie"=>"Medium (4 inches)", "largeCookie"=>"Large (5 inches)"]);
+
+define("pie_sizes", ["smallPie"=>"Small (4 inches)", "mediumPie"=>"Medium (12 inches)", "largePie"=>"Large (16 inches)"]);
+
+define("cake_sizes", ["smallCake"=>"Small (6 inches)", "mediumCake"=>"Medium (8 inches)", "largeCake"=>"Large (10 inches)"]);
+
 class Seller extends \app\core\Controller{
 	
 	public function index(){//login
