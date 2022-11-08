@@ -1,11 +1,15 @@
 <html>
 <head>
 	<title>Customize Cake</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <style>
   body{
-      background-color: lightpink;
+      background-image: url('../../images/bg.jpg');
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
   }
 </style>
 </head>
@@ -68,19 +72,25 @@
                   <textarea class="form-control" rows="3" name="description"></textarea>
                 </div>
 
-                <div class="form-outline mb-4">
-                  <label>Size</label>
-                  <select name="size" id="size">
-                    <option value="small">6 inches</option>
-                    <option value="medium">8 inches</option>
-                    <option value="big">10 inches</option>
-                  </select>
+              <div class="form-outline mb-4">
+                  <label for="layer">Layer:</label>
+                  <input type="number" min="1" max="10" name="layer">
                 </div>
 
                 <div class="form-outline mb-4">
+                  <label for="size">Size:</label>
+                  <input type="text" name="size">
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label>Flavor</label>
+                  <input type="text" name="flavor">
+                </div>
+
+<!--                 <div class="form-outline mb-4">
                   <label>Price</label>
                   <input type="text" name="Price">
-                </div>
+                </div> -->
                 
                 <div class="d-flex justify-content-center">
                   <button type="submit"  name="action" class="btn btn-primary" id="confirmBtn">Confirm</button>
