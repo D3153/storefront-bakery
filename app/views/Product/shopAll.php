@@ -55,5 +55,44 @@
         </div>
       </nav>
     </header>
+<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 20px;">
+            <div class="card-body p-5">
+              <h2 class="text-center mb-5">Shop All</h2>
+
+                <form action='' enctype="multipart/form-data" method='post'>
+                  <div class="form-outline mb-4">
+                    <table width="100%" border="1" cellpadding="5" cellspacing="5">
+                    <tr><th>Name</th><th>Image</th><th>Price</th><th> </th></tr>
+                    <?php
+                      $product=new \app\models\Product();
+                      $products = $product->getAll();
+                      foreach($data as $product){
+                        echo "<tr>
+                              <td type=name>$product->name</td>
+                              <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
+                              <td type=name>$product->price</td>
+                              <td type=action>
+                              <button class='btn btn-warning'><a class='nav-link' href='/Seller/modifyProduct/$product->product_id'>details</a></button>
+                              </td>
+                              </tr>";
+                      }
+                    ?>
+                    
+                  </table>
+                </div>
+                
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

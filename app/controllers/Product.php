@@ -3,7 +3,10 @@ namespace app\controllers;
 
 class Product extends \app\core\Controller{
 	public function shopAll(){
-		$this->view('Product/shopAll');
+		$product = new \app\models\Product();
+		$products = $product->getAll();
+		$this->view('Product/shopAll', $products);
+		// $this->view("Seller/modifyProduct",['categories'=>$categories,'product'=>$product]);
 	}
 
 	public function customizeCake(){

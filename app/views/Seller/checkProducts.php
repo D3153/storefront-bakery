@@ -50,7 +50,7 @@
                 <form action='' enctype="multipart/form-data" method='post'>
                   <div class="form-outline mb-4">
                     <table width="100%" border="1" cellpadding="5" cellspacing="5">
-                    <tr><th>Name</th><th>Image</th><th>Action</th></tr>
+                    <tr><th>Name</th><th>Image</th><th> </th></tr>
                     <?php
                       $product=new \app\models\Product();
                       $products = $product->getAll();
