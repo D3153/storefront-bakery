@@ -28,6 +28,15 @@ class Product extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
+	public function getCategory($category_id){
+		$SQL = "SELECT * FROM product WHERE category_id=:category_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['category_id'=>$category_id]);
+		//run some code to return the results
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Product');
+		return $STMT->fetch();
+	}
+
 	public function insert(){
 		$SQL = "INSERT INTO product(category_id, name, description, image, size, price) VALUES (:category_id, :name, :description, :image ,:size, :price)";
 		$STMT = self::$_connection->prepare($SQL);
