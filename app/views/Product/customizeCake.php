@@ -14,7 +14,17 @@
 </style>
 </head>
 
+
 <body>
+  <?php
+if(isset($_GET['error'])){
+?>
+<div class="alert alert-info" role="alert">
+  <?=$_GET['error']?>
+</div>
+<?php
+}
+?>
   <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
         <div class="container-fluid">
           <a class="navbar-brand nav-link"><strong>Pink Bakery</strong></a>
@@ -78,8 +88,8 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                  <label for="size">Size:</label>
-                  <input type="text" name="size">
+                  <label for="serving">Serving:</label>
+                  <input type="number" min="1" max="500" name="serving">
                 </div>
 
                 <div class="form-outline mb-4">
@@ -87,10 +97,6 @@
                   <input type="text" name="flavor">
                 </div>
 
-<!--                 <div class="form-outline mb-4">
-                  <label>Price</label>
-                  <input type="text" name="Price">
-                </div> -->
                 
                 <div class="d-flex justify-content-center">
                   <button type="submit"  name="action" class="btn btn-primary" id="confirmBtn">Confirm</button>
