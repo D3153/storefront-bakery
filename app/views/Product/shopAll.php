@@ -167,7 +167,7 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button class='btn btn-warning'><a class='nav-link' href='/Seller/modifyProduct/$product->product_id'>details</a></button>
+                              <button class='btn btn-warning'><a class='nav-link'>details</a></button>
                               </td>
                               </tr>";
                             }
@@ -191,7 +191,7 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button class='btn btn-warning'><a class='nav-link' href='/Seller/modifyProduct/$product->product_id'>details</a></button>
+                              <button class='btn btn-warning'><a class='nav-link'>details</a></button>
                               </td>
                               </tr>";
                             }
@@ -215,7 +215,7 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button class='btn btn-warning'><a class='nav-link' href='/Seller/modifyProduct/$product->product_id'>details</a></button>
+                              <button class='btn btn-warning'><a class='nav-link' >details</a></button>
                               </td>
                               </tr>";
                             }
