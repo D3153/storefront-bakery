@@ -21,7 +21,7 @@ MUJI: https://muji.ca/
 5. View client message in message center (1 features).
 
 ### The user can ...
-1. Register, login, logout and authentication (these are not new features - they are given in class).
+1. Register, login, logout (these are not new features - they are given in class).
 2. Look up a product catalogue or a certain product (1 feature).
 3. View product information (1 feature).
 4. Add/delete/modify quantities for products in the shopping cart (3 features).
