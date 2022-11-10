@@ -37,10 +37,15 @@
                     <li class="nav-item">
                       <a class="nav-link" href="/User/contactUs" target="_blank">Contact Us</a>
                     </li>
-                    <form action='' method=''>
-                        <input type="text" placeholder="Search" name="searchItem"/>
+
+
+                    <form action="/Product/search" method="get" style='display:inline-block'>
+                      <div class="input-group">
+                        <input type="search" placeholder="Search" name="search_term"/>
                         <button type="submit" class="btn btn-outline-primary" name="search">Search</button>
-                      </form>
+                      </div>  
+                    </form>
+
                     <li class="nav-item">
                       <a class="nav-link" href="/User/myAccount" target="_blank">My Account</a>
                     </li>

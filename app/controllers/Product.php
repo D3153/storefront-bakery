@@ -6,8 +6,13 @@ class Product extends \app\core\Controller{
 		$product = new \app\models\Product();
 		$products = $product->getAll();
 		$this->view('Product/shopAll', $products);
-		// $this->view("Seller/modifyProduct",['categories'=>$categories,'product'=>$product]);
 	}
+
+	public function search(){
+        $product = new \app\models\Product();
+        $products = $product->search($_GET['search_term']);
+        $this->view('Product/shopAll', $products);
+    }
 
 	public function customizeCake(){
 		if(isset($_POST['action'])){

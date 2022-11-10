@@ -66,5 +66,13 @@ class Product extends \app\core\Model{
 						'product_id'=>$this->product_id]);
 	}
 
+	public function search($searchTerm){
+        $SQL = "SELECT * FROM product WHERE name LIKE :searchTerm";
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute(['searchTerm'=>"%$searchTerm%"]);
+        $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Product');
+        return $STMT->fetchAll();
+    }
+
 
 }
