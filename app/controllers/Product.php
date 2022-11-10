@@ -11,19 +11,17 @@ class Product extends \app\core\Controller{
 
 	public function customizeCake(){
 		if(isset($_POST['action'])){
-			$customizeCake = new \app\models\customizeCake();
-			$check = $allProduct->getName($_POST['name']);
-			if(!$check){
-				$product = new \app\models\Product();
-				$product->category_id = $_POST['category_id'];
-				$product->name = $_POST['name'];
-				$product->description = $_POST['description'];
-				$product->size = $_POST['size'];
-				$product->price = $_POST['price'];
-				$filename = $this->saveFile($_FILES['image']);
-				$product->image = $filename;
-				$product->insert();
-				header('location:/Seller/checkProducts');
+			$customCake = new \app\models\customizeCake();
+			$customCake->description = $_POST['description'];
+			$customCake->layer = $_POST['layer'];
+			$customCake->serving = $_POST['serving'];
+			$customCake->flavor = $_POST['flavor'];
+			$filename = $this->saveFile($_FILES['image']);
+			$customCake->image = $filename;
+			$price = $_POST['layer']*40 +$_POST['serving']*4.99;
+			$customCake->price = $price;
+			$customCake->insert();
+			header('location:/Product/shopAll');
 		}else{
 			$this->view('Product/customizeCake');
 		}

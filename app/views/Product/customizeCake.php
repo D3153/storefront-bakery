@@ -73,7 +73,7 @@ if(isset($_GET['error'])){
 
                 <form action='' enctype="multipart/form-data" method='post'>
                 <div class="form-outline mb-4">
-                  <input type="file" name="picture" class="form-control form-control-lg" />
+                  <input type="file" name="image" class="form-control form-control-lg" />
                   <label class="form-label">Select Picture</label>
                 </div>
 

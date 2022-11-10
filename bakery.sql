@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2022 at 04:52 PM
+-- Generation Time: Nov 10, 2022 at 04:49 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -83,7 +83,8 @@ CREATE TABLE `contact_us` (
 
 INSERT INTO `contact_us` (`contact_us_id`, `user_id`, `name`, `email`, `message`) VALUES
 (1, 2, 'Mimi', 'mimi@gmail.com', 'Hi!This is a message.'),
-(2, 2, 'Mimi', 'mimi@gmail.com', 'This is the second message');
+(2, 2, 'Mimi', 'mimi@gmail.com', 'This is the second message'),
+(3, 2, 'Jiamin', 'mimi@gmail.com', 'Hello');
 
 -- --------------------------------------------------------
 
@@ -94,11 +95,20 @@ INSERT INTO `contact_us` (`contact_us_id`, `user_id`, `name`, `email`, `message`
 DROP TABLE IF EXISTS `custom_cake`;
 CREATE TABLE `custom_cake` (
   `custom_cake_id` int(11) NOT NULL,
-  `size` enum('small','medium','large') NOT NULL,
   `description` text NOT NULL,
   `image` varchar(50) NOT NULL,
+  `layer` int(10) NOT NULL,
+  `serving` int(10) NOT NULL,
+  `flavor` varchar(50) NOT NULL,
   `price` decimal(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `custom_cake`
+--
+
+INSERT INTO `custom_cake` (`custom_cake_id`, `description`, `image`, `layer`, `serving`, `flavor`, `price`) VALUES
+(3, 'birthday cake -make it blue instead of pink', '636d1d2c6072d.jpg', 3, 10, 'Fruit', '169.90');
 
 -- --------------------------------------------------------
 
@@ -154,7 +164,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `category_id`, `name`, `description`, `image`, `size`, `price`) VALUES
-(15, 5, 'Black forest', 'black forest cake 8 inches, freshly made', '63642b635ba6c.jpg', 'largeCake', '100.88');
+(15, 5, 'Black forest', 'black forest cake 8 inches, freshly made', '63642b635ba6c.jpg', 'mediumCake', '99.77'),
+(16, 1, 'Matcha Bread', 'matcha flavor 8 pieces', '636859c35065a.jpg', 'smallBread', '35.68');
 
 -- --------------------------------------------------------
 
@@ -279,13 +290,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `contact_us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `contact_us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `custom_cake`
 --
 ALTER TABLE `custom_cake`
-  MODIFY `custom_cake_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `custom_cake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `feedback`
@@ -303,7 +314,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `shipping`
