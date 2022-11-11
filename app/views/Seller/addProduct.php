@@ -78,8 +78,6 @@
                   <label for="category">Choose a Category:</label>
                   <select name="category_id" id="category">
                     <?php
-                      $category=new \app\models\Category();
-                      $categories = $category->getAll();
                       foreach($data as $category){
                         echo "<option value='$category->category_id'>$category->name</option>";
                       }

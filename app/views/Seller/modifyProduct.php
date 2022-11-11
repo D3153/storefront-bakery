@@ -77,8 +77,6 @@
                   <label for="category">Choose a Category:</label>
                   <select name="category_id" id="category" value=" ">
                     <?php
-                      $category=new \app\models\Category();
-                      $categories = $category->getAll();
                       foreach($data['categories'] as $category){
                         if($category->category_id == $data['product']->category_id){
                           echo "<option value='$category->category_id' selected='selected'>$category->name</option>";

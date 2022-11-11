@@ -55,12 +55,10 @@ class Seller extends \app\core\Controller{
 			}else{
 				header('location:/Seller/addProduct?error=The product name "'.$_POST['name'].'" is already in use. Select another.');
 			}
-				
-			
 		}else{
 			$category = new \app\models\Category();
 			$categories = $category->getAll();
-			$this->view("Seller/addProduct",$categories);
+			$this->view("Seller/addProduct", $categories);
 		}
 	}
 
