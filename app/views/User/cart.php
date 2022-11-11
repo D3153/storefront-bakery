@@ -1,10 +1,14 @@
-
-<<<<<<< HEAD
-<button type="submit" class="btn btn-outline-primary" name="add">Add</button>
-<button type="submit" class="btn btn-outline-primary" name="delete">Delete</button>
-<button type="submit" class="btn btn-outline-primary" name="plus">Plus</button>
-<button type="submit" class="btn btn-outline-primary" name="minus">Minus</button>
-=======
+<html>
+<head>
+  <title>Shopping cart</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<style>
+  body{
+    background-color: lightpink;
+  }
+</style>
+</head>
 <body>
 <header>
       <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
@@ -63,6 +67,9 @@
                     
                   </table>
                 </div>
+                  <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4" name="action">Checkout</button>
+                  </div>
                 
                 </div>
               </form>
@@ -76,4 +83,3 @@
 
 </body>
 </html>
->>>>>>> a8e2b36d7431d5452aba753cb7959f1ef17eb8f3
