@@ -20,6 +20,44 @@
     </style>
     </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+        <div class="container-fluid">
+          <a class="navbar-brand nav-link"><strong>Pink Bakery</strong></a>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                   <li class="nav-item">
+                      <a class="nav-link" href="/Product/shopAll">Shop All</a>
+                    </li>
+                      <div class="dropdown">
+                        <a class="nav-link" data-bs-toggle="dropdown">Shop by category</a>
+                        <div class="dropdown-menu">
+                          <a href="/Product/bread" class="dropdown-item">Bread</a>
+                          <a href="/Product/cookies" class="dropdown-item">Cookies</a>
+                          <a href="/Product/pies" class="dropdown-item">Pies</a>
+                          <a href="/Product/pastries" class="dropdown-item">Pastries</a>
+                          <a href="/Product/cakes" class="dropdown-item">Cakes</a>
+                          <a href="/Product/newArrivals" class="dropdown-item">New Arrivals</a>
+                      </div>
+                    </div>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/Product/customizeCake">Customize Cake</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/User/contactUs">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/User/myAccount">My Account</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/User/cart" id="logout">Shopping Cart</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/User/logout" id="logout">Logout</a>
+                    </li>
+              </ul>
+            </div>
+        </div>
+      </nav>
     <div class="container">
         <br/>
         <h1><center>Contact Us</center></h1>
@@ -29,19 +67,19 @@
             <legend><i class="bi bi-info-circle-fill"></i> User Info</legend>
             <div class="form-group form-inline">
                  <label for="name">Name</label>
-                 <input type="text" class="form-control"name="name">
+                 <input type="text" class="form-control"name="name" required>
             </div>
             <div class="form-group form-inline">
                  <label for="email">Email</label>
-                 <input type="email" class="form-control" id="emailaddress" placeholder="john@example.com" name="email">
+                 <input type="email" class="form-control" id="emailaddress" placeholder="john@example.com" name="email" required>
             </div>
 
             <div class="form-group form-inline">
                  <label for="message">Message</label>
-                 <textarea name="message" rows="4" cols="50"></textarea>
+                 <textarea name="message" rows="4" cols="50" required></textarea>
 
             </div>
-            <button type="submit"  name="action" class="btn btn-primary" id="submitBtn">Submit</button>
+            <center><button type="submit"  name="action" class="btn btn-primary" id="submitBtn">Submit</button></center>
         </form>
     </div>
 

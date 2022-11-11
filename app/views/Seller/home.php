@@ -33,13 +33,13 @@
                       </div>
                     </div>
                     <li class="nav-item">
-                      <a class="nav-link" href="/Seller/viewOrders" target="_blank">View Orders</a>
+                      <a class="nav-link" href="/Seller/viewOrders">View Orders</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/Seller/messagecenter" target="_blank">Message Center</a>
+                      <a class="nav-link" href="/Seller/messagecenter">Message Center</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/User/logout" target="_blank" id="logout">Logout</a>
+                      <a class="nav-link" href="/User/logout" id="logout">Logout</a>
                     </li>
               </ul>
             </div>

@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse" id="navbarExample01">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                    <li class="nav-item">
-                      <a class="nav-link" href="/Product/shopAll" target="_blank">Shop All</a>
+                      <a class="nav-link" href="/Product/shopAll">Shop All</a>
                     </li>
                       <div class="dropdown">
                         <a class="nav-link" data-bs-toggle="dropdown">Shop by category</a>
@@ -33,10 +33,10 @@
                       </div>
                     </div>
                     <li class="nav-item">
-                      <a class="nav-link" href="/Product/customizeCake" target="_blank">Customize Cake</a>
+                      <a class="nav-link" href="/Product/customizeCake">Customize Cake</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/User/contactUs" target="_blank">Contact Us</a>
+                      <a class="nav-link" href="/User/contactUs">Contact Us</a>
                     </li>
 
 
@@ -48,13 +48,13 @@
                     </form>
 
                     <li class="nav-item">
-                      <a class="nav-link" href="/User/myAccount" target="_blank">My Account</a>
-                    </li>
-                    <li class="nav-item" style="float:right">
-                      <a class="nav-link" href="/User/cart" target="_blank" id="logout">Shopping Cart</a>
+                      <a class="nav-link" href="/User/myAccount">My Account</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/User/logout" target="_blank" id="logout">Logout</a>
+                      <a class="nav-link" href="/User/cart" id="logout">Shopping Cart</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/User/logout" id="logout">Logout</a>
                     </li>
               </ul>
             </div>

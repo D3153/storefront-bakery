@@ -31,7 +31,7 @@ if(isset($_GET['error'])){
             <div class="collapse navbar-collapse" id="navbarExample01">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                    <li class="nav-item">
-                      <a class="nav-link" href="/Product/shopAll" target="_blank">Shop All</a>
+                      <a class="nav-link" href="/Product/shopAll">Shop All</a>
                     </li>
                       <div class="dropdown">
                         <a class="nav-link" data-bs-toggle="dropdown">Shop by category</a>
@@ -45,19 +45,19 @@ if(isset($_GET['error'])){
                       </div>
                     </div>
                     <li class="nav-item">
-                      <a class="nav-link" href="/Product/customizeCake" target="_blank">Customize Cake</a>
+                      <a class="nav-link" href="/Product/customizeCake">Customize Cake</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/User/contactUs" target="_blank">Contact Us</a>
+                      <a class="nav-link" href="/User/contactUs">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/User/myAccount" target="_blank">My Account</a>
-                    </li>
-                    <li class="nav-item" style="float:right">
-                      <a class="nav-link" href="/User/cart" target="_blank" id="logout">Shopping Cart</a>
+                      <a class="nav-link" href="/User/myAccount">My Account</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/User/logout" target="_blank" id="logout">Logout</a>
+                      <a class="nav-link" href="/User/cart" id="logout">Shopping Cart</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/User/logout" id="logout">Logout</a>
                     </li>
               </ul>
             </div>
@@ -73,28 +73,28 @@ if(isset($_GET['error'])){
 
                 <form action='' enctype="multipart/form-data" method='post'>
                 <div class="form-outline mb-4">
-                  <input type="file" name="image" class="form-control form-control-lg" />
+                  <input type="file" name="image" class="form-control form-control-lg" required />
                   <label class="form-label">Select Picture</label>
                 </div>
 
                 <div class="form-outline mb-4">
                   <label>Descrption</label>
-                  <textarea class="form-control" rows="3" name="description"></textarea>
+                  <textarea class="form-control" rows="3" name="description" required></textarea>
                 </div>
 
               <div class="form-outline mb-4">
                   <label for="layer">Layer:</label>
-                  <input type="number" min="1" max="10" name="layer">
+                  <input type="number" min="1" max="10" name="layer" required>
                 </div>
 
                 <div class="form-outline mb-4">
                   <label for="serving">Serving:</label>
-                  <input type="number" min="1" max="500" name="serving">
+                  <input type="number" min="1" max="500" name="serving" required>
                 </div>
 
                 <div class="form-outline mb-4">
                   <label>Flavor</label>
-                  <input type="text" name="flavor">
+                  <input type="text" name="flavor" required>
                 </div>
 
                 
