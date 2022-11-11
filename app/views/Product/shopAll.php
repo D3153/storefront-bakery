@@ -101,31 +101,12 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button type='button' class='btn btn-warning' data-toggle='modal' data-target='#exampleModal$product->product_id'><a class='nav-link'>details</a></button>
+                              <button type='button' class='btn btn-warning' >details</button>
                               </td>
-                              </tr>
-
-
-                              <div class='modal fade' id='exampleModal$product->product_id' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel$product->product_id' aria-hidden='true'>
-                              <div class='modal-dialog' role='document'>
-                                <div class='modal-content'>
-                                  <div class='modal-header'>
-                                    <h5 class='modal-title' id='exampleModalLabel$product->product_id'>Modal title</h5>
-                                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-                                      <span aria-hidden='true'>&times;</span>
-                                    </button>
-                                  </div>
-                                  <div class='modal-body'>
-                                    ...
-                                  </div>
-                                  <div class='modal-footer'>
-                                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
-                                    <button type='button' class='btn btn-primary'>Save changes</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>";
+                              </tr>";
                       }
+
+
                     ?>
                     
                   </table>
@@ -151,6 +132,31 @@
                   </table>
                 </div>
 
+                <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
                 <div class="form-outline mb-4">
                     <h2 class="text-center mb-5">Pies</h2>
                     <table width="100%" border="1" cellpadding="5" cellspacing="5">
