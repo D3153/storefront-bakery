@@ -34,7 +34,17 @@ class Product extends \app\core\Model{
 		$STMT->execute(['category_id'=>$category_id]);
 		//run some code to return the results
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Product');
-		return $STMT->fetch();
+		return $STMT->fetchAll();
+	}
+
+	public function getCategoryByName($category_name){
+		$SQL = "SELECT product.*, category.name AS catName FROM product JOIN category
+		ON product.category_id = category.category_id WHERE category.name=:catName";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['catName'=>$category_name]);
+		//run some code to return the results
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Product');
+		return $STMT->fetchAll();
 	}
 
 	public function insert(){

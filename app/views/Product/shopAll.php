@@ -74,28 +74,15 @@
                     <table width="100%" border="1" cellpadding="5" cellspacing="5">
                     <tr><th>Name</th><th>Image</th><th>Price</th><th> </th></tr>
                     <?php
-                      $product=new \app\models\Product();
-                      $products = $product->getAll();
-                      foreach($data as $product){
-                        if($product->category_id == 6){
+                      foreach($data['New_Arrivals'] as $product){
                         echo "<tr>
                               <td type=name>$product->name</td>
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button class='btn btn-warning' onclick='details()href'><a class='nav-link'</a></button>
+                              <button class='btn btn-warning' onclick='details()'><a class='nav-link'>details</a></button>
                               </td>
-                              </tr>
-
-                            <script>
-                            function details() {
-                              alert('Name: '$product->name\n 'Description: ');
-                            }
-                            </script>"
-
-                            ;
-                            }
-                            //href='/Seller/modifyProduct/$product->product_id'>details 
+                              </tr>";
                       }
                     ?>
                     
@@ -107,10 +94,7 @@
                     <table width="100%" border="1" cellpadding="5" cellspacing="5">
                     <tr><th>Name</th><th>Image</th><th>Price</th><th> </th></tr>
                     <?php
-                      $product=new \app\models\Product();
-                      $products = $product->getAll();
-                      foreach($data as $product){
-                        if($product->category_id == 1){
+                      foreach($data['Breads'] as $product){
                         echo "<tr>
                               <td type=name>$product->name</td>
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
@@ -118,16 +102,7 @@
                               <td type=action>
                               <button class='btn btn-warning' onclick='details()'><a class='nav-link'>details</a></button>
                               </td>
-                              </tr>
-
-                            <script>
-                            function details() {
-                              alert('Name: '$product->name\n 'Description: ');
-                            }
-                            </script>"
-
-                              ;
-                            }
+                              </tr>";
                       }
                     ?>
                     
@@ -139,19 +114,15 @@
                     <table width="100%" border="1" cellpadding="5" cellspacing="5">
                     <tr><th>Name</th><th>Image</th><th>Price</th><th> </th></tr>
                     <?php
-                      $product=new \app\models\Product();
-                      $products = $product->getAll();
-                      foreach($data as $product){
-                        if($product->category_id == 2){
+                      foreach($data['Cookies'] as $product){
                         echo "<tr>
                               <td type=name>$product->name</td>
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button class='btn btn-warning'><a class='nav-link' href='/Seller/modifyProduct/$product->product_id'>details</a></button>
+                              <button class='btn btn-warning' onclick='details()'><a class='nav-link'>details</a></button>
                               </td>
                               </tr>";
-                            }
                       }
                     ?>
                     
@@ -163,19 +134,15 @@
                     <table width="100%" border="1" cellpadding="5" cellspacing="5">
                     <tr><th>Name</th><th>Image</th><th>Price</th><th> </th></tr>
                     <?php
-                      $product=new \app\models\Product();
-                      $products = $product->getAll();
-                      foreach($data as $product){
-                        if($product->category_id == 3){
+                      foreach($data['Pies'] as $product){
                         echo "<tr>
                               <td type=name>$product->name</td>
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button class='btn btn-warning'><a class='nav-link'>details</a></button>
+                              <button class='btn btn-warning' onclick='details()'><a class='nav-link'>details</a></button>
                               </td>
                               </tr>";
-                            }
                       }
                     ?>
                     
@@ -187,19 +154,15 @@
                     <table width="100%" border="1" cellpadding="5" cellspacing="5">
                     <tr><th>Name</th><th>Image</th><th>Price</th><th> </th></tr>
                     <?php
-                      $product=new \app\models\Product();
-                      $products = $product->getAll();
-                      foreach($data as $product){
-                        if($product->category_id == 4){
+                      foreach($data['Pastries'] as $product){
                         echo "<tr>
                               <td type=name>$product->name</td>
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button class='btn btn-warning'><a class='nav-link'>details</a></button>
+                              <button class='btn btn-warning' onclick='details()'><a class='nav-link'>details</a></button>
                               </td>
                               </tr>";
-                            }
                       }
                     ?>
                     
@@ -211,19 +174,15 @@
                     <table width="100%" border="1" cellpadding="5" cellspacing="5">
                     <tr><th>Name</th><th>Image</th><th>Price</th><th> </th></tr>
                     <?php
-                      $product=new \app\models\Product();
-                      $products = $product->getAll();
-                      foreach($data as $product){
-                        if($product->category_id == 5){
+                      foreach($data['Cakes'] as $product){
                         echo "<tr>
                               <td type=name>$product->name</td>
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button class='btn btn-warning'><a class='nav-link' >details</a></button>
+                              <button class='btn btn-warning' onclick='details()'><a class='nav-link'>details</a></button>
                               </td>
                               </tr>";
-                            }
                       }
                     ?>
                     
