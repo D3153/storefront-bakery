@@ -10,13 +10,8 @@
     <style>
       body{
           background-color: lightblue;
-
       }
 
-      .container {
-          max-width: 500px;
-          margin: auto;
-        }
     </style>
     </head>
 <body>
@@ -58,30 +53,39 @@
             </div>
         </div>
       </nav>
-    <div class="container">
-        <br/>
-        <h1><center>Contact Us</center></h1>
-        <div class="alert alert-primary" role="alert">Fill in the information </div>
-        <div id="alertBox" role="alert"></div>
-        <form name="myForm" action='' method="post">
-            <legend><i class="bi bi-info-circle-fill"></i> User Info</legend>
-            <div class="form-group form-inline">
-                 <label for="name">Name</label>
-                 <input type="text" class="form-control"name="name" required>
-            </div>
-            <div class="form-group form-inline">
-                 <label for="email">Email</label>
-                 <input type="email" class="form-control" id="emailaddress" placeholder="john@example.com" name="email" required>
-            </div>
 
-            <div class="form-group form-inline">
-                 <label for="message">Message</label>
-                 <textarea name="message" rows="4" cols="50" required></textarea>
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 20px;">
+            <div class="card-body p-5">
+               <h1><center>Contact Us</center></h1>
+                <div class="alert alert-primary" role="alert">Fill in the information </div>
+                <div id="alertBox" role="alert"></div>
+                <form name="myForm" action='' method="post">
+                    <legend><i class="bi bi-info-circle-fill"></i> User Info</legend>
+                    <div class="form-group form-inline">
+                         <label for="name">Name</label>
+                         <input type="text" class="form-control"name="name" required>
+                    </div>
+                    <div class="form-group form-inline">
+                         <label for="email">Email</label>
+                         <input type="email" class="form-control" id="emailaddress" placeholder="john@example.com" name="email" required>
+                    </div>
 
+                    <div class="form-group form-inline">
+                         <label for="message">Message</label>
+                         <textarea name="message" rows="4" cols="50" required></textarea>
+
+                    </div>
+                    <center><button type="submit"  name="action" class="btn btn-primary" id="submitBtn">Submit</button></center>
+                </form>
             </div>
-            <center><button type="submit"  name="action" class="btn btn-primary" id="submitBtn">Submit</button></center>
-        </form>
+          </div>
+        </div>
+      </div>
     </div>
-
+  </div>
     </body>
 </html>
