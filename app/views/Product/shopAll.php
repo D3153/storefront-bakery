@@ -3,6 +3,7 @@
 	<title>Shop All</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <style>
   body{
       background-color: lightpink;
@@ -100,9 +101,30 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button class='btn btn-warning' onclick='details()'><a class='nav-link'>details</a></button>
+                              <button type='button' class='btn btn-warning' data-toggle='modal' data-target='#exampleModal$product->product_id'><a class='nav-link'>details</a></button>
                               </td>
-                              </tr>";
+                              </tr>
+
+
+                              <div class='modal fade' id='exampleModal$product->product_id' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel$product->product_id' aria-hidden='true'>
+                              <div class='modal-dialog' role='document'>
+                                <div class='modal-content'>
+                                  <div class='modal-header'>
+                                    <h5 class='modal-title' id='exampleModalLabel$product->product_id'>Modal title</h5>
+                                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                      <span aria-hidden='true'>&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class='modal-body'>
+                                    ...
+                                  </div>
+                                  <div class='modal-footer'>
+                                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+                                    <button type='button' class='btn btn-primary'>Save changes</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>";
                       }
                     ?>
                     
