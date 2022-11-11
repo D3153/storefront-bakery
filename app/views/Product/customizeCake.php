@@ -73,28 +73,28 @@ if(isset($_GET['error'])){
 
                 <form action='' enctype="multipart/form-data" method='post'>
                 <div class="form-outline mb-4">
-                  <input type="file" name="image" class="form-control form-control-lg" />
+                  <input type="file" name="image" class="form-control form-control-lg" required />
                   <label class="form-label">Select Picture</label>
                 </div>
 
                 <div class="form-outline mb-4">
                   <label>Descrption</label>
-                  <textarea class="form-control" rows="3" name="description"></textarea>
+                  <textarea class="form-control" rows="3" name="description" required></textarea>
                 </div>
 
               <div class="form-outline mb-4">
                   <label for="layer">Layer:</label>
-                  <input type="number" min="1" max="10" name="layer">
+                  <input type="number" min="1" max="10" name="layer" required>
                 </div>
 
                 <div class="form-outline mb-4">
                   <label for="serving">Serving:</label>
-                  <input type="number" min="1" max="500" name="serving">
+                  <input type="number" min="1" max="500" name="serving" required>
                 </div>
 
                 <div class="form-outline mb-4">
                   <label>Flavor</label>
-                  <input type="text" name="flavor">
+                  <input type="text" name="flavor" required>
                 </div>
 
                 
