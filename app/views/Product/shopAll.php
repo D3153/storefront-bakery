@@ -81,9 +81,30 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button class='btn btn-warning' onclick='details()'><a class='nav-link'>details</a></button>
+                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#newArrivalModal'><a class='nav-link'>details</a></button>
                               </td>
-                              </tr>";
+                              </tr>
+
+                              <div class='modal fade' id='newArrivalModal' tabindex='-1' aria-labelledby='newArrivalModalLabel' aria-hidden='true'>
+  <div class='modal-dialog modal-dialog-centered'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h1 class='modal-title fs-5' id='newArrivalModalLabel'>Details</h1>
+        <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+      </div>
+      <div class='modal-body'>
+        <p>Name: $product->name</p>
+        <p>Description: $product->description</p>
+        <p>Image: <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></p>
+        <p>Size: $product->size</p>
+        <p>Price: $product->price</p>
+
+      </div>
+      <div class='modal-footer'>
+      </div>
+    </div>
+  </div>
+</div>";
                       }
                     ?>
                     
@@ -101,9 +122,30 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button type='button' class='btn btn-warning' >details</button>
+                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#breadModal'><a class='nav-link'>details</a></button>
                               </td>
-                              </tr>";
+                              </tr>
+
+                              <div class='modal fade' id='breadModal' tabindex='-1' aria-labelledby='breadModalLabel' aria-hidden='true'>
+  <div class='modal-dialog modal-dialog-centered'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h1 class='modal-title fs-5' id='breadModalLabel'>Details</h1>
+        <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+      </div>
+      <div class='modal-body'>
+        <p>Name: $product->name</p>
+        <p>Description: $product->description</p>
+        <p>Image: <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></p>
+        <p>Size: $product->size</p>
+        <p>Price: $product->price</p>
+
+      </div>
+      <div class='modal-footer'>
+      </div>
+    </div>
+  </div>
+</div>";
                       }
 
 
@@ -123,40 +165,36 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button class='btn btn-warning' onclick='details()'><a class='nav-link'>details</a></button>
+                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#cookieModal'><a class='nav-link'>details</a></button>
                               </td>
-                              </tr>";
+                              </tr>
+
+                              <div class='modal fade' id='cookieModal' tabindex='-1' aria-labelledby='cookieModalLabel' aria-hidden='true'>
+  <div class='modal-dialog modal-dialog-centered'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h1 class='modal-title fs-5' id='cookieModalLabel'>Details</h1>
+        <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+      </div>
+      <div class='modal-body'>
+        <p>Name: $product->name</p>
+        <p>Description: $product->description</p>
+        <p>Image: <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></p>
+        <p>Size: $product->size</p>
+        <p>Price: $product->price</p>
+
+      </div>
+      <div class='modal-footer'>
+      </div>
+    </div>
+  </div>
+</div>";
                       }
                     ?>
                     
                   </table>
                 </div>
 
-                <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
                 <div class="form-outline mb-4">
                     <h2 class="text-center mb-5">Pies</h2>
                     <table width="100%" border="1" cellpadding="5" cellspacing="5">
@@ -168,9 +206,30 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button class='btn btn-warning' onclick='details()'><a class='nav-link'>details</a></button>
+                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#piesModal'><a class='nav-link'>details</a></button>
                               </td>
-                              </tr>";
+                              </tr>
+
+                              <div class='modal fade' id='piesModal' tabindex='-1' aria-labelledby='piesModalLabel' aria-hidden='true'>
+  <div class='modal-dialog modal-dialog-centered'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h1 class='modal-title fs-5' id='piesModalLabel'>Details</h1>
+        <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+      </div>
+      <div class='modal-body'>
+        <p>Name: $product->name</p>
+        <p>Description: $product->description</p>
+        <p>Image: <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></p>
+        <p>Size: $product->size</p>
+        <p>Price: $product->price</p>
+
+      </div>
+      <div class='modal-footer'>
+      </div>
+    </div>
+  </div>
+</div>";
                       }
                     ?>
                     
@@ -188,9 +247,30 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button class='btn btn-warning' onclick='details()'><a class='nav-link'>details</a></button>
+                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#pastriesModal'><a class='nav-link'>details</a></button>
                               </td>
-                              </tr>";
+                              </tr>
+
+                              <div class='modal fade' id='pastriesModal' tabindex='-1' aria-labelledby='pastriesModalLabel' aria-hidden='true'>
+  <div class='modal-dialog modal-dialog-centered'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h1 class='modal-title fs-5' id='pastriesModalLabel'>Details</h1>
+        <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+      </div>
+      <div class='modal-body'>
+        <p>Name: $product->name</p>
+        <p>Description: $product->description</p>
+        <p>Image: <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></p>
+        <p>Size: $product->size</p>
+        <p>Price: $product->price</p>
+
+      </div>
+      <div class='modal-footer'>
+      </div>
+    </div>
+  </div>
+</div>";
                       }
                     ?>
                     
@@ -208,9 +288,30 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button class='btn btn-warning' onclick='details()'><a class='nav-link'>details</a></button>
+                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#cakeModal'><a class='nav-link'>details</a></button>
                               </td>
-                              </tr>";
+                              </tr>
+
+                              <div class='modal fade' id='cakeModal' tabindex='-1' aria-labelledby='cakeModalLabel' aria-hidden='true'>
+  <div class='modal-dialog modal-dialog-centered'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h1 class='modal-title fs-5' id='cakeModalLabel'>Details</h1>
+        <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+      </div>
+      <div class='modal-body'>
+        <p>Name: $product->name</p>
+        <p>Description: $product->description</p>
+        <p>Image: <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></p>
+        <p>Size: $product->size</p>
+        <p>Price: $product->price</p>
+
+      </div>
+      <div class='modal-footer'>
+      </div>
+    </div>
+  </div>
+</div>";
                       }
                     ?>
                     
