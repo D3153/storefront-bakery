@@ -39,4 +39,41 @@ class Product extends \app\core\Controller{
 		}
 	}
 
+	public function Bread(){
+		$product = new \app\models\Product();
+		$products[] = array();
+		$products['Breads'] = $product->getCategoryByName('Breads');
+		$this->view('Product/Bread',$products);
+	}
+
+	public function Cakes(){
+		$product = new \app\models\Product();
+		$products[] = array();
+		$products['Cakes'] = $product->getCategoryByName('Cakes');
+		$this->view('Product/Cakes',$products);
+	}
+
+	public function Cookies(){
+		$product = new \app\models\Product();
+		$products[] = array();
+		$products['Cookies'] = $product->getCategoryByName('Cookies');
+		$this->view('Product/Cookies',$products);
+	}
+
+	public function Pastries(){
+		$product = new \app\models\Product();
+		$products[] = array();
+		$products['Pastries'] = $product->getCategoryByName('Pastries');
+
+		$this->view('Product/Pastries',$products);
+	}
+
+	public function Pies(){
+		$product = new \app\models\Product();
+		$products[] = array();
+		$products['Pies'] = $product->getCategoryByName('Pies');
+		$this->view('Product/Pies',$products);
+	}
+
+
 }

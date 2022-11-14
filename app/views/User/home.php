@@ -35,7 +35,6 @@
                           <a href="/Product/pies" class="dropdown-item">Pies</a>
                           <a href="/Product/pastries" class="dropdown-item">Pastries</a>
                           <a href="/Product/cakes" class="dropdown-item">Cakes</a>
-                          <a href="/Product/newArrivals" class="dropdown-item">New Arrivals</a>
                       </div>
                     </div>
                     <li class="nav-item">
