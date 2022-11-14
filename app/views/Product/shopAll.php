@@ -69,12 +69,14 @@
             <div class="card-body p-5">
 
                 <form action='' enctype="multipart/form-data" method='post'>
+                  <?php
 
-                    <div class="form-outline mb-4">
-                    <h2 class="text-center mb-5">New Arivals</h2>
-                    <table width="100%" border="1" cellpadding="5" cellspacing="5">
-                    <tr><th>Name</th><th>Image</th><th>Price</th><th> </th></tr>
-                    <?php
+                  if (count($data['New_Arrivals']) > 0){
+                    echo "<div class='form-outline mb-4'>
+                    <h2 class='text-center mb-5'>New Arivals</h2>
+                    <table width='100%' border='1' cellpadding='5' cellspacing='5'>
+                    <tr><th>Name</th><th>Image</th><th>Price</th><th> </th></tr>";
+                    
                       foreach($data['New_Arrivals'] as $product){
                         echo "<tr>
                               <td type=name>$product->name</td>
@@ -106,6 +108,7 @@
   </div>
 </div>";
                       }
+                    }
                     ?>
                     
                   </table>
