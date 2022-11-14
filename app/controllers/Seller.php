@@ -63,18 +63,12 @@ class Seller extends \app\core\Controller{
 	}
 
 
-	public function deleteProduct(){
-		if(isset($_POST['action'])){
-			$product = new \app\models\Product();
-			$product->product_id = $_POST['product_id'];
-			$product->delete();
-			header('location:/Seller/checkProducts');
-		}else{
-			$product = new \app\models\Product();
-			$products = $product->getAll();
-			$this->view("Seller/deleteProduct",$products);
-		}
-		
+	public function deleteProduct($product_id){
+		$product = new \app\models\Product();
+		$product = $product->get($product_id);
+		unlink("images/$product->image");
+		$product->delete();
+		header('location:/Seller/checkProducts');
 	}
 
 	public function modifyProduct($product_id){

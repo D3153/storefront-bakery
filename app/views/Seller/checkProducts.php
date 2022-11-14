@@ -50,7 +50,7 @@
                 <form action='' enctype="multipart/form-data" method='post'>
                   <div class="form-outline mb-4">
                     <table width="100%" border="1" cellpadding="5" cellspacing="5">
-                    <tr><th>Name</th><th>Image</th><th> </th></tr>
+                    <tr><th>Name</th><th>Image</th><th></th></tr></th></tr>
                     <?php
                       $product=new \app\models\Product();
                       $products = $product->getAll();
@@ -59,7 +59,10 @@
                               <td type=name>$product->name</td>
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=action>
-                              <button><a class='nav-link' href='/Seller/modifyProduct/$product->product_id'>edit</a></button>
+                              <button class='btn btn-warning'><a class='nav-link' href='/Seller/modifyProduct/$product->product_id'>edit</a></button>
+                              </td>
+                              <td type=action>
+                              <button class='btn btn-danger'><a class='nav-link' href='/Seller/deleteProduct/$product->product_id'>delete</a></button>
                               </td>
                               </tr>";
                       }
