@@ -78,15 +78,15 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#breadModal'><a class='nav-link'>details</a></button>
+                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>details</a></button>
                               </td>
                               </tr>
 
-                              <div class='modal fade' id='breadModal' tabindex='-1' aria-labelledby='breadModalLabel' aria-hidden='true'>
+                              <div class='modal fade' id='Modal$product->product_id' tabindex='-1' aria-labelledby='ModalLabel$product->product_id' aria-hidden='true'>
                                 <div class='modal-dialog modal-dialog-centered'>
                                   <div class='modal-content'>
                                     <div class='modal-header'>
-                                      <h1 class='modal-title fs-5' id='breadModalLabel'>Details</h1>
+                                      <h1 class='modal-title fs-5' id='ModalLabel$product->product_id'>Details</h1>
                                       <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                                     </div>
                                     <div class='modal-body'>
