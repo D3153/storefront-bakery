@@ -71,7 +71,4 @@ class User extends \app\core\Controller{
 		$this->view('User/checkout');
 	}
 
-	public function cart(){
-		$this->view('User/cart');
-	}
 }

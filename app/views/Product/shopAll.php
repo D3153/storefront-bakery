@@ -82,7 +82,10 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>details</a></button>
+                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
+                              </td>
+                              <td type=action>
+                              <button type='button' class='btn btn-success'><a class='nav-link'>+</a></button>
                               </td>
                               </tr>
 
@@ -116,7 +119,7 @@
                   <div class="form-outline mb-4">
                     <h2 class="text-center mb-5">Bread</h2>
                     <table width="100%" border="1" cellpadding="5" cellspacing="5">
-                    <tr><th>Name</th><th>Image</th><th>Price</th><th> </th></tr>
+                    <tr><th>Name</th><th>Image</th><th>Price</th><th> </th></tr> </th></tr>
                     <?php
                       foreach($data['Breads'] as $product){
                         echo "<tr>
@@ -124,7 +127,10 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>details</a></button>
+                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
+                              </td>
+                              <td type=action>
+                              <button type='button' class='btn btn-success'><a class='nav-link'>+</a></button>
                               </td>
                               </tr>
 
@@ -167,7 +173,10 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>details</a></button>
+                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
+                              </td>
+                              <td type=action>
+                              <button type='button' class='btn btn-success'><a class='nav-link'>+</a></button>
                               </td>
                               </tr>
 
@@ -208,7 +217,10 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>details</a></button>
+                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
+                              </td>
+                              <td type=action>
+                              <button type='button' class='btn btn-success'><a class='nav-link'>+</a></button>
                               </td>
                               </tr>
 
@@ -249,7 +261,10 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>details</a></button>
+                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
+                              </td>
+                              <td type=action>
+                              <button type='button' class='btn btn-success'><a class='nav-link'>+</a></button>
                               </td>
                               </tr>
 
@@ -290,7 +305,10 @@
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
-                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>details</a></button>
+                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
+                              </td>
+                              <td type=action>
+                              <button type='button' class='btn btn-success'><a class='nav-link'>+</a></button>
                               </td>
                               </tr>
 
