@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2022 at 04:14 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Nov 18, 2022 at 04:19 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -169,8 +169,8 @@ INSERT INTO `product` (`product_id`, `category_id`, `name`, `description`, `imag
 (17, 2, 'Fruit Macaron', 'Pack of 8 macarons, each filled with delicious fruit flavor.', '636d2a99b8857.jpg', 'smallCookie', '24.99'),
 (18, 3, 'Fruit Tart', 'Freshly baked fruit tart with a creamy mouse filling and topped with organic fruits. ', '6377a0e23b37c.jpg', 'Small (4 inches)', '21.98'),
 (19, 4, 'Croissant', 'A French delicacy, with a flaky outside and soft inside. Perfect with a cup of coffee.', '6377a0ea444f2.jpg', 'default', '7.97'),
-(20, 5, 'Floral cake', 'Edible Flower Cake', '63719c07a941f.jpg', 'largeCake', '87.22'),
-(21, 6, 'Brownies', 'A bag of 8 pieces chocolate brownies', '63719db17b196.jpg', 'default', '5.99');
+(20, 5, 'Floral cake', 'Edible Flower Cake', '6377a202d7825.jpg', 'Large (10 inches)', '87.22'),
+(21, 6, 'Brownies', 'A bag of 8 pieces chocolate brownies', '6377a20b4cf52.jpg', 'default', '5.99');
 
 -- --------------------------------------------------------
 

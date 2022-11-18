@@ -4,7 +4,7 @@ namespace app\controllers;
 class Product extends \app\core\Controller{
 	public function shopAll(){
 		$product = new \app\models\Product();
-		
+
 		$products[] = array();
 		$products['Breads'] = $product->getCategoryByName('Breads');
 		$products['Cookies'] = $product->getCategoryByName('Cookies');

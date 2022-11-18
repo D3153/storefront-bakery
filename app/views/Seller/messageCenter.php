@@ -16,7 +16,6 @@
                       <a class="nav-link" data-bs-toggle="dropdown">Product</a>
                       <div class="dropdown-menu">
                           <a href="/Seller/addProduct" class="dropdown-item">Add Product</a>
-                          <a href="/Seller/deleteProduct" class="dropdown-item">Delete Product</a>
                           <a href="/Seller/checkProducts" class="dropdown-item">Check Products</a>
                       </div>
                     </div>
