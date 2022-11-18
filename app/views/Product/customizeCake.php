@@ -54,7 +54,7 @@ if(isset($_GET['error'])){
                       <a class="nav-link" href="/User/myAccount">My Account</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/User/cart" id="logout">Shopping Cart</a>
+                      <a class="nav-link" href="/Cart/cart" id="logout">Shopping Cart</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/User/logout" id="logout">Logout</a>

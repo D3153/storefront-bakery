@@ -241,7 +241,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iWantAddAChocolateDonutToMyShoppingCart()
      {
-         $this->amOnPage("User/cart");
+         $this->amOnPage("Cart/cart");
      }
 
     /**
@@ -384,7 +384,7 @@ class AcceptanceTester extends \Codeception\Actor
      public function iShouldSeeChocolateDonutInMyShoppingCartAndPriceUpdate()
      {
 
-         $this->amOnPage("User/cart");
+         $this->amOnPage("Cart/cart");
      }
 
     /**
@@ -392,7 +392,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iWantToRemoveTheBaguetteFromMyShoppingCart()
      {
-         $this->amOnPage("User/cart");
+         $this->amOnPage("Cart/cart");
      }
 
     /**
@@ -400,7 +400,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iShouldNotSeeBaguetteInMyShoppingCartAndPriceUpdate()
      {
-         $this->amOnPage("User/cart");
+         $this->amOnPage("Cart/cart");
      }
 
     /**
@@ -408,7 +408,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iWantToAddMoreChocolateDonut($num1)
      {
-         $this->amOnPage("User/cart");
+         $this->amOnPage("Cart/cart");
      }
 
     /**
@@ -416,7 +416,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iShouldSeeTheQuantityAndPriceIncreased()
      {
-         $this->amOnPage("User/cart");
+         $this->amOnPage("Cart/cart");
      }
 
     /**
@@ -424,7 +424,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iWantToRemoveChocolateDonut($num1)
      {
-         $this->amOnPage("User/cart");
+         $this->amOnPage("Cart/cart");
      }
 
     /**
@@ -432,7 +432,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iShouldSeeTheQuantityAndPriceReduced()
      {
-         $this->amOnPage("User/cart");
+         $this->amOnPage("Cart/cart");
      }
 
     /**
