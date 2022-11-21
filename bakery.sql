@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2022 at 04:19 PM
+-- Generation Time: Nov 21, 2022 at 05:20 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -32,10 +32,13 @@ USE `bakery`;
 DROP TABLE IF EXISTS `cart`;
 CREATE TABLE `cart` (
   `cart_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `product_id` int(11) DEFAULT NULL,
   `custom_cake_id` int(11) DEFAULT NULL,
   `quantity` int(100) NOT NULL,
-  `total_price` decimal(6,2) NOT NULL
+  `total_price` decimal(6,2) NOT NULL,
+  `shipping_id` int(11) NOT NULL,
+  `status` enum('cart','paid','shipped') NOT NULL DEFAULT 'cart'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -128,23 +131,6 @@ CREATE TABLE `feedback` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
---
-
-DROP TABLE IF EXISTS `order`;
-CREATE TABLE `order` (
-  `order_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `cart_id` int(11) NOT NULL,
-  `ship_id` int(11) DEFAULT NULL,
-  `email` varchar(128) NOT NULL,
-  `address` varchar(128) NOT NULL,
-  `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `product`
 --
 
@@ -218,7 +204,9 @@ INSERT INTO `user` (`user_id`, `username`, `password_hash`, `role`, `secret_key`
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cart_id`),
   ADD KEY `product_to_cart` (`product_id`),
-  ADD KEY `custom_cake_to_cart` (`custom_cake_id`);
+  ADD KEY `custom_cake_to_cart` (`custom_cake_id`),
+  ADD KEY `user_to_cart` (`user_id`),
+  ADD KEY `shipping_to_cart` (`shipping_id`);
 
 --
 -- Indexes for table `category`
@@ -246,15 +234,6 @@ ALTER TABLE `feedback`
   ADD PRIMARY KEY (`feedback_id`),
   ADD KEY `order_to_feedback` (`order_id`),
   ADD KEY `product_to_feedback` (`product_id`);
-
---
--- Indexes for table `order`
---
-ALTER TABLE `order`
-  ADD PRIMARY KEY (`order_id`),
-  ADD KEY `user_to_order` (`user_id`),
-  ADD KEY `shipping_to_order` (`ship_id`),
-  ADD KEY `cart_to_order` (`cart_id`);
 
 --
 -- Indexes for table `product`
@@ -311,12 +290,6 @@ ALTER TABLE `feedback`
   MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `order`
---
-ALTER TABLE `order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
@@ -343,7 +316,9 @@ ALTER TABLE `user`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `custom_cake_to_cart` FOREIGN KEY (`custom_cake_id`) REFERENCES `custom_cake` (`custom_cake_id`),
-  ADD CONSTRAINT `product_to_cart` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
+  ADD CONSTRAINT `product_to_cart` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
+  ADD CONSTRAINT `shipping_to_cart` FOREIGN KEY (`shipping_id`) REFERENCES `shipping` (`ship_id`),
+  ADD CONSTRAINT `user_to_cart` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
