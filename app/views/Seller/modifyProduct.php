@@ -47,20 +47,14 @@
               <h2 class="text-center mb-5">Modify Product</h2>
 
                 <form action='' enctype="multipart/form-data" method='post'>
-                  <!-- <div class="form-outline mb-4"> -->
-                  <!-- <label class="form-label">Product ID</label> -->
-                  <!-- <input type="text" name="product_id"> -->
-                  <!-- <button type="submit" name="search">Search</button> -->
-                  <!-- <button><a class="nav-link" href="/Seller/checkProducts">Check Products</a></button> -->
-                <!-- </div> -->
 
                  <div class="form-outline mb-4">
                   <label class="form-label">Name</label>
-                  <input type="text" name="name" value="<?= $data['product']->name ?>">
+                  <input type="text" name="name" value="<?= $data['product']->name ?>" required>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <label class="form-label">Select Picture<input type="file" name="image" id="image"class="form-control form-control-lg"/></label><img id='image_preview' src='/images/<?= $data['product']->image ?>' value="<?= $data['product']->image ?>" style="max-width:200px;max-height:200px" id="product_image_preview" />
+                  <label class="form-label">Select Picture<input type="file" name="image" id="image"class="form-control form-control-lg" required /></label><img id='image_preview' src='/images/<?= $data['product']->image ?>' value="<?= $data['product']->image ?>" style="max-width:200px;max-height:200px" id="product_image_preview" />
                 </div>
 
                 <script>
@@ -137,7 +131,7 @@
 
                 <div class="form-outline mb-4">
                   <label>Price</label>
-                  <input type="number" name="price" step="any" min="0" value="<?= $data['product']->price ?>">
+                  <input type="number" name="price" step="any" min="0" value="<?= $data['product']->price ?>" required>
                 </div>
                 
                 <div class="d-flex justify-content-center">

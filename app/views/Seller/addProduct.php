@@ -58,11 +58,11 @@
                 <form action='' enctype="multipart/form-data" method='post'>
                  <div class="form-outline mb-4">
                   <label class="form-label">Name</label>
-                  <input type="text" name="name">
+                  <input type="text" name="name" required>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <label class="form-label">Select Picture<input type="file" name="image" id="image" class="form-control form-control-lg"/></label><img id='image_preview' src='/images/blank.jpg' style="max-width:200px;max-height:200px" id="product_image_preview" />
+                  <label class="form-label">Select Picture<input type="file" name="image" id="image" class="form-control form-control-lg" required /></label><img id='image_preview' src='/images/blank.jpg' style="max-width:200px;max-height:200px" id="product_image_preview" />
                 </div>
                <script>
                   image.onchange = evt => {
@@ -129,7 +129,7 @@
 
                 <div class="form-outline mb-4">
                   <label>Price</label>
-                  <input type="number" name="price" step="any" min="0">
+                  <input type="number" name="price" step="any" min="0" required>
                 </div>
                 
                 <div class="d-flex justify-content-center">
