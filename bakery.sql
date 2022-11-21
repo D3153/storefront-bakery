@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2022 at 04:19 PM
+-- Generation Time: Nov 21, 2022 at 04:25 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -32,6 +32,7 @@ USE `bakery`;
 DROP TABLE IF EXISTS `cart`;
 CREATE TABLE `cart` (
   `cart_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `product_id` int(11) DEFAULT NULL,
   `custom_cake_id` int(11) DEFAULT NULL,
   `quantity` int(100) NOT NULL,
