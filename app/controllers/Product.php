@@ -4,15 +4,22 @@ namespace app\controllers;
 class Product extends \app\core\Controller{
 	public function shopAll(){
 		$product = new \app\models\Product();
+		if(isset($_POST['addNewArrival'])){
 
-		$products[] = array();
-		$products['Breads'] = $product->getCategoryByName('Breads');
-		$products['Cookies'] = $product->getCategoryByName('Cookies');
-		$products['Pies'] = $product->getCategoryByName('Pies');
-		$products['Pastries'] = $product->getCategoryByName('Pastries');
-		$products['Cakes'] = $product->getCategoryByName('Cakes');
-		$products['New_Arrivals'] = $product->getCategoryByName('New_Arrivals');
-		$this->view('Product/shopAll', $products);
+		}
+		if(isset($_POST['addBread'])){
+
+		}else{
+			$products[] = array();
+			$products['Breads'] = $product->getCategoryByName('Breads');
+			$products['Cookies'] = $product->getCategoryByName('Cookies');
+			$products['Pies'] = $product->getCategoryByName('Pies');
+			$products['Pastries'] = $product->getCategoryByName('Pastries');
+			$products['Cakes'] = $product->getCategoryByName('Cakes');
+			$products['New_Arrivals'] = $product->getCategoryByName('New_Arrivals');
+			$this->view('Product/shopAll', $products);
+		}
+		
 	}
 
 	public function search(){
