@@ -35,8 +35,8 @@ class Seller extends \app\core\Controller{
 		}
 	}
 
-#[\app\filters\Check2fa]
 #[\app\filters\Seller2fa]
+	#[\app\filters\Check2fa]
 	public function home(){
 		print_r($_SESSION);
 		$this->view('Seller/home');

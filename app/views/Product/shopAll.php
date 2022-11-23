@@ -78,14 +78,14 @@
                     
                       foreach($data['New_Arrivals'] as $product){
                         echo "<tr>
-                              <td type=name>$product->name</td>
+                              <td type=name id='prName'>$product->name</td>
                               <td> <img src='/images/".$product->image."'style='max-width:200px;max-height:100px'/></td>
                               <td type=name>$product->price</td>
                               <td type=action>
                               <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
                               </td>
                               <td type=action>
-                              <button type='button' class='btn btn-success'><a class='nav-link'>+</a></button>
+                              <button type='button' class='btn btn-success' name='action'><a class='nav-link'>+</a></button>
                               </td>
                               </tr>
 
@@ -130,7 +130,7 @@
                               <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
                               </td>
                               <td type=action>
-                              <button type='button' class='btn btn-success'><a class='nav-link'>+</a></button>
+                              <button type='button' class='btn btn-success' name='action'><a class='nav-link'>+</a></button>
                               </td>
                               </tr>
 
@@ -176,7 +176,7 @@
                               <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
                               </td>
                               <td type=action>
-                              <button type='button' class='btn btn-success'><a class='nav-link'>+</a></button>
+                              <button type='button' class='btn btn-success' name='action'><a class='nav-link'>+</a></button>
                               </td>
                               </tr>
 
@@ -220,7 +220,7 @@
                               <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
                               </td>
                               <td type=action>
-                              <button type='button' class='btn btn-success'><a class='nav-link'>+</a></button>
+                              <button type='button' class='btn btn-success' name='action'><a class='nav-link'>+</a></button>
                               </td>
                               </tr>
 
@@ -264,7 +264,7 @@
                               <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
                               </td>
                               <td type=action>
-                              <button type='button' class='btn btn-success'><a class='nav-link'>+</a></button>
+                              <button type='button' class='btn btn-success' name='action'><a class='nav-link'>+</a></button>
                               </td>
                               </tr>
 
@@ -308,7 +308,7 @@
                               <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
                               </td>
                               <td type=action>
-                              <button type='button' class='btn btn-success'><a class='nav-link'>+</a></button>
+                              <button type='button' class='btn btn-success' name='action'><a class='nav-link'>+</a></button>
                               </td>
                               </tr>
 

@@ -69,19 +69,18 @@
                 <h4>Shipping Methods</h4>
                 <div class="form-outline mb-4">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="freeShipping" checked>
+                    <input type="radio" class="form-check-input" name="freeShipping">
                     <label class="form-check-label" for="flexRadioDefault1">
                       Free Shipping (5 business days)
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="extraShipping">
+                    <input type="radio"class="form-check-input" name="extraShipping">
                     <label class="form-check-label" for="flexRadioDefault2">
                       Express Shipping (1 business day + $8.99)
                     </label>
                   </div>
                 </div>
-
 
                 <hr>
                 <h4>Address</h4>
