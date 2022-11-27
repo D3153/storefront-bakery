@@ -22,7 +22,7 @@ MUJI: https://muji.ca/
 
 ### The user can ...
 1. Register, login, logout (these are not new features - they are given in class).✓
-2. Look up a product catalogue or a certain product (1 feature).
+2. Search product by keyword (1 feature). ✓
 3. View product information (1 feature).✓
 4. Add/delete/modify quantities for products in the shopping cart (3 features).
 5. Place an order (1 feature).
