@@ -69,13 +69,13 @@
                 <h4>Shipping Methods</h4>
                 <div class="form-outline mb-4">
                   <div class="form-check">
-                    <input type="radio" class="form-check-input" name="freeShipping">
+                    <input type="radio" class="form-check-input" name="shipping">
                     <label class="form-check-label" for="flexRadioDefault1">
                       Free Shipping (5 business days)
                     </label>
                   </div>
                   <div class="form-check">
-                    <input type="radio"class="form-check-input" name="extraShipping">
+                    <input type="radio"class="form-check-input" name="shipping">
                     <label class="form-check-label" for="flexRadioDefault2">
                       Express Shipping (1 business day + $8.99)
                     </label>
@@ -86,17 +86,17 @@
                 <h4>Address</h4>
                 <div class="form-outline mb-4">
                   <label for="name"><i class="fa fa-user"></i> Full Name:</label>
-                  <input type="text" name="name" class="form-control form-control-lg" placeholder="Norah Wilkinson">
+                  <input type="text" name="name" class="form-control form-control-lg" placeholder="Norah Wilkinson" required>
                 </div>
 
                  <div class="form-outline mb-4">
                   <label for="email"><i class="fa fa-envelope"></i> Email:</label>
-                  <input type="email" name="email" class="form-control form-control-lg" placeholder="norah123@gmail.com"required />
+                  <input type="email" name="email" class="form-control form-control-lg" placeholder="norah123@gmail.com" required />
                 </div>
 
               <div class="form-outline mb-4">
                   <label for="address"><i class="fa fa-address-card-o"></i> Address: </label>
-                  <input type="text" name="address" class="form-control form-control-lg" placeholder="4089 Chapmans Lane">
+                  <input type="text" name="address" class="form-control form-control-lg" placeholder="4089 Chapmans Lane" required>
                 </div>
 
               <div class="form-outline mb-4">
@@ -119,27 +119,27 @@
 
               <div class="form-outline mb-4">
                 <label for="cardHolder">Card holder</label>
-                <input type="text" name="cardHolder" class="form-control form-control-lg" placeholder="Norah Wilkinson">
+                <input type="text" name="cardHolder" class="form-control form-control-lg" placeholder="Norah Wilkinson" required>
               </div>
 
               <div class="form-outline mb-4">
                 <label for="ccnum">Credit card number</label>
-                <input type="text" name="cardnumber" class="form-control form-control-lg" placeholder="1111222233334444">
+                <input type="text" name="cardnumber" class="form-control form-control-lg" placeholder="1111222233334444" required>
               </div>
 
               <div class="form-outline mb-4">
                 <label for="expdate">Expire date</label>
-                <input type="month" name="expdate" class="form-control form-control-lg">
+                <input type="month" name="expdate" class="form-control form-control-lg" required>
               </div>
 
               <div class="form-outline mb-4">
                 <label for="cvv">CVV</label>
-                <input type="number" name="cvv"class="form-control form-control-lg" placeholder="897" min="000" max="999">
+                <input type="number" name="cvv"class="form-control form-control-lg" placeholder="897" min="000" max="999" required>
               </div>
 
-
+              <form action='' enctype="multipart/form-data" method='post'>
               <div class="d-flex justify-content-center">
-                  <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4" name="action">Checkout</button>
+                  <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4" name="action">Place Order</button>
               </div>
                 
                 </div>
