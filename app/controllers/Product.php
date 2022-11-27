@@ -24,8 +24,49 @@ class Product extends \app\core\Controller{
 
 	public function search(){
         $product = new \app\models\Product();
-        $products = $product->search($_GET['search_term']);
+       	$products[] = array();
+		$products['Breads'] = $product->search($_GET['search_term'],'1');
+		$products['Cookies'] = $product->search($_GET['search_term'],'2');
+		$products['Pies'] = $product->search($_GET['search_term'],'3');
+		$products['Pastries'] = $product->search($_GET['search_term'],'4');
+		$products['Cakes'] = $product->search($_GET['search_term'],'5');
+		$products['New_Arrivals'] = $product->search($_GET['search_term'],'6');
         $this->view('Product/shopAll', $products);
+    }
+
+    public function searchBread(){
+        $product = new \app\models\Product();
+       	$products[] = array();
+		$products['Breads'] = $product->search($_GET['search_term'],'1');
+        $this->view('Product/Bread', $products);
+    }
+
+    public function searchCookies(){
+        $product = new \app\models\Product();
+       	$products[] = array();
+		$products['Cookies'] = $product->search($_GET['search_term'],'2');
+        $this->view('Product/Cookies', $products);
+    }
+
+    public function searchPies(){
+        $product = new \app\models\Product();
+       	$products[] = array();
+		$products['Pies'] = $product->search($_GET['search_term'],'3');
+        $this->view('Product/Pies', $products);
+    }
+
+    public function searchPastries(){
+        $product = new \app\models\Product();
+       	$products[] = array();
+		$products['Pastries'] = $product->search($_GET['search_term'],'4');
+        $this->view('Product/Pastries', $products);
+    }
+
+    public function searchCakes(){
+        $product = new \app\models\Product();
+       	$products[] = array();
+		$products['Cakes'] = $product->search($_GET['search_term'],'5');
+        $this->view('Product/Cakes', $products);
     }
 
 	public function customizeCake(){

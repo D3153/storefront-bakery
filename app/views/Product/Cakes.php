@@ -39,7 +39,7 @@
                     </li>
 
 
-                    <form action="/Product/search" method="get" style='display:inline-block'>
+                    <form action="/Product/searchCakes" method="get" style='display:inline-block'>
                       <div class="input-group">
                         <input type="search" placeholder="Search" name="search_term"/>
                         <button type="submit" class="btn btn-outline-primary" name="search">Search</button>
