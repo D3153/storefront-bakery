@@ -74,7 +74,7 @@
                               <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$cartUser->product_id'><a class='nav-link'>Details</a></button>
                               </td>
                               <td type=action>
-                              <button class='btn btn-danger'><a class='nav-link' href='/Cart/addCartProduct/$cartUser->product_id'>-</a></button>
+                              <button class='btn btn-danger'><a class='nav-link' href='/Cart/removeFromCart/$cartUser->product_id'>-</a></button>
                               </td>
                               </tr>
 

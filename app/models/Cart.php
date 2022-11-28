@@ -77,4 +77,22 @@ class Cart extends \app\core\Model{
 						'product_id'=>$this->product_id,
 						'initStatus'=>$this->initStatus]);
 	}
+
+	public function deleteProduct(){
+		$SQL = "DELETE FROM cart WHERE product_id = :product_id AND user_id = :user_id AND status = :status";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['product_id'=>$this->product_id,
+						'user_id'=>$this->user_id,
+						'status'=>'cart']);
+	}
+
+	public function removeProduct(){
+		$SQL = "UPDATE cart SET quantity=quantity-:quantity WHERE user_id = :user_id AND status = :status AND product_id = :product_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['quantity'=>1,
+						'user_id'=>$this->user_id,
+						'status'=>'cart',
+						'product_id'=>$this->product_id]);
+	}
+
 }

@@ -35,9 +35,26 @@ class Cart extends \app\core\Controller{
 			header('location:/Product/shopAll');
 		}
 
-	public function FunctionName($value='')
+	public function removeFromCart($product_id)
 	{
-		// code...
+		$cart = new \app\models\Cart();
+		$product = new \app\models\Product();
+		$product = $product->get($product_id);
+
+		$cartUser = $cart->getCartProduct($_SESSION['user_id'], $product_id);
+		if($cartUser){
+			if($cartUser->quantity > 1){
+				$cart->user_id = $_SESSION['user_id'];
+				$cart->product_id = $product_id;
+				$cart->removeProduct();
+				$cart->updatePrice();
+			}
+		}else{
+			$cart->user_id = $_SESSION['user_id'];
+			$cart->product_id = $product_id;
+			$cart->deleteProduct();
+		}
+		header('location:/Cart/cart');
 	}
 	
 }
