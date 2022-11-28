@@ -101,7 +101,7 @@ class Seller extends \app\core\Controller{
 		
 	}
 
-	public function response($user_id){
+	public function response($contact_us_id){
 		if(isset($_POST['action'])){
 			$reply = new \app\models\MessageCenter();
 			$reply->user_id= $user_id;
@@ -113,7 +113,7 @@ class Seller extends \app\core\Controller{
 			header('location:/Seller/messageCenter');
 		}
 		$userContact = new \app\models\ContactUs();
-		$userContact = $userContact->get($user_id);
+		$userContact = $userContact->get($contact_us_id);
 		$this->view("Seller/response",['userContact'=>$userContact]);
 	}
 
