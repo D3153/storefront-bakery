@@ -55,7 +55,7 @@
                               <td type=name>$contact->message</td>
                               <td type=name>$contact->send_date</td>
                               <td type=action>
-                              <button class='btn btn-primary'><a class='nav-link' href='/Seller/response/$contact->user_id'>Reply</a></button>
+                              <button class='btn btn-primary'><a class='nav-link' href='/Seller/response/$contact->contact_us_id'>Reply</a></button>
                               </td>
                               </tr>";
                       }
