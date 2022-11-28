@@ -5,8 +5,8 @@ class Cart extends \app\core\Controller{
 
 	public function cart(){
 		$cart = new \app\models\Cart();
-		$userCart = $cart->getCart($_SESSION['user_id']);
-		$this->view('Cart/cart');
+		$cartUser = $cart->getCart($_SESSION['user_id']);
+		$this->view('Cart/cart', $cartUser);
 	}
 
 public function addCartProduct($product_id)
@@ -16,9 +16,8 @@ public function addCartProduct($product_id)
 		$product = new \app\models\Product();
 		$product = $product->get($product_id);
 
-		$cartUser = $cart->getCart($_SESSION['user_id'], $product_id);
+		$cartUser = $cart->getCartProduct($_SESSION['user_id'], $product_id);
 
-		var_dump($cartUser);
 		if($cartUser){
 			$cart->user_id = $_SESSION['user_id'];
 			$cart->product_id = $product_id;
@@ -31,7 +30,7 @@ public function addCartProduct($product_id)
 			$cart->custom_cake_id = null;
 			$cart->shipping_id = null;
 			$cart->insertIntoCart();
-			// header('location:/Product/shopAll');
+			header('location:/Product/shopAll');
 		}
 	}
 	

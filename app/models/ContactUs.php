@@ -11,10 +11,10 @@ class ContactUs extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
-	public function get($contact_us_id){
-		$SQL = "SELECT * FROM contact_us WHERE contact_us_id =:contact_us_id";
+	public function get($user_id){
+		$SQL = "SELECT * FROM contact_us WHERE user_id=:user_id";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['contact_us_id'=>$contact_us_id]);
+		$STMT->execute(['user_id'=>$user_id]);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\ContactUs');
 		return $STMT->fetch();
 	}

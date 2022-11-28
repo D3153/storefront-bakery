@@ -62,6 +62,46 @@
                     <table width="100%" border="1" cellpadding="5" cellspacing="5">
                     <tr><th>Name</th><th>Image</th><th>Quantity</th><th>Price</th><th> </th></tr>
 
+                    <?php 
+
+                      foreach ($data as $cartUser) {
+                        echo "<tr>
+                              <td type=name id='prName'>$cartUser->name</td>
+                              <td> <img src='/images/".$cartUser->image."'style='max-width:200px;max-height:100px'/></td>
+                              <td type=name>$cartUser->quantity</td>
+                              <td type=name>$cartUser->unit_price</td>
+                              <td type=action>
+                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$cartUser->product_id'><a class='nav-link'>Details</a></button>
+                              </td>
+                              <td type=action>
+                              <button class='btn btn-warning'><a class='nav-link' href='/Cart/addCartProduct/$cartUser->product_id'>-</a></button>
+                              </td>
+                              </tr>
+
+                              <div class='modal fade' id='Modal$cartUser->product_id' tabindex='-1' aria-labelledby='ModalLabel$cartUser->product_id' aria-hidden='true'>
+  <div class='modal-dialog modal-dialog-centered'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h1 class='modal-title fs-5' id='ModalLabel$cartUser->product_id'>Details</h1>
+        <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+      </div>
+      <div class='modal-body'>
+        <p>Name: $cartUser->name</p>
+        <p>Description: $cartUser->description</p>
+        <p>Image: <img src='/images/".$cartUser->image."'style='max-width:200px;max-height:100px'/></p>
+        <p>Size: $cartUser->size</p>
+        <p>Price: $cartUser->price</p>
+
+      </div>
+      <div class='modal-footer'>
+      </div>
+    </div>
+  </div>
+</div>";
+                      }
+
+                    ?>
+
                     <tfoot><tr>Total Price: </tr><tr>$</tr></tfoot>
                     
                   </table>

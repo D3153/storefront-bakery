@@ -79,7 +79,7 @@
                   <table width="100%" border="1" cellpadding="5" cellspacing="5">
                     <tr><th>From</th><th>Message</th><th>Date</th><th> </th></tr>
                     <?php
-                      $message= new \app\models\MessageCenter();
+                      $message=new \app\models\MessageCenter();
                       $messages = $message->getAll($_SESSION['$user_id']);
                       foreach($data as $message){
                         echo "<tr>
