@@ -85,7 +85,7 @@
                               <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
                               </td>
                               <td type=action>
-                              <button class='btn btn-success'><a class='nav-link' href='/Product/addCartProduct/$product->product_id'>+</a></button>
+                              <button class='btn btn-success'><a class='nav-link' href='/Cart/addCartProduct/$product->product_id'>+</a></button>
                               </td>
                               </tr>
 
@@ -130,7 +130,7 @@
                               <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
                               </td>
                               <td type=action>
-                              <button type='button' class='btn btn-success' name='addBread'><a class='nav-link'>+</a></button>
+                              <button class='btn btn-success'><a class='nav-link' href='/Cart/addCartProduct/$product->product_id'>+</a></button>
                               </td>
                               </tr>
 
@@ -176,7 +176,7 @@
                               <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
                               </td>
                               <td type=action>
-                              <button type='button' class='btn btn-success' name='addCookies'><a class='nav-link'>+</a></button>
+                              <button class='btn btn-success'><a class='nav-link' href='/Cart/addCartProduct/$product->product_id'>+</a></button>
                               </td>
                               </tr>
 
@@ -220,7 +220,7 @@
                               <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
                               </td>
                               <td type=action>
-                              <button type='button' class='btn btn-success' name='addPie'><a class='nav-link'>+</a></button>
+                              <button class='btn btn-success'><a class='nav-link' href='/Cart/addCartProduct/$product->product_id'>+</a></button>
                               </td>
                               </tr>
 
@@ -264,7 +264,7 @@
                               <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
                               </td>
                               <td type=action>
-                              <button type='button' class='btn btn-success' name='addPastry'><a class='nav-link'>+</a></button>
+                              <button class='btn btn-success'><a class='nav-link' href='/Cart/addCartProduct/$product->product_id'>+</a></button>
                               </td>
                               </tr>
 
@@ -308,7 +308,7 @@
                               <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
                               </td>
                               <td type=action>
-                              <button type='button' class='btn btn-success' name='addCake'><a class='nav-link'>+</a></button>
+                              <button class='btn btn-success'><a class='nav-link' href='/Cart/addCartProduct/$product->product_id'>+</a></button>
                               </td>
                               </tr>
 
