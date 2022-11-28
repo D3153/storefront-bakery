@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2022 at 05:20 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Nov 28, 2022 at 03:14 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -77,17 +77,17 @@ CREATE TABLE `contact_us` (
   `user_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `email` varchar(128) NOT NULL,
-  `message` text NOT NULL
+  `message` text NOT NULL,
+  `send_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `contact_us`
 --
 
-INSERT INTO `contact_us` (`contact_us_id`, `user_id`, `name`, `email`, `message`) VALUES
-(1, 2, 'Mimi', 'mimi@gmail.com', 'Hi!This is a message.'),
-(2, 2, 'Mimi', 'mimi@gmail.com', 'This is the second message'),
-(3, 2, 'Jiamin', 'mimi@gmail.com', 'Hello');
+INSERT INTO `contact_us` (`contact_us_id`, `user_id`, `name`, `email`, `message`, `send_date`) VALUES
+(5, 1, 'Mimi', 'mimi@gmail.com', 'Hello! This is a message from mimi', '2022-11-28'),
+(6, 3, 'Dinal', 'dinal@hotmail.com', 'Test sending a second message', '2022-11-28');
 
 -- --------------------------------------------------------
 
@@ -126,6 +126,46 @@ CREATE TABLE `feedback` (
   `product_id` int(11) NOT NULL,
   `rate` int(5) NOT NULL,
   `comment` varchar(2048) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `message_center`
+--
+
+DROP TABLE IF EXISTS `message_center`;
+CREATE TABLE `message_center` (
+  `message_Id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `sender` varchar(10) NOT NULL,
+  `send_date` date NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `message_center`
+--
+
+INSERT INTO `message_center` (`message_Id`, `user_id`, `sender`, `send_date`, `message`) VALUES
+(1, 2, 'Seller', '2022-11-28', 'Test reply'),
+(2, 2, 'Seller', '2022-11-28', 'send a response to mimi');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+DROP TABLE IF EXISTS `order`;
+CREATE TABLE `order` (
+  `order_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `cart_id` int(11) NOT NULL,
+  `ship_id` int(11) DEFAULT NULL,
+  `email` varchar(128) NOT NULL,
+  `address` varchar(128) NOT NULL,
+  `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -192,7 +232,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `username`, `password_hash`, `role`, `secret_key`) VALUES
 (1, 'jiamin', '$2y$10$l4cjJzx.gmnimTMOchP0/OnyNo.8odtHgAKu27j6zfFyPGKli9Tci', 'seller', 'XU5VVZTETBDMM7VC'),
-(2, 'mimi', '$2y$10$pJGdhHXasC17oR7zlGv.P.7TClzRAKD6cIqXbOuWLfsSXojP44chG', 'user', NULL);
+(2, 'mimi', '$2y$10$pJGdhHXasC17oR7zlGv.P.7TClzRAKD6cIqXbOuWLfsSXojP44chG', 'user', NULL),
+(3, 'dinal', '$2y$10$RHs9cWP.bNeELbaEQrVECu/1lISkS8xi5JWsYsfO.uN21SoXST9Cm', 'user', NULL);
 
 --
 -- Indexes for dumped tables
@@ -236,6 +277,21 @@ ALTER TABLE `feedback`
   ADD KEY `product_to_feedback` (`product_id`);
 
 --
+-- Indexes for table `message_center`
+--
+ALTER TABLE `message_center`
+  ADD PRIMARY KEY (`message_Id`);
+
+--
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `user_to_order` (`user_id`),
+  ADD KEY `shipping_to_order` (`ship_id`),
+  ADD KEY `cart_to_order` (`cart_id`);
+
+--
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
@@ -275,7 +331,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `contact_us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `contact_us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `custom_cake`
@@ -288,6 +344,18 @@ ALTER TABLE `custom_cake`
 --
 ALTER TABLE `feedback`
   MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `message_center`
+--
+ALTER TABLE `message_center`
+  MODIFY `message_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `order`
+--
+ALTER TABLE `order`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -305,7 +373,7 @@ ALTER TABLE `shipping`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

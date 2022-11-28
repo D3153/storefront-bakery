@@ -60,6 +60,8 @@ class User extends \app\core\Controller{
 			$contact->name = $_POST['name'];
 			$contact->email = $_POST['email'];
 			$contact->message = $_POST['message'];
+			$t=time();
+			$contact->send_date = date("Y-m-d",$t);
 			$contact->insert();
 			header('location:/User/home');		
 		}else{
@@ -67,8 +69,12 @@ class User extends \app\core\Controller{
 		}
 	}
 
-	public function checkout(){
-		$this->view('User/checkout');
+	public function messages(){
+		$contact = new \app\models\MessageCenter();
+		$contacts = $contact->getAll($_SESSION['user_id']);
+		$this->view('User/messages',$contacts);
 	}
+
+
 
 }

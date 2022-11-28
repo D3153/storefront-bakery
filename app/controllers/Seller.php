@@ -35,10 +35,11 @@ class Seller extends \app\core\Controller{
 		}
 	}
 
-#[\app\filters\Seller2fa]
-	#[\app\filters\Check2fa]
+/*
+	#[\app\filters\Seller2fa]
+	#[\app\filters\Check2fa]*/
 	public function home(){
-		print_r($_SESSION);
+		// print_r($_SESSION);
 		$this->view('Seller/home');
 	}
 
@@ -100,7 +101,21 @@ class Seller extends \app\core\Controller{
 		
 	}
 
-	
+	public function response($user_id){
+		if(isset($_POST['action'])){
+			$reply = new \app\models\MessageCenter();
+			$reply->user_id= $user_id;
+			$reply->sender= "Seller";
+			$t=time();
+			$reply->send_date = date("Y-m-d",$t);
+			$reply->message= $_POST['message'];
+			$reply->insert();
+			header('location:/Seller/messageCenter');
+		}
+		$userContact = new \app\models\ContactUs();
+		$userContact = $userContact->get($user_id);
+		$this->view("Seller/response",['userContact'=>$userContact]);
+	}
 
 	public function checkProducts(){
 		$product = new \app\models\Product();

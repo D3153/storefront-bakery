@@ -44,7 +44,7 @@
                 <form action='' enctype="multipart/form-data" method='post'>
                 <div class="form-outline mb-4">
                   <table width="100%" border="1" cellpadding="5" cellspacing="5">
-                    <tr><th>Username</th><th>Email</th><th>Message</th></tr>
+                    <tr><th>Username</th><th>Email</th><th>Message</th><th>Date</th><th> </th></tr>
                     <?php
                       $contact=new \app\models\ContactUs();
                       $contacts = $contact->getAll();
@@ -53,6 +53,10 @@
                               <td type=name>$contact->name</td>
                               <td type=name>$contact->email</td>
                               <td type=name>$contact->message</td>
+                              <td type=name>$contact->send_date</td>
+                              <td type=action>
+                              <button class='btn btn-primary'><a class='nav-link' href='/Seller/response/$contact->user_id'>Reply</a></button>
+                              </td>
                               </tr>";
                       }
                     ?>
