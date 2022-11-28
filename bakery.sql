@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2022 at 03:19 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Nov 28, 2022 at 04:08 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,7 +37,7 @@ CREATE TABLE `cart` (
   `custom_cake_id` int(11) DEFAULT NULL,
   `quantity` int(100) NOT NULL,
   `total_price` decimal(6,2) NOT NULL,
-  `shipping_id` int(11) NOT NULL,
+  `shipping_id` int(11) DEFAULT NULL,
   `status` enum('cart','paid','shipped') NOT NULL DEFAULT 'cart'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
