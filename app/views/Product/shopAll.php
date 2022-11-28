@@ -85,7 +85,7 @@
                               <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>Details</a></button>
                               </td>
                               <td type=action>
-                              <button type='button' class='btn btn-success' name='addNewArrival'><a class='nav-link'>+</a></button>
+                              <button class='btn btn-success'><a class='nav-link' href='/Product/addCartProduct/$product->product_id'>+</a></button>
                               </td>
                               </tr>
 

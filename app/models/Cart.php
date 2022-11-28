@@ -21,6 +21,7 @@ class Cart extends \app\core\Model{
 						'custom_cake_id'=>$this->custom_cake_id,
 						'quantity'=>$this->quantity,
 						'total_price'=>$this->total_price,
+						'shipping_id'=>$this->shipping_id,
 						'status'=>'cart']);
 	}
 
@@ -30,6 +31,15 @@ class Cart extends \app\core\Model{
 		$STMT->execute(['status'=>'paid',
 						'user_id'=>$this->user_id,
 						'initStatus'=>'cart']);
+	}
+
+	public function updateQty(){
+		$SQL = "UPDATE cart SET quantity=:quantity WHERE user_id = :user_id AND status = :status AND product_id = :product_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['quantity'=>+1,
+						'user_id'=>$this->user_id,
+						'status'=>'cart',
+						'product_id'=>$this->product_id]);
 	}
 
 	public function updateItemStatus(){

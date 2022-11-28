@@ -7,6 +7,7 @@ class Cart extends \app\core\Controller{
 		$this->view('Cart/cart');
 	}
 
+
 	// public function insertCart(){
 	// 	if(isset($_POST['action'])){
 	// 		$cart = new \app\models\Cart();
