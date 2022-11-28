@@ -62,6 +62,14 @@ class Cart extends \app\core\Model{
 						'product_id'=>$this->product_id]);
 	}
 
+	public function updatePrice(){
+		$SQL = "UPDATE cart LEFT JOIN product ON cart.product_id=product.product_id SET unit_price=price*quantity WHERE user_id = :user_id AND status = :status AND cart.product_id = :product_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['user_id'=>$this->user_id,
+						'status'=>'cart',
+						'product_id'=>$this->product_id]);
+	}
+
 	public function updateItemStatus(){
 		$SQL = "UPDATE cart SET status=:status WHERE product_id = :product_id AND status = :intitStatus";
 		$STMT = self::$_connection->prepare($SQL);

@@ -9,29 +9,35 @@ class Cart extends \app\core\Controller{
 		$this->view('Cart/cart', $cartUser);
 	}
 
-public function addCartProduct($product_id)
-	{
-		//user_id, product_id, custom_cake_id, quantity, unit_price, shipping_id, status) VALUES (:user_id, :product_id, :custom_cake_id, :quantity, :unit_price, :shipping_id, :status
-		$cart = new \app\models\Cart();
-		$product = new \app\models\Product();
-		$product = $product->get($product_id);
+	public function addCartProduct($product_id)
+		{
+			//user_id, product_id, custom_cake_id, quantity, unit_price, shipping_id, status) VALUES (:user_id, :product_id, :custom_cake_id, :quantity, :unit_price, :shipping_id, :status
+			$cart = new \app\models\Cart();
+			$product = new \app\models\Product();
+			$product = $product->get($product_id);
 
-		$cartUser = $cart->getCartProduct($_SESSION['user_id'], $product_id);
+			$cartUser = $cart->getCartProduct($_SESSION['user_id'], $product_id);
 
-		if($cartUser){
-			$cart->user_id = $_SESSION['user_id'];
-			$cart->product_id = $product_id;
-			$cart->updateQty();
-		}else{
-			$cart->user_id = $_SESSION['user_id'];
-			$cart->product_id = $product_id;
-			$cart->quantity = 1;
-			$cart->unit_price = $product->price;
-			$cart->custom_cake_id = null;
-			$cart->shipping_id = null;
-			$cart->insertIntoCart();
+			if($cartUser){
+				$cart->user_id = $_SESSION['user_id'];
+				$cart->product_id = $product_id;
+				$cart->updateQty();
+				$cart->updatePrice();
+			}else{
+				$cart->user_id = $_SESSION['user_id'];
+				$cart->product_id = $product_id;
+				$cart->quantity = 1;
+				$cart->unit_price = $product->price;
+				$cart->custom_cake_id = null;
+				$cart->shipping_id = null;
+				$cart->insertIntoCart();
+			}
 			header('location:/Product/shopAll');
 		}
+
+	public function FunctionName($value='')
+	{
+		// code...
 	}
 	
 }
