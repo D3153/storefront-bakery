@@ -18,7 +18,7 @@ MUJI: https://muji.ca/
 2. Add/delete/modify products for sale (3 features). ✓
 3. Publish new arrivals. It is a category at shop all page and appear only when there is a new arrival.(1 feature). ✓
 4. View product purchases and mark them as shipped while adding tracking information (1 features).
-5. View client message in message center (1 features).✓
+5. View client message in message center and reply(1 features).✓
 
 ### The user can ...
 1. Register, login, logout (these are not new features - they are given in class).✓
