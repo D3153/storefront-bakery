@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2022 at 03:19 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Nov 29, 2022 at 12:35 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,10 +36,19 @@ CREATE TABLE `cart` (
   `product_id` int(11) DEFAULT NULL,
   `custom_cake_id` int(11) DEFAULT NULL,
   `quantity` int(100) NOT NULL,
-  `total_price` decimal(6,2) NOT NULL,
-  `shipping_id` int(11) NOT NULL,
+  `unit_price` decimal(6,2) NOT NULL,
+  `shipping_id` int(11) DEFAULT NULL,
   `status` enum('cart','paid','shipped') NOT NULL DEFAULT 'cart'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `custom_cake_id`, `quantity`, `unit_price`, `shipping_id`, `status`) VALUES
+(15, 2, 18, NULL, 1, '21.98', NULL, 'cart'),
+(16, 2, 21, NULL, 4, '23.96', NULL, 'cart'),
+(17, 2, 15, NULL, 1, '99.77', NULL, 'cart');
 
 -- --------------------------------------------------------
 
@@ -87,7 +96,8 @@ CREATE TABLE `contact_us` (
 
 INSERT INTO `contact_us` (`contact_us_id`, `user_id`, `name`, `email`, `message`, `send_date`) VALUES
 (5, 1, 'Mimi', 'mimi@gmail.com', 'Hello! This is a message from mimi', '2022-11-28'),
-(6, 3, 'Dinal', 'dinal@hotmail.com', 'Test sending a second message', '2022-11-28');
+(6, 3, 'Dinal', 'dinal@hotmail.com', 'Test sending a second message', '2022-11-28'),
+(7, 2, 'Maria', '123@gmail.com', 'i hate Alex', '2022-11-28');
 
 -- --------------------------------------------------------
 
@@ -111,7 +121,8 @@ CREATE TABLE `custom_cake` (
 --
 
 INSERT INTO `custom_cake` (`custom_cake_id`, `description`, `image`, `layer`, `serving`, `flavor`, `price`) VALUES
-(3, 'birthday cake -make it blue instead of pink', '636d1d2c6072d.jpg', 3, 10, 'Fruit', '169.90');
+(3, 'birthday cake -make it blue instead of pink', '636d1d2c6072d.jpg', 3, 10, 'Fruit', '169.90'),
+(4, 'Please write Alex on the top', '6384f966955bc.jpg', 5, 100, 'Strawberry', '699.00');
 
 -- --------------------------------------------------------
 
@@ -149,7 +160,8 @@ CREATE TABLE `message_center` (
 
 INSERT INTO `message_center` (`message_Id`, `user_id`, `sender`, `send_date`, `message`) VALUES
 (1, 2, 'Seller', '2022-11-28', 'Test reply'),
-(2, 2, 'Seller', '2022-11-28', 'send a response to mimi');
+(2, 2, 'Seller', '2022-11-28', 'send a response to mimi'),
+(3, 2, 'Seller', '2022-11-28', 'Me too');
 
 -- --------------------------------------------------------
 
@@ -320,7 +332,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -332,13 +344,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `contact_us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `contact_us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `custom_cake`
 --
 ALTER TABLE `custom_cake`
-  MODIFY `custom_cake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `custom_cake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `feedback`
@@ -350,7 +362,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `message_center`
 --
 ALTER TABLE `message_center`
-  MODIFY `message_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `message_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `order`
