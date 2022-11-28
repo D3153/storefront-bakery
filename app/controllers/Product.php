@@ -4,12 +4,6 @@ namespace app\controllers;
 class Product extends \app\core\Controller{
 	public function shopAll(){
 		$product = new \app\models\Product();
-		if(isset($_POST['addNewArrival'])){
-
-		}
-		if(isset($_POST['addBread'])){
-
-		}else{
 			$products[] = array();
 			$products['Breads'] = $product->getCategoryByName('Breads');
 			$products['Cookies'] = $product->getCategoryByName('Cookies');
@@ -18,8 +12,6 @@ class Product extends \app\core\Controller{
 			$products['Cakes'] = $product->getCategoryByName('Cakes');
 			$products['New_Arrivals'] = $product->getCategoryByName('New_Arrivals');
 			$this->view('Product/shopAll', $products);
-		}
-		
 	}
 
 	public function search(){
@@ -123,5 +115,25 @@ class Product extends \app\core\Controller{
 		$this->view('Product/Pies',$products);
 	}
 
+	public function addCartProduct($product_id)
+	{
+		//user_id, product_id, custom_cake_id, quantity, total_price, shipping_id, status) VALUES (:user_id, :product_id, :custom_cake_id, :quantity, :total_price, :shipping_id, :status
+		$cart = new \app\models\Cart();
+		$product = new \app\models\Product();
+		$product = $product->get($product_id);
+
+		$cart->user_id = $_SESSION['user_id'];
+		$cart->product_id = $product_id;
+		$cart->quantity = 1;
+		$cart->total_price = $product->price;
+		$cart->custom_cake_id = null;
+		$cart->shipping_id = null;
+		$cart->insertIntoCart();
+		var_dump($cart);
+		header('location:/Product/shopAll');
+
+
+		
+	}
 
 }
