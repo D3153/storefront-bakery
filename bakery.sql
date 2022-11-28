@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2022 at 03:14 AM
+-- Generation Time: Nov 28, 2022 at 03:19 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -280,7 +280,8 @@ ALTER TABLE `feedback`
 -- Indexes for table `message_center`
 --
 ALTER TABLE `message_center`
-  ADD PRIMARY KEY (`message_Id`);
+  ADD PRIMARY KEY (`message_Id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `order`
@@ -387,6 +388,12 @@ ALTER TABLE `cart`
   ADD CONSTRAINT `product_to_cart` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
   ADD CONSTRAINT `shipping_to_cart` FOREIGN KEY (`shipping_id`) REFERENCES `shipping` (`ship_id`),
   ADD CONSTRAINT `user_to_cart` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Constraints for table `message_center`
+--
+ALTER TABLE `message_center`
+  ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
