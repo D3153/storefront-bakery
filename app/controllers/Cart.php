@@ -48,11 +48,11 @@ class Cart extends \app\core\Controller{
 				$cart->product_id = $product_id;
 				$cart->removeProduct();
 				$cart->updatePrice();
-			}
-		}else{
-			$cart->user_id = $_SESSION['user_id'];
+			}else{
+				$cart->user_id = $_SESSION['user_id'];
 			$cart->product_id = $product_id;
 			$cart->deleteProduct();
+			}
 		}
 		header('location:/Cart/cart');
 	}

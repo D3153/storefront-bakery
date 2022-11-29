@@ -12,11 +12,11 @@ class Cart extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
-	public function getCart()
+	public function getCart($user_id)
 	{
-		$SQL = "SELECT * FROM cart CROSS JOIN product on cart.product_id=product.product_id";
+		$SQL = "SELECT * FROM cart CROSS JOIN product on cart.product_id=product.product_id WHERE user_id = :user_id";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute();
+		$STMT->execute(['user_id'=>$user_id]);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Cart');
 		return $STMT->fetchAll();
 	}
