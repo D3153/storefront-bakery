@@ -82,7 +82,7 @@ class Seller extends \app\core\Controller{
 		$product = $product->get($product_id);
 		if(isset($_POST['action'])){
 			$filename = $this->saveFile($_FILES['image']);
-			if($filename){
+			if(!$filename){
 				unlink("images/$product->image");
 				$product->image = $filename;
 			}

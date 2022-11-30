@@ -64,7 +64,7 @@
 
                     <?php 
 
-                      foreach ($data as $cartUser) {
+                      foreach ($data['cartUser'] as $cartUser) {
                         echo "<tr>
                               <td type=name id='prName'>$cartUser->name</td>
                               <td> <img src='/images/".$cartUser->image."'style='max-width:200px;max-height:100px'/></td>
@@ -102,7 +102,7 @@
 
                     ?>
 
-                    <tfoot><tr>Total Price: </tr><tr>$</tr></tfoot>
+                    <tfoot><tr>Total Price: </tr><tr><?php echo $data['total_price'] ?>$</tr></tfoot>
                     
                   </table>
                 </div>

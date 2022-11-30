@@ -5,18 +5,19 @@ class Cart extends \app\core\Model{
 
 //for order history
 	public function getByUser($user_id){
-		$SQL = "SELECT * FROM cart WHERE user_id=:user_id";
+		$SQL = "SELECT * FROM cart CROSS JOIN product on cart.product_id=product.product_id WHERE user_id = :user_id";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['user_id'=>$this->user_id]);
+		$STMT->execute(['user_id'=>$user_id]);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Cart');
 		return $STMT->fetchAll();
 	}
 
 	public function getCart($user_id)
 	{
-		$SQL = "SELECT * FROM cart CROSS JOIN product on cart.product_id=product.product_id WHERE user_id = :user_id";
+		$SQL = "SELECT * FROM cart CROSS JOIN product on cart.product_id=product.product_id WHERE user_id = :user_id AND status = :status";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['user_id'=>$user_id]);
+		$STMT->execute(['user_id'=>$user_id,
+						'status'=>'cart']);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Cart');
 		return $STMT->fetchAll();
 	}
