@@ -35,11 +35,10 @@ class Seller extends \app\core\Controller{
 		}
 	}
 
-/*
+
 	#[\app\filters\Seller2fa]
-	#[\app\filters\Check2fa]*/
+	#[\app\filters\Check2fa]
 	public function home(){
-		// print_r($_SESSION);
 		$this->view('Seller/home');
 	}
 
@@ -157,7 +156,7 @@ class Seller extends \app\core\Controller{
 			$user->update2fa();             
 			header('location:Seller/home');         
 		}else{             
-			header('location:/Seller/setup2fa?error=token not verified!');//reload         
+			header('location:Seller/setup2fa?error=token not verified!');//reload         
 		}     
 	}else{         
 		$secretkey = \app\core\TokenAuth6238::generateRandomClue();         
@@ -170,25 +169,12 @@ class Seller extends \app\core\Controller{
 	function check2fa(){
 		if(isset($_POST['action'])){
 			$currentcode = $_POST['currentCode'];
-		 if(\app\core\TokenAuth6238::verify($_SESSION['secretkey'],$currentcode)){
-		 	$_SESSION['secretkey'] = null;
+		 if(\app\core\TokenAuth6238::verify($_SESSION['secret_key'],$currentcode)){
+		 	$_SESSION['secret_key'] = null;
 		 	header('location:/Seller/home');
 		 }
 		}else{
 			$this->view('Seller/check2fa');
 		}
-    //     if(isset($_POST['action'])){
-    //         $currentCode = $_POST['currentCode'];
-    //         if(\app\core\TokenAuth6238::verify($_SESSION['secret_key'],$currentCode)){
-    //             $_SESSION['secret_key']=null;
-    //             header('location:/Seller/setup2fa');
-    //         }else{
-    //             // session_destroy();
-    //             header('location:/Seller/home');
-    //         }
-    //     }else{
-    //         $this->view("Seller/check2fa");
-    //     }
-    }
-
+	}
 }

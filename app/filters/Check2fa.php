@@ -5,10 +5,9 @@ namespace app\filters;
 class Check2fa extends \app\core\AccessFilter{
 	public function execute(){
 		if($_SESSION['role'] == 'seller'){
-			$user = new \app\models\User();
-			$user->get($_SESSION['username']);
-			if($user->secret_key != null){
+			if($_SESSION['secret_key']!= null){
 				header('location:/Seller/check2fa');
+				return true;
 			}else return false;
 		}else{
 			return false;
