@@ -31,7 +31,7 @@
                       <a class="nav-link" href="/Seller/messagecenter">Message Center</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/User/logout" id="logout">Logout</a>
+                      <a class="nav-link" href="/Seller/index" id="logout">Logout</a>
                     </li>
               </ul>
             </div>
