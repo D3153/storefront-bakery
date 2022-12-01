@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2022 at 04:07 AM
+-- Generation Time: Dec 01, 2022 at 02:48 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -214,22 +214,6 @@ INSERT INTO `product` (`product_id`, `category_id`, `name`, `description`, `imag
 -- --------------------------------------------------------
 
 --
--- Table structure for table `profile`
---
-
-DROP TABLE IF EXISTS `profile`;
-CREATE TABLE `profile` (
-  `profile_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `name` varchar(100) DEFAULT NULL,
-  `phone` int(20) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `bio` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `shipping`
 --
 
@@ -330,13 +314,6 @@ ALTER TABLE `product`
   ADD KEY `category_to_product` (`category_id`);
 
 --
--- Indexes for table `profile`
---
-ALTER TABLE `profile`
-  ADD PRIMARY KEY (`profile_id`),
-  ADD KEY `user_id_fk` (`user_id`);
-
---
 -- Indexes for table `shipping`
 --
 ALTER TABLE `shipping`
@@ -401,12 +378,6 @@ ALTER TABLE `product`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `profile`
---
-ALTER TABLE `profile`
-  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `shipping`
 --
 ALTER TABLE `shipping`
@@ -436,12 +407,6 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `message_center`
   ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
-
---
--- Constraints for table `profile`
---
-ALTER TABLE `profile`
-  ADD CONSTRAINT `user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

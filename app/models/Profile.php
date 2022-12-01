@@ -12,10 +12,10 @@ class Profile extends \app\core\Model{
 	}
 
 
-	public function insert(){
+	public function insertUserId($user_id){
 		$SQL = "INSERT INTO profile(user_id) VALUES (:user_id)";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['user_id'=>$this->user_id]);
+		$STMT->execute(['user_id'=>$user_id]);
 	}
 
 }

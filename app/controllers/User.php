@@ -53,9 +53,6 @@ class User extends \app\core\Controller{
 	}
 
 	public function myAccount(){
-		// $userContact = new \app\models\ContactUs();
-		// $userContact = $userContact->get($contact_us_id);
-		// $this->view("Seller/response",['userContact'=>$userContact]);
 		$this->view('User/myAccount');
 	}
 

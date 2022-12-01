@@ -73,7 +73,7 @@
             <div class="e-profile">
               <div class="row">
                 <div class="col-12 col-sm-auto mb-3">
-                  <div class="mx-auto" style="width: 140px;">
+                  <div class="mx-auto" style="width: 140px; height: 200px;">
                     <div class="d-flex justify-content-center align-items-center rounded">
                       <img src="../images/user.png" width="150" height="150">
                     </div>
@@ -86,58 +86,11 @@
 
                   </div>
                   <div class="text-center text-sm-right">
-                    <div class="text-muted"><small>Joined November 2022</small></div>
+                    <div class="text-muted"><small>Joined December 2022</small></div>
                   </div>
                 </div>
               </div>
 
-              <div class="tab-content pt-3">
-                <div class="tab-pane active">
-                  <form class="form" novalidate="">
-                    <div class="row">
-                      <div class="col">
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-group">
-                              <label>Full Name</label>
-                              <input class="form-control" type="text" name="name" value=" ">
-                            </div>
-                          </div>
-                          <div class="col">
-                            <div class="form-group">
-                              <label>Phone Number</label>
-                              <input class="form-control" type="text" name="phone" value="">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-group">
-                              <label>Email</label>
-                              <input class="form-control" type="text" name="email">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col mb-3">
-                            <div class="form-group">
-                              <label>About</label>
-                              <textarea class="form-control" rows="5" name="about" placeholder="My Bio"></textarea>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col d-flex justify-content-center">
-                        <button class="btn btn-primary" type="submit">Save Changes</button>
-                      </div>
-                    </div>
-                  </form>
-
-                </div>
-              </div>
             </div>
           </div>
         </div>
