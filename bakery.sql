@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 12:35 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Dec 01, 2022 at 04:07 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -161,7 +161,8 @@ CREATE TABLE `message_center` (
 INSERT INTO `message_center` (`message_Id`, `user_id`, `sender`, `send_date`, `message`) VALUES
 (1, 2, 'Seller', '2022-11-28', 'Test reply'),
 (2, 2, 'Seller', '2022-11-28', 'send a response to mimi'),
-(3, 2, 'Seller', '2022-11-28', 'Me too');
+(3, 2, 'Seller', '2022-11-28', 'Me too'),
+(4, 1, 'Seller', '2022-12-01', 'hi mimi!');
 
 -- --------------------------------------------------------
 
@@ -209,6 +210,22 @@ INSERT INTO `product` (`product_id`, `category_id`, `name`, `description`, `imag
 (19, 4, 'Croissant', 'A French delicacy, with a flaky outside and soft inside. Perfect with a cup of coffee.', '6377a0ea444f2.jpg', 'default', '7.97'),
 (20, 5, 'Floral cake', 'Edible Flower Cake', '6377a202d7825.jpg', 'Large (10 inches)', '87.22'),
 (21, 6, 'Brownies', 'A bag of 8 pieces chocolate brownies', '6377a20b4cf52.jpg', 'default', '5.99');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profile`
+--
+
+DROP TABLE IF EXISTS `profile`;
+CREATE TABLE `profile` (
+  `profile_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `phone` int(20) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `bio` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -313,6 +330,13 @@ ALTER TABLE `product`
   ADD KEY `category_to_product` (`category_id`);
 
 --
+-- Indexes for table `profile`
+--
+ALTER TABLE `profile`
+  ADD PRIMARY KEY (`profile_id`),
+  ADD KEY `user_id_fk` (`user_id`);
+
+--
 -- Indexes for table `shipping`
 --
 ALTER TABLE `shipping`
@@ -362,7 +386,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `message_center`
 --
 ALTER TABLE `message_center`
-  MODIFY `message_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `message_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `order`
@@ -377,6 +401,12 @@ ALTER TABLE `product`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
+-- AUTO_INCREMENT for table `profile`
+--
+ALTER TABLE `profile`
+  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `shipping`
 --
 ALTER TABLE `shipping`
@@ -386,7 +416,7 @@ ALTER TABLE `shipping`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -406,6 +436,12 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `message_center`
   ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Constraints for table `profile`
+--
+ALTER TABLE `profile`
+  ADD CONSTRAINT `user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

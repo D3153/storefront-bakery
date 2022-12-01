@@ -54,6 +54,11 @@
                 <form name="myForm" action='' method="post">
                     <legend><i class="bi bi-info-circle-fill"></i> User Info</legend>
                     <div class="form-group form-inline">
+                         <label for="id">Id</label>
+                         &nbsp;
+                         <input type="text" class="form-control" name="id"  value="<?= $data['userContact']->user_id ?>" required>
+                    </div>
+                    <div class="form-group form-inline">
                          <label for="name">Name</label>
                          &nbsp;
                          <input type="text" class="form-control" name="name"  value="<?= $data['userContact']->name ?>" required>

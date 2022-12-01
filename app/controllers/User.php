@@ -11,6 +11,9 @@ class User extends \app\core\Controller{
                     $user->username = $_POST['username'];
                     $user->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
                     $user->insert();
+                    // $profile = new \app\models\Profile();
+                    // $profile->user_id= $user->user_id;
+                    // $profile->insert();
                     header('location:/User/index');
                 }else{
                     header('location:/User/register?error=The username "'.$_POST['username'].'" is already in use. Select another.');
@@ -50,6 +53,9 @@ class User extends \app\core\Controller{
 	}
 
 	public function myAccount(){
+		// $userContact = new \app\models\ContactUs();
+		// $userContact = $userContact->get($contact_us_id);
+		// $this->view("Seller/response",['userContact'=>$userContact]);
 		$this->view('User/myAccount');
 	}
 

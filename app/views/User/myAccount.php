@@ -105,8 +105,8 @@
                           </div>
                           <div class="col">
                             <div class="form-group">
-                              <label>Username</label>
-                              <input class="form-control" type="text" name="username" value="">
+                              <label>Phone Number</label>
+                              <input class="form-control" type="text" name="phone" value="">
                             </div>
                           </div>
                         </div>

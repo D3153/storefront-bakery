@@ -104,7 +104,8 @@ class Seller extends \app\core\Controller{
 	public function response($contact_us_id){
 		if(isset($_POST['action'])){
 			$reply = new \app\models\MessageCenter();
-			$reply->user_id= $user_id;
+			$fromUser = new \app\models\ContactUs();
+			$reply->user_id= $_POST['id'];
 			$reply->sender= "Seller";
 			$t=time();
 			$reply->send_date = date("Y-m-d",$t);
