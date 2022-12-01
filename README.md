@@ -24,7 +24,7 @@ MUJI: https://muji.ca/
 1. Register, login, logout (these are not new features - they are given in class).✓
 2. Search product by keyword (1 feature). ✓
 3. View product information (1 feature).✓
-4. Add/delete/modify quantities for products in the shopping cart (3 features).
+4. Add/delete/modify quantities for products in the shopping cart (3 features).✓
 5. Place an order (1 feature).
 6. Rating and leave feedback on a product after purchasing it (1 feature).
 7. View order history including order details and shipping status(1 feature).
