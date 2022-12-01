@@ -35,4 +35,3 @@ MUJI: https://muji.ca/
 --------------Extra Features---------------------- 
 
 10. Recieve Seller response and order confirmation in message center (1 feature).
-11. Create and update a user profile (1 feature).
