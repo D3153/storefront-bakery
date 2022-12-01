@@ -70,7 +70,13 @@
                     </div>
 
                     <div class="form-group form-inline">
-                         <label for="message">Message</label>
+                         <label for="recivedMessage">Message Recieved</label>
+                         <br>
+                         <textarea name="recivedMessage" rows="4" cols="50" required> <?= $data['userContact']->message ?></textarea>
+                    </div>
+
+                    <div class="form-group form-inline">
+                         <label for="message">Response</label>
                          <br>
                          <textarea name="message" rows="4" cols="50" required></textarea>
                     </div>

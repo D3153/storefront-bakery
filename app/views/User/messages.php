@@ -77,13 +77,14 @@
                 <form action='' enctype="multipart/form-data" method='post'>
                 <div class="form-outline mb-4">
                   <table width="100%" border="1" cellpadding="5" cellspacing="5">
-                    <tr><th>From</th><th>Message</th><th>Date</th><th> </th></tr>
+                    <tr><th>From</th><th>Sent</th><th>Recieved</th><th>Date</th><th> </th></tr>
                     <?php
                       $message=new \app\models\MessageCenter();
                       $messages = $message->getAll($_SESSION['$user_id']);
                       foreach($data as $message){
                         echo "<tr>
                               <td type=name>$message->name</td>
+                              <td type=name>$message->sent</td>
                               <td type=name>$message->message</td>
                               <td type=name>$message->send_date</td>
                               <td type=action>

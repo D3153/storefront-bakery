@@ -110,6 +110,7 @@ class Seller extends \app\core\Controller{
 			$t=time();
 			$reply->send_date = date("Y-m-d",$t);
 			$reply->message= $_POST['message'];
+			$reply->message_recieved = $_POST['recivedMessage'];
 			$reply->insert();
 			header('location:/Seller/messageCenter');
 		}

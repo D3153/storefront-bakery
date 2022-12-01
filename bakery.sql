@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2022 at 02:48 PM
+-- Generation Time: Dec 01, 2022 at 03:12 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -151,18 +151,19 @@ CREATE TABLE `message_center` (
   `user_id` int(11) NOT NULL,
   `sender` varchar(10) NOT NULL,
   `send_date` date NOT NULL,
-  `message` text NOT NULL
+  `message` text NOT NULL,
+  `sent` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `message_center`
 --
 
-INSERT INTO `message_center` (`message_Id`, `user_id`, `sender`, `send_date`, `message`) VALUES
-(1, 2, 'Seller', '2022-11-28', 'Test reply'),
-(2, 2, 'Seller', '2022-11-28', 'send a response to mimi'),
-(3, 2, 'Seller', '2022-11-28', 'Me too'),
-(4, 1, 'Seller', '2022-12-01', 'hi mimi!');
+INSERT INTO `message_center` (`message_Id`, `user_id`, `sender`, `send_date`, `message`, `sent`) VALUES
+(1, 2, 'Seller', '2022-11-28', 'Test reply', ''),
+(2, 2, 'Seller', '2022-11-28', 'send a response to mimi', ''),
+(3, 2, 'Seller', '2022-11-28', 'Me too', ''),
+(4, 1, 'Seller', '2022-12-01', 'hi mimi!', '');
 
 -- --------------------------------------------------------
 
