@@ -73,7 +73,7 @@
             <div class="e-profile">
               <div class="row">
                 <div class="col-12 col-sm-auto mb-3">
-                  <div class="mx-auto" style="width: 140px; height: 200px;">
+                  <div class="mx-auto" style="width: 140px; height: 400px;">
                     <div class="d-flex justify-content-center align-items-center rounded">
                       <img src="../images/user.png" width="150" height="150">
                     </div>
@@ -81,9 +81,12 @@
                 </div>
                 <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                   <div class="text-center text-sm-left mb-2 mb-sm-0">
-                    <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">Username</h4>
+                    <h2 class="pt-sm-2 pb-1 mb-0 text-nowrap text-sm-left">Hello, <?= $data['userInfo']->username ?>!</h2>
                     <div class="text-muted"><small><i class="fa fa-check-circle"></i> Online</small></div>
-
+                  </div>
+                   <div class="text-center text-sm-center">
+                    <br><br><br>
+                      <h4>Welcome to Pink Bakery! If you need more assistance, feel free to contact us by using </h4>
                   </div>
                   <div class="text-center text-sm-right">
                     <div class="text-muted"><small>Joined December 2022</small></div>

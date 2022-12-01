@@ -11,9 +11,6 @@ class User extends \app\core\Controller{
                     $user->username = $_POST['username'];
                     $user->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
                     $user->insert();
-                    // $profile = new \app\models\Profile();
-                    // $profile->user_id= $user->user_id;
-                    // $profile->insert();
                     header('location:/User/index');
                 }else{
                     header('location:/User/register?error=The username "'.$_POST['username'].'" is already in use. Select another.');
@@ -53,7 +50,9 @@ class User extends \app\core\Controller{
 	}
 
 	public function myAccount(){
-		$this->view('User/myAccount');
+		$userInfo = new \app\models\User();
+		$userInfo = $userInfo->getById($_SESSION['user_id']);
+		$this->view('User/myAccount',['userInfo'=>$userInfo]);
 	}
 
 	public function contactUs(){
@@ -73,8 +72,8 @@ class User extends \app\core\Controller{
 	}
 
 	public function messages(){
-		$contact = new \app\models\MessageCenter();
-		$contacts = $contact->getAll($_SESSION['user_id']);
+		$contact = new \app\models\ContactUs();
+		$contacts = $contact->getByUserId($_SESSION['user_id']);
 		$this->view('User/messages',$contacts);
 	}
 

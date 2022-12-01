@@ -103,15 +103,12 @@ class Seller extends \app\core\Controller{
 
 	public function response($contact_us_id){
 		if(isset($_POST['action'])){
-			$reply = new \app\models\MessageCenter();
-			$fromUser = new \app\models\ContactUs();
-			$reply->user_id= $_POST['id'];
-			$reply->sender= "Seller";
+			$response = new \app\models\ContactUs();
+			$response->sender= "Seller";
 			$t=time();
-			$reply->send_date = date("Y-m-d",$t);
-			$reply->message= $_POST['message'];
-			$reply->message_recieved = $_POST['recivedMessage'];
-			$reply->insert();
+			$response->reply_date = date("Y-m-d",$t);
+			$response->response= $_POST['message'];
+			$response->updateResponse($contact_us_id);
 			header('location:/Seller/messageCenter');
 		}
 		$userContact = new \app\models\ContactUs();

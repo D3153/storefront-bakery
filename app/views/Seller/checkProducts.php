@@ -51,8 +51,6 @@
                     <table width="100%" border="1" cellpadding="5" cellspacing="5">
                     <tr><th>Name</th><th>Image</th><th></th></tr></th></tr>
                     <?php
-                      $product=new \app\models\Product();
-                      $products = $product->getAll();
                       foreach($data as $product){
                         echo "<tr>
                               <td type=name>$product->name</td>

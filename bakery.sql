@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2022 at 03:12 PM
+-- Generation Time: Dec 01, 2022 at 04:43 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -87,17 +87,20 @@ CREATE TABLE `contact_us` (
   `name` varchar(50) NOT NULL,
   `email` varchar(128) NOT NULL,
   `message` text NOT NULL,
-  `send_date` date DEFAULT NULL
+  `send_date` date NOT NULL,
+  `sender` varchar(10) DEFAULT NULL,
+  `reply_date` date DEFAULT NULL,
+  `response` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `contact_us`
 --
 
-INSERT INTO `contact_us` (`contact_us_id`, `user_id`, `name`, `email`, `message`, `send_date`) VALUES
-(5, 1, 'Mimi', 'mimi@gmail.com', 'Hello! This is a message from mimi', '2022-11-28'),
-(6, 3, 'Dinal', 'dinal@hotmail.com', 'Test sending a second message', '2022-11-28'),
-(7, 2, 'Maria', '123@gmail.com', 'i hate Alex', '2022-11-28');
+INSERT INTO `contact_us` (`contact_us_id`, `user_id`, `name`, `email`, `message`, `send_date`, `sender`, `reply_date`, `response`) VALUES
+(5, 1, 'Mimi', 'mimi@gmail.com', 'Hello! This is a message from mimi', '2022-11-28', '', NULL, NULL),
+(6, 3, 'Dinal', 'dinal@hotmail.com', 'Test sending a second message', '2022-11-28', '', NULL, NULL),
+(8, 2, 'Mimi', 'mimi@gmail.com', 'test', '2022-12-01', 'Seller', '2022-12-01', 'reply');
 
 -- --------------------------------------------------------
 
@@ -138,32 +141,6 @@ CREATE TABLE `feedback` (
   `rate` int(5) NOT NULL,
   `comment` varchar(2048) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `message_center`
---
-
-DROP TABLE IF EXISTS `message_center`;
-CREATE TABLE `message_center` (
-  `message_Id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `sender` varchar(10) NOT NULL,
-  `send_date` date NOT NULL,
-  `message` text NOT NULL,
-  `sent` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `message_center`
---
-
-INSERT INTO `message_center` (`message_Id`, `user_id`, `sender`, `send_date`, `message`, `sent`) VALUES
-(1, 2, 'Seller', '2022-11-28', 'Test reply', ''),
-(2, 2, 'Seller', '2022-11-28', 'send a response to mimi', ''),
-(3, 2, 'Seller', '2022-11-28', 'Me too', ''),
-(4, 1, 'Seller', '2022-12-01', 'hi mimi!', '');
 
 -- --------------------------------------------------------
 
@@ -291,13 +268,6 @@ ALTER TABLE `feedback`
   ADD KEY `product_to_feedback` (`product_id`);
 
 --
--- Indexes for table `message_center`
---
-ALTER TABLE `message_center`
-  ADD PRIMARY KEY (`message_Id`),
-  ADD KEY `user_id` (`user_id`);
-
---
 -- Indexes for table `order`
 --
 ALTER TABLE `order`
@@ -346,7 +316,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `contact_us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `contact_us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `custom_cake`
@@ -359,12 +329,6 @@ ALTER TABLE `custom_cake`
 --
 ALTER TABLE `feedback`
   MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `message_center`
---
-ALTER TABLE `message_center`
-  MODIFY `message_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `order`
@@ -402,12 +366,6 @@ ALTER TABLE `cart`
   ADD CONSTRAINT `product_to_cart` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
   ADD CONSTRAINT `shipping_to_cart` FOREIGN KEY (`shipping_id`) REFERENCES `shipping` (`ship_id`),
   ADD CONSTRAINT `user_to_cart` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
-
---
--- Constraints for table `message_center`
---
-ALTER TABLE `message_center`
-  ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

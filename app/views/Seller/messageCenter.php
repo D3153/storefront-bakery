@@ -46,8 +46,6 @@
                   <table width="100%" border="1" cellpadding="5" cellspacing="5">
                     <tr><th>Username</th><th>Email</th><th>Message</th><th>Date</th><th> </th></tr>
                     <?php
-                      $contact=new \app\models\ContactUs();
-                      $contacts = $contact->getAll();
                       foreach($data as $contact){
                         echo "<tr>
                               <td type=name>$contact->name</td>
