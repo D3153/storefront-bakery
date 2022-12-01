@@ -73,7 +73,7 @@
             <div class="e-profile">
               <div class="row">
                 <div class="col-12 col-sm-auto mb-3">
-                  <div class="mx-auto" style="width: 140px; height: 400px;">
+                  <div class="mx-auto" style="width: 140px; height: 300px;">
                     <div class="d-flex justify-content-center align-items-center rounded">
                       <img src="../images/user.png" width="150" height="150">
                     </div>
@@ -86,7 +86,8 @@
                   </div>
                    <div class="text-center text-sm-center">
                     <br><br><br>
-                      <h4>Welcome to Pink Bakery! If you need more assistance, feel free to contact us by using </h4>
+                      <h5>Welcome to Pink Bakery</h5>
+                      <h7>If you need more assistance, feel free to contact us.</h7>
                   </div>
                   <div class="text-center text-sm-right">
                     <div class="text-muted"><small>Joined December 2022</small></div>

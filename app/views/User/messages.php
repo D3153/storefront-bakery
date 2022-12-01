@@ -59,7 +59,7 @@
       <div class="e-navlist e-navlist--active-bg">
         <ul class="nav">
           <li class="nav-item"><a class="nav-link px-2" href="/User/messages" ><i class="fa fa-commenting-o" ></i><span> View Messages</span></a></li>
-          <li class="nav-item"><a class="nav-link px-2" href="/User/orders" ><i class="fa fa-shopping-bag"></i><span> Order History</span></a></li>
+          <li class="nav-item"><a class="nav-link px-2" href="/Cart/orders" ><i class="fa fa-shopping-bag"></i><span> Order History</span></a></li>
         </ul>
       </div>
     </div>
