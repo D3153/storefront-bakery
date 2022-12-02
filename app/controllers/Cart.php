@@ -3,6 +3,7 @@ namespace app\controllers;
 
 class Cart extends \app\core\Controller{
 
+	#[\app\filters\Login]
 	public function cart(){
 		$cart = new \app\models\Cart();
 		$cartUser = $cart->getCart($_SESSION['user_id']);
@@ -20,6 +21,7 @@ class Cart extends \app\core\Controller{
 		$this->view('Cart/cart', ['cartUser'=>$cartUser, 'total_price'=>$total_price]);
 	}
 
+	#[\app\filters\Login]
 	public function orders(){
 		$order = new \app\models\Cart();
 		$order_history = $order->getByUser($_SESSION['user_id']);
@@ -42,6 +44,7 @@ class Cart extends \app\core\Controller{
 		$this->view('Cart/orders', $order_history);
 	}
 
+	#[\app\filters\Login]
 	public function addCartProduct($product_id)
 		{
 			//user_id, product_id, custom_cake_id, quantity, unit_price, shipping_id, status) VALUES (:user_id, :product_id, :custom_cake_id, :quantity, :unit_price, :shipping_id, :status
@@ -68,6 +71,7 @@ class Cart extends \app\core\Controller{
 			header('location:/Product/shopAll');
 		}
 
+	#[\app\filters\Login]
 	public function removeFromCart($product_id)
 	{
 		$cart = new \app\models\Cart();

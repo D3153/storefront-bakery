@@ -49,12 +49,14 @@ class User extends \app\core\Controller{
 		$this->view("User/home");
 	}
 
+	#[\app\filters\Login]
 	public function myAccount(){
 		$userInfo = new \app\models\User();
 		$userInfo = $userInfo->getById($_SESSION['user_id']);
 		$this->view('User/myAccount',['userInfo'=>$userInfo]);
 	}
 
+	#[\app\filters\Login]
 	public function contactUs(){
 		if(isset($_POST['action'])){
 			$contact = new \app\models\ContactUs();
@@ -71,6 +73,7 @@ class User extends \app\core\Controller{
 		}
 	}
 
+	#[\app\filters\Login]
 	public function messages(){
 		$contact = new \app\models\ContactUs();
 		$contacts = $contact->getByUserId($_SESSION['user_id']);
