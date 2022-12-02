@@ -57,15 +57,6 @@
           <div class="card" style="border-radius: 20px;">
             <div class="card-body p-5">
               <h2 class="text-center mb-5">Checkout</h2>
-
-                <h4>Order Details</h4>
-                  <div class="form-outline mb-4">
-                    <table width="100%" border="1" cellpadding="5" cellspacing="5">
-                    <tr><th>Name</th><th>Image</th><th>Quantity</th><th>Price</th><th> </th></tr>                    
-                  </table>
-                </div>
-
-                <hr>
                 <h4>Shipping Methods</h4>
                 <div class="form-outline mb-4">
                   <div class="form-check">

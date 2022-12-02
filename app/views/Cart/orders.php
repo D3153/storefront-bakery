@@ -40,7 +40,7 @@
                       <a class="nav-link" href="/User/myAccount">My Account</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/User/cart" id="logout">Shopping Cart</a>
+                      <a class="nav-link" href="/Cart/cart">Shopping Cart</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/User/logout" id="logout">Logout</a>
@@ -71,17 +71,14 @@
           <div class="card-body">
             <div class="e-profile">
               <div class="row">
-<!--   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100"> -->
         <div class="col-12 col-md-9 col-lg-7 col-xl-6" >
-          <div class="card " style="border-radius: 20px; width: 600px;">
+          <div class="card " style="border-radius: 20px; width: 1000px;">
             <div class="card-body p-5">
               
 
                 <form action='' enctype="multipart/form-data" method='post'>
 
-                  <h2 class='text-center mb-5'>Shopping cart</h2>
+                  <h2 class='text-center mb-5'>Shopping Cart</h2>
                               <div class='form-outline mb-4'>
                                 <table width="100%" border="1" cellpadding="5" cellspacing="5">
                                 <tr><th>Name</th><th>Image</th><th>Quantity</th><th>Price</th></tr>
@@ -166,10 +163,7 @@
                     
                   </table>
                 </div>
-                  <div class="d-flex justify-content-center">
-                    <button type="Button" class="btn btn-success btn-block btn-lg gradient-custom-4" href="/User/myAccount" name="action">Back</button>
-                  </div>
-                
+              
                 </div>
               </form>
 

@@ -101,7 +101,7 @@ class Cart extends \app\core\Model{
 		$SQL = "UPDATE cart SET status=:status, full_name=:full_name, email=:email, address=:address, phone_num=:phone_num WHERE user_id=:user_id AND status=:intitStatus";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['status'=>'paid',
-						'full_name'=>$this->full_name,s
+						'full_name'=>$this->full_name,
 						'email'=>$this->email,
 						'address'=>$this->address,
 						'phone_num'=>$this->phone_num,
