@@ -80,6 +80,9 @@
                               <td type=action>
                               <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$product->product_id'><a class='nav-link'>details</a></button>
                               </td>
+                              <td type=action>
+                              <button class='btn btn-success'><a class='nav-link' href='/Cart/addCartProduct/$product->product_id'>+</a></button>
+                              </td>
                               </tr>
 
                               <div class='modal fade' id='Modal$product->product_id' tabindex='-1' aria-labelledby='ModalLabel$product->product_id' aria-hidden='true'>

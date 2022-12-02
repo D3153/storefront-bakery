@@ -57,6 +57,7 @@
           <div class="card" style="border-radius: 20px;">
             <div class="card-body p-5">
               <h2 class="text-center mb-5">Checkout</h2>
+              <h4 style="text-align: right;">Total Price: </h4>
                 <h4>Shipping Methods</h4>
                 <div class="form-outline mb-4">
                   <div class="form-check">
