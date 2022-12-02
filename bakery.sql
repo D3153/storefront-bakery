@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 04:23 PM
+-- Generation Time: Dec 02, 2022 at 04:44 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -38,8 +38,10 @@ CREATE TABLE `cart` (
   `quantity` int(100) NOT NULL,
   `unit_price` decimal(6,2) NOT NULL,
   `shipping_id` int(11) DEFAULT NULL,
+  `full_name` varchar(50) DEFAULT NULL,
   `email` varchar(128) DEFAULT NULL,
   `address` varchar(128) DEFAULT NULL,
+  `phone_num` varchar(50) DEFAULT NULL,
   `status` enum('cart','paid','shipped') NOT NULL DEFAULT 'cart'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -47,11 +49,11 @@ CREATE TABLE `cart` (
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `custom_cake_id`, `quantity`, `unit_price`, `shipping_id`, `email`, `address`, `status`) VALUES
-(15, 2, 18, NULL, 1, '21.98', NULL, NULL, NULL, 'cart'),
-(16, 2, 21, NULL, 4, '23.96', NULL, NULL, NULL, 'cart'),
-(17, 2, 15, NULL, 1, '99.77', NULL, NULL, NULL, 'cart'),
-(18, 3, 21, NULL, 1, '5.99', NULL, NULL, NULL, 'cart');
+INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `custom_cake_id`, `quantity`, `unit_price`, `shipping_id`, `full_name`, `email`, `address`, `phone_num`, `status`) VALUES
+(15, 2, 18, NULL, 1, '21.98', NULL, NULL, NULL, NULL, NULL, 'cart'),
+(16, 2, 21, NULL, 4, '23.96', NULL, NULL, NULL, NULL, NULL, 'cart'),
+(17, 2, 15, NULL, 1, '99.77', NULL, NULL, NULL, NULL, NULL, 'cart'),
+(18, 3, 21, NULL, 1, '5.99', NULL, NULL, NULL, NULL, NULL, 'cart');
 
 -- --------------------------------------------------------
 
