@@ -11,6 +11,10 @@ class Cart extends \app\core\Controller{
 			$total_price += $data->unit_price;
 		}
 		$this->view('Cart/cart', ['cartUser'=>$cartUser, 'total_price'=>$total_price]);
+	
+		if(isset($_POST['action'])){
+			if(tot)
+		}
 	}
 
 	public function orders(){

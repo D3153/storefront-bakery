@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2022 at 04:43 PM
+-- Generation Time: Dec 02, 2022 at 04:16 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -48,7 +48,8 @@ CREATE TABLE `cart` (
 INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `custom_cake_id`, `quantity`, `unit_price`, `shipping_id`, `status`) VALUES
 (15, 2, 18, NULL, 1, '21.98', NULL, 'cart'),
 (16, 2, 21, NULL, 4, '23.96', NULL, 'cart'),
-(17, 2, 15, NULL, 1, '99.77', NULL, 'cart');
+(17, 2, 15, NULL, 1, '99.77', NULL, 'cart'),
+(18, 3, 21, NULL, 1, '5.99', NULL, 'cart');
 
 -- --------------------------------------------------------
 
@@ -99,7 +100,7 @@ CREATE TABLE `contact_us` (
 
 INSERT INTO `contact_us` (`contact_us_id`, `user_id`, `name`, `email`, `message`, `send_date`, `sender`, `reply_date`, `response`) VALUES
 (5, 1, 'Mimi', 'mimi@gmail.com', 'Hello! This is a message from mimi', '2022-11-28', '', NULL, NULL),
-(6, 3, 'Dinal', 'dinal@hotmail.com', 'Test sending a second message', '2022-11-28', '', NULL, NULL),
+(6, 3, 'Dinal', 'dinal@hotmail.com', 'Test sending a second message', '2022-11-28', 'Seller', '2022-12-01', 'hello dinal'),
 (8, 2, 'Mimi', 'mimi@gmail.com', 'test', '2022-12-01', 'Seller', '2022-12-01', 'reply');
 
 -- --------------------------------------------------------
@@ -304,7 +305,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `category`
