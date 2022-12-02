@@ -22,11 +22,11 @@ class CustomizeCake extends \app\core\Model{
 
 
 	public function insert($user_id){
-		$SQL = "INSERT INTO custom_cake(user_id, description, image, layer, serving, flavor, price) VALUES (:user_id,:description, :image, :layer, :serving ,:flavor, :price)";
+		$SQL = "INSERT INTO custom_cake(user_id, description, cake_image, layer, serving, flavor, price) VALUES (:user_id,:description, :cake_image, :layer, :serving ,:flavor, :price)";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['user_id'=>$user_id,
 						'description'=>$this->description,
-						'image'=>$this->image,
+						'cake_image'=>$this->cake_image,
 						'layer'=>$this->layer,
 						'serving'=>$this->serving,
 						'flavor'=>$this->flavor,

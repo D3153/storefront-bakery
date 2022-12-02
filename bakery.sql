@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 06:58 PM
+-- Generation Time: Dec 02, 2022 at 11:31 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -57,7 +57,8 @@ INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `custom_cake_id`, `quant
 (20, 3, 16, NULL, 2, '71.36', NULL, NULL, NULL, NULL, NULL, 'cart'),
 (21, 3, 15, NULL, 1, '99.77', NULL, NULL, NULL, NULL, NULL, 'cart'),
 (22, 3, 17, NULL, 1, '24.99', NULL, NULL, NULL, NULL, NULL, 'cart'),
-(25, 3, NULL, 9, 1, '569.50', NULL, NULL, NULL, NULL, NULL, 'cart');
+(25, 3, NULL, 9, 1, '569.50', NULL, NULL, NULL, NULL, NULL, 'cart'),
+(26, 3, NULL, 10, 1, '324.75', NULL, NULL, NULL, NULL, NULL, 'cart');
 
 -- --------------------------------------------------------
 
@@ -122,7 +123,7 @@ CREATE TABLE `custom_cake` (
   `custom_cake_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `description` text NOT NULL,
-  `image` varchar(50) NOT NULL,
+  `cake_image` varchar(50) NOT NULL,
   `layer` int(10) NOT NULL,
   `serving` int(10) NOT NULL,
   `flavor` varchar(50) NOT NULL,
@@ -133,8 +134,9 @@ CREATE TABLE `custom_cake` (
 -- Dumping data for table `custom_cake`
 --
 
-INSERT INTO `custom_cake` (`custom_cake_id`, `user_id`, `description`, `image`, `layer`, `serving`, `flavor`, `price`) VALUES
-(9, 3, 'Wedding cake with white roses', '638a2eb69bf6d.jpg', 8, 50, 'Fruit', '569.50');
+INSERT INTO `custom_cake` (`custom_cake_id`, `user_id`, `description`, `cake_image`, `layer`, `serving`, `flavor`, `price`) VALUES
+(9, 3, 'Wedding cake with white roses', '638a2eb69bf6d.jpg', 8, 50, 'Fruit', '569.50'),
+(10, 3, 'cake', '638a7a9a98080.jpg', 5, 25, 'vanilla', '324.75');
 
 -- --------------------------------------------------------
 
@@ -288,7 +290,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -306,7 +308,7 @@ ALTER TABLE `contact_us`
 -- AUTO_INCREMENT for table `custom_cake`
 --
 ALTER TABLE `custom_cake`
-  MODIFY `custom_cake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `custom_cake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `feedback`

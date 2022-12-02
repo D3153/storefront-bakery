@@ -78,7 +78,7 @@ class Product extends \app\core\Controller{
 			$customCake->serving = $_POST['serving'];
 			$customCake->flavor = $_POST['flavor'];
 			$filename = $this->saveFile($_FILES['image']);
-			$customCake->image = $filename;
+			$customCake->cake_image = $filename;
 			$price = $_POST['layer']*40 +$_POST['serving']*4.99;
 			$customCake->price = $price;
 			$customCake->custom_cake_id = $customCake->insert($_SESSION['user_id']);
