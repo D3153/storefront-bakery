@@ -2,6 +2,8 @@
 namespace app\controllers;
 
 class Product extends \app\core\Controller{
+
+	#[\app\filters\Login]
 	public function shopAll(){
 		$product = new \app\models\Product();
 			$products[] = array();
@@ -14,6 +16,7 @@ class Product extends \app\core\Controller{
 			$this->view('Product/shopAll', $products);
 	}
 
+	#[\app\filters\Login]
 	public function search(){
         $product = new \app\models\Product();
        	$products[] = array();
@@ -26,6 +29,7 @@ class Product extends \app\core\Controller{
         $this->view('Product/shopAll', $products);
     }
 
+    #[\app\filters\Login]
     public function searchBread(){
         $product = new \app\models\Product();
        	$products[] = array();
@@ -33,6 +37,7 @@ class Product extends \app\core\Controller{
         $this->view('Product/Bread', $products);
     }
 
+    #[\app\filters\Login]
     public function searchCookies(){
         $product = new \app\models\Product();
        	$products[] = array();
@@ -40,6 +45,7 @@ class Product extends \app\core\Controller{
         $this->view('Product/Cookies', $products);
     }
 
+    #[\app\filters\Login]
     public function searchPies(){
         $product = new \app\models\Product();
        	$products[] = array();
@@ -47,6 +53,7 @@ class Product extends \app\core\Controller{
         $this->view('Product/Pies', $products);
     }
 
+    #[\app\filters\Login]
     public function searchPastries(){
         $product = new \app\models\Product();
        	$products[] = array();
@@ -54,6 +61,7 @@ class Product extends \app\core\Controller{
         $this->view('Product/Pastries', $products);
     }
 
+    #[\app\filters\Login]
     public function searchCakes(){
         $product = new \app\models\Product();
        	$products[] = array();
@@ -61,6 +69,7 @@ class Product extends \app\core\Controller{
         $this->view('Product/Cakes', $products);
     }
 
+    #[\app\filters\Login]
 	public function customizeCake(){
 		if(isset($_POST['action'])){
 			$customCake = new \app\models\customizeCake();
@@ -79,6 +88,7 @@ class Product extends \app\core\Controller{
 		}
 	}
 
+	#[\app\filters\Login]
 	public function Bread(){
 		$product = new \app\models\Product();
 		$products[] = array();
@@ -86,6 +96,7 @@ class Product extends \app\core\Controller{
 		$this->view('Product/Bread',$products);
 	}
 
+	#[\app\filters\Login]
 	public function Cakes(){
 		$product = new \app\models\Product();
 		$products[] = array();
@@ -93,6 +104,7 @@ class Product extends \app\core\Controller{
 		$this->view('Product/Cakes',$products);
 	}
 
+	#[\app\filters\Login]
 	public function Cookies(){
 		$product = new \app\models\Product();
 		$products[] = array();
@@ -107,7 +119,8 @@ class Product extends \app\core\Controller{
 
 		$this->view('Product/Pastries',$products);
 	}
-
+	
+	#[\app\filters\Login]
 	public function Pies(){
 		$product = new \app\models\Product();
 		$products[] = array();

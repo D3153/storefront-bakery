@@ -38,10 +38,14 @@ class Seller extends \app\core\Controller{
 
 	//#[\app\filters\Seller2fa]
 	//#[\app\filters\Check2fa]
+	#[\app\filters\Login]
+	#[\app\filters\CheckSellerRole]
 	public function home(){
 		$this->view('Seller/home');
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\CheckSellerRole]
 	public function addProduct(){
 		if(isset($_POST['action'])){
 			$allProduct = new \app\models\Product();
@@ -67,7 +71,8 @@ class Seller extends \app\core\Controller{
 		}
 	}
 
-
+	#[\app\filters\Login]
+	#[\app\filters\CheckSellerRole]
 	public function deleteProduct($product_id){
 		$product = new \app\models\Product();
 		$product = $product->get($product_id);
@@ -76,6 +81,8 @@ class Seller extends \app\core\Controller{
 		header('location:/Seller/checkProducts');
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\CheckSellerRole]
 	public function modifyProduct($product_id){
 		$product = new \app\models\Product();
 		$product = $product->get($product_id);
@@ -100,6 +107,8 @@ class Seller extends \app\core\Controller{
 		
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\CheckSellerRole]
 	public function response($contact_us_id){
 		if(isset($_POST['action'])){
 			$response = new \app\models\ContactUs();
@@ -115,17 +124,22 @@ class Seller extends \app\core\Controller{
 		$this->view("Seller/response",['userContact'=>$userContact]);
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\CheckSellerRole]
 	public function checkProducts(){
 		$product = new \app\models\Product();
 		$products = $product->getAll();
 		$this->view("Seller/checkProducts",$products);
 	}
 
+	#[\app\filters\Login]
+
 	public function viewOrders(){
 		$this->view('Seller/viewOrders');
 	}
 
-
+	#[\app\filters\Login]
+	#[\app\filters\CheckSellerRole]
 	public function messageCenter(){
 		$contact = new \app\models\ContactUs();
 		$contacts = $contact->getAll();
@@ -166,6 +180,7 @@ class Seller extends \app\core\Controller{
 		} 
 	} 
 
+	#[\app\filters\Login]
 	function check2fa(){
 		if(isset($_POST['action'])){
 			$currentcode = $_POST['currentCode'];
