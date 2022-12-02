@@ -10,6 +10,15 @@
 </style>
 </head>
 <body>
+  <?php
+if(isset($_GET['error'])){
+?>
+<div class="alert alert-danger" role="alert">
+  <?=$_GET['error']?>
+</div>
+<?php
+}
+?>
 <header>
       <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
         <div class="container-fluid">
@@ -34,7 +43,7 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/User/contactUs">Contact Us</a>
-                    </li>	
+                    </li> 
                     <li class="nav-item">
                       <a class="nav-link" href="/User/myAccount">My Account</a>
                     </li>

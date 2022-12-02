@@ -35,7 +35,7 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/User/contactUs">Contact Us</a>
-                    </li>	
+                    </li> 
                     <li class="nav-item">
                       <a class="nav-link" href="/User/myAccount">My Account</a>
                     </li>
@@ -69,13 +69,13 @@
                 <h4>Shipping Methods</h4>
                 <div class="form-outline mb-4">
                   <div class="form-check">
-                    <input type="radio" class="form-check-input" name="shipping">
+                    <input type="radio" class="form-check-input" name="shipping" value="free">
                     <label class="form-check-label" for="flexRadioDefault1">
                       Free Shipping (5 business days)
                     </label>
                   </div>
                   <div class="form-check">
-                    <input type="radio"class="form-check-input" name="shipping">
+                    <input type="radio"class="form-check-input" name="shipping" value="extra">
                     <label class="form-check-label" for="flexRadioDefault2">
                       Express Shipping (1 business day + $8.99)
                     </label>

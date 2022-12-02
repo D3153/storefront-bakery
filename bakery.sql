@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 04:44 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Dec 01, 2022 at 04:43 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,10 +38,6 @@ CREATE TABLE `cart` (
   `quantity` int(100) NOT NULL,
   `unit_price` decimal(6,2) NOT NULL,
   `shipping_id` int(11) DEFAULT NULL,
-  `full_name` varchar(50) DEFAULT NULL,
-  `email` varchar(128) DEFAULT NULL,
-  `address` varchar(128) DEFAULT NULL,
-  `phone_num` varchar(50) DEFAULT NULL,
   `status` enum('cart','paid','shipped') NOT NULL DEFAULT 'cart'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -49,11 +45,10 @@ CREATE TABLE `cart` (
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `custom_cake_id`, `quantity`, `unit_price`, `shipping_id`, `full_name`, `email`, `address`, `phone_num`, `status`) VALUES
-(15, 2, 18, NULL, 1, '21.98', NULL, NULL, NULL, NULL, NULL, 'cart'),
-(16, 2, 21, NULL, 4, '23.96', NULL, NULL, NULL, NULL, NULL, 'cart'),
-(17, 2, 15, NULL, 1, '99.77', NULL, NULL, NULL, NULL, NULL, 'cart'),
-(18, 3, 21, NULL, 1, '5.99', NULL, NULL, NULL, NULL, NULL, 'cart');
+INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `custom_cake_id`, `quantity`, `unit_price`, `shipping_id`, `status`) VALUES
+(15, 2, 18, NULL, 1, '21.98', NULL, 'cart'),
+(16, 2, 21, NULL, 4, '23.96', NULL, 'cart'),
+(17, 2, 15, NULL, 1, '99.77', NULL, 'cart');
 
 -- --------------------------------------------------------
 
@@ -104,7 +99,7 @@ CREATE TABLE `contact_us` (
 
 INSERT INTO `contact_us` (`contact_us_id`, `user_id`, `name`, `email`, `message`, `send_date`, `sender`, `reply_date`, `response`) VALUES
 (5, 1, 'Mimi', 'mimi@gmail.com', 'Hello! This is a message from mimi', '2022-11-28', '', NULL, NULL),
-(6, 3, 'Dinal', 'dinal@hotmail.com', 'Test sending a second message', '2022-11-28', 'Seller', '2022-12-01', 'hello dinal'),
+(6, 3, 'Dinal', 'dinal@hotmail.com', 'Test sending a second message', '2022-11-28', '', NULL, NULL),
 (8, 2, 'Mimi', 'mimi@gmail.com', 'test', '2022-12-01', 'Seller', '2022-12-01', 'reply');
 
 -- --------------------------------------------------------
@@ -145,6 +140,23 @@ CREATE TABLE `feedback` (
   `product_id` int(11) NOT NULL,
   `rate` int(5) NOT NULL,
   `comment` varchar(2048) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+DROP TABLE IF EXISTS `order`;
+CREATE TABLE `order` (
+  `order_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `cart_id` int(11) NOT NULL,
+  `ship_id` int(11) DEFAULT NULL,
+  `email` varchar(128) NOT NULL,
+  `address` varchar(128) NOT NULL,
+  `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -256,6 +268,15 @@ ALTER TABLE `feedback`
   ADD KEY `product_to_feedback` (`product_id`);
 
 --
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `user_to_order` (`user_id`),
+  ADD KEY `shipping_to_order` (`ship_id`),
+  ADD KEY `cart_to_order` (`cart_id`);
+
+--
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
@@ -283,7 +304,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -308,6 +329,12 @@ ALTER TABLE `custom_cake`
 --
 ALTER TABLE `feedback`
   MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `order`
+--
+ALTER TABLE `order`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product`

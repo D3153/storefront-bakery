@@ -10,6 +10,13 @@ class Cart extends \app\core\Controller{
 		foreach ($cartUser as $data){
 			$total_price += $data->unit_price;
 		}
+		if(isset($_POST['action'])){
+            if($total_price>0){
+                header('location:/Order/checkout');
+            }else{
+                header('location:/Cart/cart?error=Order can not be empty');
+            }
+        }
 		$this->view('Cart/cart', ['cartUser'=>$cartUser, 'total_price'=>$total_price]);
 	}
 
