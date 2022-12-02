@@ -14,7 +14,9 @@ class Cart extends \app\core\Model{
 
 	public function getCart($user_id)
 	{
-		$SQL = "SELECT * FROM cart CROSS JOIN product on cart.product_id=product.product_id WHERE user_id = :user_id AND status = :status";
+
+	 	$SQL = "SELECT * FROM cart LEFT JOIN product on cart.product_id=product.product_id LEFT JOIN custom_cake on cart.custom_cake_id=custom_cake.custom_cake_id  WHERE cart.user_id = :user_id AND status = :status";
+
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['user_id'=>$user_id,
 						'status'=>'cart']);

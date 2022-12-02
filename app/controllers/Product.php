@@ -81,7 +81,19 @@ class Product extends \app\core\Controller{
 			$customCake->image = $filename;
 			$price = $_POST['layer']*40 +$_POST['serving']*4.99;
 			$customCake->price = $price;
-			$customCake->insert();
+			$customCake->custom_cake_id = $customCake->insert($_SESSION['user_id']);
+
+	
+			$cart = new \app\models\Cart();
+			
+			$cart->user_id = $_SESSION['user_id'];
+			$cart->product_id = null;
+			$cart->custom_cake_id=$customCake->custom_cake_id;
+			$cart->quantity = 1;
+			$cart->unit_price=$price;
+			$cart->shipping_id=null;
+			$cart->insertIntoCart();
+
 			header('location:/Product/shopAll');
 		}else{
 			$this->view('Product/customizeCake');

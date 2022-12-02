@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 04:53 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Dec 02, 2022 at 06:58 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -53,7 +53,11 @@ INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `custom_cake_id`, `quant
 (15, 2, 18, NULL, 1, '21.98', NULL, NULL, NULL, NULL, NULL, 'cart'),
 (16, 2, 21, NULL, 4, '23.96', NULL, NULL, NULL, NULL, NULL, 'cart'),
 (17, 2, 15, NULL, 1, '99.77', NULL, NULL, NULL, NULL, NULL, 'cart'),
-(18, 3, 21, NULL, 1, '5.99', NULL, NULL, NULL, NULL, NULL, 'cart');
+(18, 3, 21, NULL, 1, '5.99', NULL, NULL, NULL, NULL, NULL, 'cart'),
+(20, 3, 16, NULL, 2, '71.36', NULL, NULL, NULL, NULL, NULL, 'cart'),
+(21, 3, 15, NULL, 1, '99.77', NULL, NULL, NULL, NULL, NULL, 'cart'),
+(22, 3, 17, NULL, 1, '24.99', NULL, NULL, NULL, NULL, NULL, 'cart'),
+(25, 3, NULL, 9, 1, '569.50', NULL, NULL, NULL, NULL, NULL, 'cart');
 
 -- --------------------------------------------------------
 
@@ -116,6 +120,7 @@ INSERT INTO `contact_us` (`contact_us_id`, `user_id`, `name`, `email`, `message`
 DROP TABLE IF EXISTS `custom_cake`;
 CREATE TABLE `custom_cake` (
   `custom_cake_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `description` text NOT NULL,
   `image` varchar(50) NOT NULL,
   `layer` int(10) NOT NULL,
@@ -128,9 +133,8 @@ CREATE TABLE `custom_cake` (
 -- Dumping data for table `custom_cake`
 --
 
-INSERT INTO `custom_cake` (`custom_cake_id`, `description`, `image`, `layer`, `serving`, `flavor`, `price`) VALUES
-(3, 'birthday cake -make it blue instead of pink', '636d1d2c6072d.jpg', 3, 10, 'Fruit', '169.90'),
-(4, 'Please write Alex on the top', '6384f966955bc.jpg', 5, 100, 'Strawberry', '699.00');
+INSERT INTO `custom_cake` (`custom_cake_id`, `user_id`, `description`, `image`, `layer`, `serving`, `flavor`, `price`) VALUES
+(9, 3, 'Wedding cake with white roses', '638a2eb69bf6d.jpg', 8, 50, 'Fruit', '569.50');
 
 -- --------------------------------------------------------
 
@@ -245,7 +249,8 @@ ALTER TABLE `contact_us`
 -- Indexes for table `custom_cake`
 --
 ALTER TABLE `custom_cake`
-  ADD PRIMARY KEY (`custom_cake_id`);
+  ADD PRIMARY KEY (`custom_cake_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `feedback`
@@ -283,7 +288,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -301,7 +306,7 @@ ALTER TABLE `contact_us`
 -- AUTO_INCREMENT for table `custom_cake`
 --
 ALTER TABLE `custom_cake`
-  MODIFY `custom_cake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `custom_cake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `feedback`
@@ -339,6 +344,12 @@ ALTER TABLE `cart`
   ADD CONSTRAINT `product_to_cart` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
   ADD CONSTRAINT `shipping_to_cart` FOREIGN KEY (`shipping_id`) REFERENCES `shipping` (`ship_id`),
   ADD CONSTRAINT `user_to_cart` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Constraints for table `custom_cake`
+--
+ALTER TABLE `custom_cake`
+  ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
