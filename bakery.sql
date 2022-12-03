@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 11:31 PM
+-- Generation Time: Dec 03, 2022 at 04:10 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -53,12 +53,9 @@ INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `custom_cake_id`, `quant
 (15, 2, 18, NULL, 1, '21.98', NULL, NULL, NULL, NULL, NULL, 'cart'),
 (16, 2, 21, NULL, 4, '23.96', NULL, NULL, NULL, NULL, NULL, 'cart'),
 (17, 2, 15, NULL, 1, '99.77', NULL, NULL, NULL, NULL, NULL, 'cart'),
-(18, 3, 21, NULL, 1, '5.99', NULL, NULL, NULL, NULL, NULL, 'cart'),
-(20, 3, 16, NULL, 2, '71.36', NULL, NULL, NULL, NULL, NULL, 'cart'),
-(21, 3, 15, NULL, 1, '99.77', NULL, NULL, NULL, NULL, NULL, 'cart'),
-(22, 3, 17, NULL, 1, '24.99', NULL, NULL, NULL, NULL, NULL, 'cart'),
-(25, 3, NULL, 9, 1, '569.50', NULL, NULL, NULL, NULL, NULL, 'cart'),
-(26, 3, NULL, 10, 1, '324.75', NULL, NULL, NULL, NULL, NULL, 'cart');
+(22, 3, 17, NULL, 1, '24.99', NULL, 'Dinal Patel', 'dinal@gmail.com', '1129 somewhere', '718-232-211', 'paid'),
+(26, 3, NULL, 10, 1, '324.75', NULL, 'Dinal Patel', 'dinal@gmail.com', '1129 somewhere', '718-232-211', 'paid'),
+(27, 3, 18, NULL, 1, '21.98', NULL, 'Dinal Patel', 'dinal@gmail.com', '1129 somewhere', '718-232-211', 'paid');
 
 -- --------------------------------------------------------
 
@@ -135,7 +132,6 @@ CREATE TABLE `custom_cake` (
 --
 
 INSERT INTO `custom_cake` (`custom_cake_id`, `user_id`, `description`, `cake_image`, `layer`, `serving`, `flavor`, `price`) VALUES
-(9, 3, 'Wedding cake with white roses', '638a2eb69bf6d.jpg', 8, 50, 'Fruit', '569.50'),
 (10, 3, 'cake', '638a7a9a98080.jpg', 5, 25, 'vanilla', '324.75');
 
 -- --------------------------------------------------------
@@ -290,7 +286,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -302,13 +298,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `contact_us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `contact_us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `custom_cake`
 --
 ALTER TABLE `custom_cake`
-  MODIFY `custom_cake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `custom_cake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `feedback`
