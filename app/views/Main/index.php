@@ -21,7 +21,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
         <div class="container-fluid">
-          <a class="navbar-brand nav-link"><strong>Pink Bakery</strong></a>
+          <a class="navbar-brand nav-link" href="/Main/index"><strong>Pink Bakery</strong></a>
             <div class="collapse navbar-collapse" id="navbarExample01">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <div class="dropdown">

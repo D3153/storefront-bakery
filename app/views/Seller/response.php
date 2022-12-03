@@ -8,9 +8,12 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
       body{
-          background-color: lightpink;
-      }
-
+          background-image: url('../../images/response.jpg');
+          height: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          }
     </style>
 </head>
 
@@ -18,7 +21,7 @@
   <header>
 		<nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
         <div class="container-fluid">
-          <a class="navbar-brand nav-link"><strong>Pink Bakery</strong></a>
+          <a class="navbar-brand nav-link" href="/Seller/home"><strong>Pink Bakery</strong></a>
             <div class="collapse navbar-collapse" id="navbarExample01">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <div class="dropdown">
@@ -50,29 +53,28 @@
             <div class="card-body p-5">
                <h1><center>Reply to <?= $data['userContact']->name ?></center></h1>
                 <div class="alert alert-primary" role="alert">Fill in the information </div>
-                <div id="alertBox" role="alert"></div>
                 <form name="myForm" action='' method="post">
                     <legend><i class="bi bi-info-circle-fill"></i> User Info</legend>
                     <div class="form-group form-inline">
                          <label for="id">Id</label>
                          &nbsp;
-                         <input type="text" class="form-control" name="id"  value="<?= $data['userContact']->user_id ?>" required>
+                         <input type="text" class="form-control" name="id"  value="<?= $data['userContact']->user_id ?>" readonly>
                     </div>
                     <div class="form-group form-inline">
                          <label for="name">Name</label>
                          &nbsp;
-                         <input type="text" class="form-control" name="name"  value="<?= $data['userContact']->name ?>" required>
+                         <input type="text" class="form-control" name="name"  value="<?= $data['userContact']->name ?>" readonly>
                     </div>
                     <div class="form-group form-inline">
                          <label for="email">Email</label>
                          &nbsp;&nbsp;
-                         <input type="email" class="form-control" name="email"  value="<?= $data['userContact']->email ?>" required>
+                         <input type="email" class="form-control" name="email"  value="<?= $data['userContact']->email ?>" readonly>
                     </div>
 
                     <div class="form-group form-inline">
                          <label for="recivedMessage">Message Recieved</label>
                          <br>
-                         <textarea name="recivedMessage" rows="4" cols="50" required> <?= $data['userContact']->message ?></textarea>
+                         <textarea name="recivedMessage" rows="4" cols="50" readonly> <?= $data['userContact']->message ?></textarea>
                     </div>
 
                     <div class="form-group form-inline">

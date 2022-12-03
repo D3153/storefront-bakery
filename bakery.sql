@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2022 at 04:10 AM
+-- Generation Time: Dec 03, 2022 at 08:56 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -53,9 +53,11 @@ INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `custom_cake_id`, `quant
 (15, 2, 18, NULL, 1, '21.98', NULL, NULL, NULL, NULL, NULL, 'cart'),
 (16, 2, 21, NULL, 4, '23.96', NULL, NULL, NULL, NULL, NULL, 'cart'),
 (17, 2, 15, NULL, 1, '99.77', NULL, NULL, NULL, NULL, NULL, 'cart'),
-(22, 3, 17, NULL, 1, '24.99', NULL, 'Dinal Patel', 'dinal@gmail.com', '1129 somewhere', '718-232-211', 'paid'),
-(26, 3, NULL, 10, 1, '324.75', NULL, 'Dinal Patel', 'dinal@gmail.com', '1129 somewhere', '718-232-211', 'paid'),
-(27, 3, 18, NULL, 1, '21.98', NULL, 'Dinal Patel', 'dinal@gmail.com', '1129 somewhere', '718-232-211', 'paid');
+(22, 3, 17, NULL, 1, '24.99', 4, 'Dinal Patel', 'dinal@gmail.com', '1129 somewhere', '718-232-211', 'shipped'),
+(26, 3, NULL, 10, 1, '324.75', 5, 'Dinal Patel', 'dinal@gmail.com', '1129 somewhere', '718-232-211', 'shipped'),
+(27, 3, 18, NULL, 1, '21.98', 6, 'Dinal Patel', 'dinal@gmail.com', '1129 somewhere', '718-232-211', 'shipped'),
+(30, 3, 19, NULL, 2, '15.94', NULL, 'Jiamin Yuan', 'jiamin@hotmail.com', '1150 Boulevard', '124-141-412', 'paid'),
+(31, 3, 20, NULL, 1, '87.22', 7, 'Jiamin Yuan', 'jiamin@hotmail.com', '1150 Boulevard', '124-141-412', 'shipped');
 
 -- --------------------------------------------------------
 
@@ -187,10 +189,20 @@ INSERT INTO `product` (`product_id`, `category_id`, `name`, `description`, `imag
 
 DROP TABLE IF EXISTS `shipping`;
 CREATE TABLE `shipping` (
-  `ship_id` int(11) NOT NULL,
+  `shipping_id` int(11) NOT NULL,
   `tracking_info` varchar(72) NOT NULL,
   `time_stamp` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `shipping`
+--
+
+INSERT INTO `shipping` (`shipping_id`, `tracking_info`, `time_stamp`) VALUES
+(4, 'UNIAS3066812540YQ', '2022-12-03'),
+(5, 'UNIAS235235YP', '2022-12-03'),
+(6, 'UNIAS2352563687ZQ', '2022-12-03'),
+(7, 'UNIAS124262325BV', '2022-12-03');
 
 -- --------------------------------------------------------
 
@@ -270,7 +282,7 @@ ALTER TABLE `product`
 -- Indexes for table `shipping`
 --
 ALTER TABLE `shipping`
-  ADD PRIMARY KEY (`ship_id`);
+  ADD PRIMARY KEY (`shipping_id`);
 
 --
 -- Indexes for table `user`
@@ -286,7 +298,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -304,7 +316,7 @@ ALTER TABLE `contact_us`
 -- AUTO_INCREMENT for table `custom_cake`
 --
 ALTER TABLE `custom_cake`
-  MODIFY `custom_cake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `custom_cake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `feedback`
@@ -322,7 +334,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `shipping`
 --
 ALTER TABLE `shipping`
-  MODIFY `ship_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `shipping_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -340,7 +352,7 @@ ALTER TABLE `user`
 ALTER TABLE `cart`
   ADD CONSTRAINT `custom_cake_to_cart` FOREIGN KEY (`custom_cake_id`) REFERENCES `custom_cake` (`custom_cake_id`),
   ADD CONSTRAINT `product_to_cart` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
-  ADD CONSTRAINT `shipping_to_cart` FOREIGN KEY (`shipping_id`) REFERENCES `shipping` (`ship_id`),
+  ADD CONSTRAINT `shipping_to_cart` FOREIGN KEY (`shipping_id`) REFERENCES `shipping` (`shipping_id`),
   ADD CONSTRAINT `user_to_cart` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 
 --

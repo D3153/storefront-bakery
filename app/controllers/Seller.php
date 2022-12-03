@@ -135,10 +135,21 @@ class Seller extends \app\core\Controller{
 	#[\app\filters\Login]
 	#[\app\filters\CheckSellerRole]
 	public function viewOrders(){
-		$cart = new \app\models\Cart();
-		$cartPaid = $cart->getAllStatusPaid();
+		$productCart = new \app\models\Cart();
+		$productCartPaid = $productCart->getAllStatusPaid();
 
-		$this->view('Seller/viewOrders', $cartPaid);
+		$cakeCart = new \app\models\CustomizeCake();
+		$cakeCartPaid = $cakeCart->getAllStatusPaid();
+
+
+		$shippedProduct = new \app\models\Cart();
+		$shippedProducts = $shippedProduct->getAllStatusShipped();
+
+		$shippedCake = new \app\models\CustomizeCake();
+		$shippedCakes = $shippedCake->getAllStatusShipped();
+
+		$this->view('Seller/viewOrders', ['productCartPaid'=>$productCartPaid, 'cakeCartPaid'=>$cakeCartPaid,
+											'shippedProducts'=>$shippedProducts,'shippedCakes'=>$shippedCakes]);
 	}
 
 	#[\app\filters\Login]

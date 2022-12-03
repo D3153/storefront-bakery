@@ -20,6 +20,22 @@ class CustomizeCake extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
+	public function getAllStatusPaid(){
+		$SQL = "SELECT * FROM custom_cake CROSS JOIN cart on custom_cake.custom_cake_id=cart.custom_cake_id WHERE status = :status";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['status'=>'paid']);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\CustomizeCake');
+		return $STMT->fetchAll();
+	}
+
+	public function getAllStatusShipped(){
+		$SQL = "SELECT * FROM custom_cake CROSS JOIN cart on custom_cake.custom_cake_id=cart.custom_cake_id WHERE status = :status";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['status'=>'shipped']);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\CustomizeCake');
+		return $STMT->fetchAll();
+	}
+
 	public function getByCakeId($custom_cake_id){
 		$SQL = "SELECT * FROM custom_cake WHERE custom_cake_id=:custom_cake_id";
 		$STMT = self::$_connection->prepare($SQL);

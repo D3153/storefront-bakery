@@ -20,6 +20,14 @@ class Cart extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
+	public function getByCartId($cart_id){
+		$SQL = "SELECT * FROM cart WHERE cart_id = :cart_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['cart_id'=>$cart_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Cart');
+		return $STMT->fetch();
+	}
+
 
 	public function getCart($user_id)
 	{
@@ -62,17 +70,25 @@ class Cart extends \app\core\Model{
 	}
 
 	public function updateOrderStatusShip(){
-		$SQL = "UPDATE cart SET status=:status WHERE user_id = :user_id AND status = :intitStatus";
+		$SQL = "UPDATE cart SET status=:status, shipping_id=:shipping_id WHERE cart_id = :cart_id";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['status'=>'shipped',
-						'user_id'=>$this->user_id,
-						'initStatus'=>'paid']);
+						'shipping_id'=>$this->shipping_id,
+						'cart_id'=>$this->cart_id]);
 	}
 
 	public function getAllStatusPaid(){
 		$SQL = "SELECT * FROM cart CROSS JOIN product on cart.product_id=product.product_id WHERE status = :status";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['status'=>'paid']);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Cart');
+		return $STMT->fetchAll();
+	}
+
+	public function getAllStatusShipped(){
+		$SQL = "SELECT * FROM cart CROSS JOIN product on cart.product_id=product.product_id WHERE status = :status";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['status'=>'shipped']);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Cart');
 		return $STMT->fetchAll();
 	}

@@ -22,14 +22,14 @@ if(isset($_GET['error'])){
 <header>
       <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
         <div class="container-fluid">
-          <a class="navbar-brand nav-link"><strong>Pink Bakery</strong></a>
+          <a class="navbar-brand nav-link" href="/User/home"><strong>Pink Bakery</strong></a>
             <div class="collapse navbar-collapse" id="navbarExample01">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                    <li class="nav-item">
                       <a class="nav-link" href="/Product/shopAll">Shop All</a>
                     </li>
                       <div class="dropdown">
-                        <a class="nav-link" data-bs-toggle="dropdown">Shop by category</a>
+                        <a class="nav-link" data-bs-toggle="dropdown">Shop By Category</a>
                         <div class="dropdown-menu">
                           <a href="/Product/bread" class="dropdown-item">Bread</a>
                           <a href="/Product/cookies" class="dropdown-item">Cookies</a>
@@ -116,7 +116,6 @@ if(isset($_GET['error'])){
                   </table>
                 </div>
 
-<form action='' enctype="multipart/form-data" method='post'>
                   <?php
 
                   if (count($data['customCake']) > 0){
@@ -160,6 +159,7 @@ if(isset($_GET['error'])){
   </div>
 </div>";
                       }
+                      
                     }
                     ?>
                     <tfoot><tr>Custom Cake Price: </tr><tr><?php echo $data['customCake_price'] ?>$</tr></tfoot>
