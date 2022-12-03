@@ -61,12 +61,20 @@ class Cart extends \app\core\Model{
 						'status'=>'cart']);
 	}
 
-	public function updateOrderStatus(){
+	public function updateOrderStatusShip(){
 		$SQL = "UPDATE cart SET status=:status WHERE user_id = :user_id AND status = :intitStatus";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['status'=>'paid',
+		$STMT->execute(['status'=>'shipped',
 						'user_id'=>$this->user_id,
-						'initStatus'=>'cart']);
+						'initStatus'=>'paid']);
+	}
+
+	public function getAllStatusPaid(){
+		$SQL = "SELECT * FROM cart CROSS JOIN product on cart.product_id=product.product_id WHERE status = :status";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['status'=>'paid']);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Cart');
+		return $STMT->fetchAll();
 	}
 
 	public function updateQty(){

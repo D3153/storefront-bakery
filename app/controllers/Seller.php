@@ -133,9 +133,12 @@ class Seller extends \app\core\Controller{
 	}
 
 	#[\app\filters\Login]
-
+	#[\app\filters\CheckSellerRole]
 	public function viewOrders(){
-		$this->view('Seller/viewOrders');
+		$cart = new \app\models\Cart();
+		$cartPaid = $cart->getAllStatusPaid();
+
+		$this->view('Seller/viewOrders', $cartPaid);
 	}
 
 	#[\app\filters\Login]
