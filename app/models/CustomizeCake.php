@@ -12,9 +12,10 @@ class CustomizeCake extends \app\core\Model{
 	}
 
 	public function getByUserId($user_id){
-		$SQL = "SELECT * FROM custom_cake WHERE user_id=:user_id";
+		$SQL = "SELECT * FROM custom_cake CROSS JOIN cart on custom_cake.custom_cake_id=cart.custom_cake_id WHERE custom_cake.user_id = :user_id AND status = :status";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['user_id'=>$user_id]);
+		$STMT->execute(['user_id'=>$user_id,
+						'status'=>'cart']);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\CustomizeCake');
 		return $STMT->fetchAll();
 	}
