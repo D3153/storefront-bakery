@@ -5,19 +5,23 @@ class Order extends \app\core\Controller{
 
 	#[\app\filters\Login]
 	public function checkout(){
-		$cart = new \app\models\Cart();
+		$cartTemp = new \app\models\Cart();
+		$cartUser = $cartTemp->getAllFromUser($_SESSION['user_id']);
+		$total_price = 0;
+		foreach ($cartUser as $data){
+			$total_price += $data->unit_price;
+		}
+
 		if(isset($_POST['action'])){
-			$cart = \app\models\Cart();
+			$cart = new \app\models\Cart();
 			$cart->full_name = $_POST['name'];
 			$cart->email = $_POST['email'];
 			$cart->address = $_POST['address'];
 			$cart->phone_num = $_POST['phone'];
 			$cart->updateCartCheckout($_SESSION['user_id']);
 			header('location:/Order/confirmation');
-
-			
 		}
-		$this->view('Order/checkout');
+		$this->view('Order/checkout', $total_price);
 	}
 
 	#[\app\filters\Login]

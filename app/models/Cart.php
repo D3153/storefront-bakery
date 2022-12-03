@@ -12,6 +12,15 @@ class Cart extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
+	public function getAllFromUser($user_id){
+		$SQL = "SELECT * FROM cart WHERE user_id = :user_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['user_id'=>$user_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Cart');
+		return $STMT->fetchAll();
+	}
+
+
 	public function getCart($user_id)
 	{
 
@@ -110,7 +119,7 @@ class Cart extends \app\core\Model{
 
 	//for checkout
 	public function updateCartCheckout($user_id){
-		$SQL = "UPDATE cart SET status=:status, full_name=:full_name, email=:email, address=:address, phone_num=:phone_num WHERE user_id=:user_id AND status=:intitStatus";
+		$SQL = "UPDATE cart SET status=:status, full_name=:full_name, email=:email, address=:address, phone_num=:phone_num WHERE user_id=:user_id AND status=:initStatus";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['status'=>'paid',
 						'full_name'=>$this->full_name,
@@ -118,7 +127,7 @@ class Cart extends \app\core\Model{
 						'address'=>$this->address,
 						'phone_num'=>$this->phone_num,
 						'user_id'=>$user_id,
-						'status'=>'cart']);
+						'initStatus'=>'cart']);
 	}
 
 }
