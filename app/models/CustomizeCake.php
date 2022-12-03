@@ -4,20 +4,27 @@ namespace app\models;
 class CustomizeCake extends \app\core\Model{
 
 	public function getAll(){
-		$SQL = "SELECT * from custom_cake";
+		$SQL = "SELECT * FROM custom_cake";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute();
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\CustomizeCake');
 		return $STMT->fetchAll();
 	}
 
-	public function getByDescPrice(){
-		$SQL = "SELECT * from custom_cake WHERE description=:description AND price=:price";
+	public function getByUserId($user_id){
+		$SQL = "SELECT * FROM custom_cake WHERE user_id=:user_id";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['description'=>$this->description,
-						'price'=>$this->price]);
+		$STMT->execute(['user_id'=>$user_id]);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\CustomizeCake');
 		return $STMT->fetchAll();
+	}
+
+	public function getByCakeId($custom_cake_id){
+		$SQL = "SELECT * FROM custom_cake WHERE custom_cake_id=:custom_cake_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['custom_cake_id'=>$custom_cake_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\CustomizeCake');
+		return $STMT->fetch();
 	}
 
 
@@ -32,6 +39,14 @@ class CustomizeCake extends \app\core\Model{
 						'flavor'=>$this->flavor,
 						'price'=>$this->price]);
 		return self::$_connection->lastInsertId();
+	}
+
+	public function removeByCakeId(){
+		$SQL = "DELETE FROM custom_cake WHERE custom_cake_id=:custom_cake_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['custom_cake_id'=>$this->custom_cake_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\CustomizeCake');
+		return $STMT->fetchAll();
 	}
 
 }

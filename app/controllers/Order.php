@@ -5,6 +5,7 @@ class Order extends \app\core\Controller{
 
 	#[\app\filters\Login]
 	public function checkout(){
+		$cart = new \app\models\Cart();
 		if(isset($_POST['action'])){
 			$cart = \app\models\Cart();
 			$cart->full_name = $_POST['name'];

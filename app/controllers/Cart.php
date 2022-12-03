@@ -11,6 +11,14 @@ class Cart extends \app\core\Controller{
 		foreach ($cartUser as $data){
 			$total_price += $data->unit_price;
 		}
+		
+		$customCake = new \app\models\CustomizeCake();
+		$customCakeList = $customCake->getByUserId($_SESSION['user_id']);
+		$customCake_price = 0;
+		foreach($customCakeList as $data){
+			$customCake_price += $data->price;
+		}
+
 		if(isset($_POST['action'])){
             if($total_price>0){
                 header('location:/Order/checkout');
@@ -18,7 +26,7 @@ class Cart extends \app\core\Controller{
                 header('location:/Cart/cart?error=Order can not be empty');
             }
         }
-		$this->view('Cart/cart', ['cartUser'=>$cartUser, 'total_price'=>$total_price]);
+		$this->view('Cart/cart', ['cartUser'=>$cartUser, 'total_price'=>$total_price, 'customCake'=>$customCakeList, 'customCake_price'=>$customCake_price]);
 	}
 
 	#[\app\filters\Login]
@@ -94,4 +102,18 @@ class Cart extends \app\core\Controller{
 		header('location:/Cart/cart');
 	}
 	
+	#[\app\filters\Login]
+	public function removeFromCake($custom_cake_id)
+	{
+		$cake = new \app\models\CustomizeCake();
+		$cart = new \app\models\Cart();
+		$cake = $cake->getByCakeId($custom_cake_id);
+		// $cake->custom_cake_id = $custom_cake_id;
+		unlink("images/$cart->cake_image");
+		$cart->custom_cake_id = $custom_cake_id;
+
+		$cart->deleteCake();
+		$cake->removeByCakeId();
+		header('location:/Cart/cart');
+	}
 }

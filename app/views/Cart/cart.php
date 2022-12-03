@@ -115,6 +115,57 @@ if(isset($_GET['error'])){
                     
                   </table>
                 </div>
+
+<form action='' enctype="multipart/form-data" method='post'>
+                  <?php
+
+                  if (count($data['customCake']) > 0){
+                    echo "<div class='form-outline mb-4'>
+                    <h2 class='text-center mb-5'>Custom Cake</h2>
+                    <table width='100%' border='1' cellpadding='5' cellspacing='5'>
+                    <tr><th>Description</th><th>Image</th><th>Price</th><th> </th></tr>";
+                    
+                      foreach($data['customCake'] as $cake){
+                        echo "<tr>
+                              <td type=name id='prName'>$cake->description</td>
+                              <td> <img src='/images/".$cake->cake_image."'style='max-width:200px;max-height:100px'/></td>
+                              <td type=name>$cake->price</td>
+                              <td type=action>
+                              <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#Modal$cake->custom_cake_id'><a class='nav-link'>Details</a></button>
+                              </td>
+                              <td type=action>
+                              <button class='btn btn-danger'><a class='nav-link' href='/Cart/removeFromCake/$cake->custom_cake_id'>-</a></button>
+                              </td>
+                              </tr>
+
+                              <div class='modal fade' id='Modal$cake->custom_cake_id' tabindex='-1' aria-labelledby='ModalLabel$cake->custom_cake_id' aria-hidden='true'>
+  <div class='modal-dialog modal-dialog-centered'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h1 class='modal-title fs-5' id='ModalLabel$cake->custom_cake_id'>Details</h1>
+        <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+      </div>
+      <div class='modal-body'>
+        <p>Name: $cake->description</p>
+        <p>Image: <img src='/images/".$cake->cake_image."'style='max-width:200px;max-height:100px'/></p>
+        <p>Size: $cake->layer</p>
+        <p>Size: $cake->serving</p>
+        <p>Size: $cake->flavor</p>
+        <p>Price: $cake->price</p>
+
+      </div>
+      <div class='modal-footer'>
+      </div>
+    </div>
+  </div>
+</div>";
+                      }
+                    }
+                    ?>
+                    <tfoot><tr>Custom Cake Price: </tr><tr><?php echo $data['customCake_price'] ?>$</tr></tfoot>
+                  </table>
+                </div>
+
                   <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4" name="action">Checkout</button>
                   </div>

@@ -15,11 +15,11 @@ class Cart extends \app\core\Model{
 	public function getCart($user_id)
 	{
 
-	 	// $SQL = "SELECT * FROM cart LEFT JOIN product on cart.product_id=product.product_id LEFT JOIN custom_cake on cart.custom_cake_id=custom_cake.custom_cake_id  WHERE cart.user_id = :user_id AND status = :status";
+	 	$SQL = "SELECT * FROM cart CROSS JOIN product on cart.product_id=product.product_id WHERE cart.user_id = :user_id AND status = :status";
 
-	 	$SQL = "SELECT * , 'dummy1' AS membersCol1 FROM cart CROSS JOIN product on cart.product_id=product.product_id WHERE cart.user_id = :user_id AND status = :status
-		UNION 
-	 	SELECT * FROM cart CROSS JOIN custom_cake on cart.custom_cake_id=custom_cake.custom_cake_id WHERE cart.user_id = :user_id AND status = :status";
+	 	// $SQL = "SELECT * , 'dummy1' AS membersCol1 FROM cart CROSS JOIN product on cart.product_id=product.product_id WHERE cart.user_id = :user_id AND status = :status
+		// UNION 
+	 	// SELECT * FROM cart CROSS JOIN custom_cake on cart.custom_cake_id=custom_cake.custom_cake_id WHERE cart.user_id = :user_id AND status = :status";
 
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['user_id'=>$user_id,
@@ -91,6 +91,12 @@ class Cart extends \app\core\Model{
 		$STMT->execute(['product_id'=>$this->product_id,
 						'user_id'=>$this->user_id,
 						'status'=>'cart']);
+	}
+
+	public function deleteCake(){
+		$SQL = "DELETE FROM cart WHERE custom_cake_id = :custom_cake_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['custom_cake_id'=>$this->custom_cake_id]);
 	}
 
 	public function removeProduct(){
