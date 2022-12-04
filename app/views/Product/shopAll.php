@@ -79,7 +79,7 @@
 
                   if (count($data['New_Arrivals']) > 0){
                     echo "<div class='form-outline mb-4'>
-                    <h2 class='text-center mb-5'>New Arivals</h2>
+                    <h2 class='text-center mb-5'>New Arrivals</h2>
                     <table width='100%' border='1' cellpadding='5' cellspacing='5'>
                     <tr><th>Name</th><th>Image</th><th>Price</th><th> </th></tr>";
                     

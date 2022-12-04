@@ -85,7 +85,7 @@ if(isset($_GET['error'])){
                 </div>
 
                 <div class="form-outline mb-4">
-                  <label><?= _("Descrption")?></label>
+                  <label><?= _("Description")?></label>
                   <textarea class="form-control" rows="3" name="description" required></textarea>
                 </div>
 
