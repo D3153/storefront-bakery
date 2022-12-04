@@ -99,7 +99,7 @@
                     <optgroup label="Breads">
                       <?php
                       foreach(bread_sizes as $key=>$text){
-                        echo "<option value='$text'" . ($data['product']->size == $key?" selected":"") . ">$text</option>";
+                        echo "<option value='$text'" . ($data['product']->size == $text?" selected":"") . ">$text</option>";
                       }
                       
                       ?>
@@ -107,14 +107,14 @@
                     <optgroup label="Cookies">
                       <?php
                       foreach(cookie_sizes as $key=>$text){
-                        echo "<option value='$text'" . ($data['product']->size == $key?" selected":"") . ">$text</option>";
+                        echo "<option value='$text'" . ($data['product']->size == $text?" selected":"") . ">$text</option>";
                       }
                       ?>
                     </optgroup>
                     <optgroup label="Pies">
                       <?php
                       foreach(pie_sizes as $key=>$text){
-                        echo "<option value='$text'" . ($data['product']->size == $key?" selected":"") . ">$text</option>";
+                        echo "<option value='$text'" . ($data['product']->size == $text?" selected":"") . ">$text</option>";
                       }
                       ?>
                     </optgroup>
@@ -129,7 +129,7 @@
                     <optgroup label="Cakes">
                       <?php
                       foreach(cake_sizes as $key=>$text){
-                        echo "<option value='$text'" . ($data['product']->size == $key?" selected":"") . ">$text</option>";
+                        echo "<option value='$text'" . ($data['product']->size == $text?" selected":"") . ">$text</option>";
                       }
                       ?>
                     </optgroup>

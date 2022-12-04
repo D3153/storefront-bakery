@@ -103,21 +103,21 @@
                     <optgroup label="Breads">
                       <?php 
                         foreach (bread_sizes as $key=>$size) {
-                          echo "<option value=$key>$size</option>";
+                          echo "<option value='$size'>$size</option>";
                         }
                        ?>
                     </optgroup>
                     <optgroup label="Cookies">
                       <?php 
                         foreach (cookie_sizes as $key=>$size) {
-                          echo "<option value=$key>$size</option>";
+                          echo "<option value='$size'>$size</option>";
                         }
                        ?>
                     </optgroup>
                     <optgroup label="Pies">
                       <?php 
                         foreach (pie_sizes as $key=>$size) {
-                          echo "<option value=$key>$size</option>";
+                          echo "<option value='$size'>$size</option>";
                         }
                        ?>
                     </optgroup>
@@ -127,7 +127,7 @@
                     <optgroup label="Cakes">
                      <?php 
                         foreach (cake_sizes as $key=>$size) {
-                          echo "<option value=$key>$size</option>";
+                          echo "<option value='$size'>$size</option>";
                         }
                      ?> 
                     </optgroup>
