@@ -36,8 +36,8 @@
                     <div class="dropdown">
                         <a class="nav-link" data-bs-toggle="dropdown"><?= _("Language")?></a>
                         <div class="dropdown-menu">
-                          <a href="" class="dropdown-item">English</a>
-                          <a href="" class="dropdown-item">Français</a>
+                          <a href="/?lang=en_CA" class="dropdown-item">English</a>
+                         <a href="/?lang=fr_CA" class="dropdown-item">Français</a>
                       </div>
                     </div>  
               </ul>
