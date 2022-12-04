@@ -23,7 +23,7 @@
                       </div>
                     </div>
                     <div class="dropdown">
-                      <a class="nav-link" data-bs-toggle="dropdown">Login</a>
+                      <a class="nav-link" data-bs-toggle="dropdown"><?= _("Login")?></a>
                       <div class="dropdown-menu">
                           <a href="/Seller/index" class="dropdown-item"><?= _("As Seller")?></a>
                           <a href="/User/index" class="dropdown-item"><?= _("As User")?></a>
@@ -32,8 +32,8 @@
                     <div class="dropdown">
                         <a class="nav-link" data-bs-toggle="dropdown"><?= _("Language")?></a>
                         <div class="dropdown-menu">
-                          <a href="/?lang=en_CA" class="dropdown-item">English</a>
-                         <a href="/?lang=fr_CA" class="dropdown-item">Français</a>
+                          <a href="?lang=en_CA" class="dropdown-item">English</a>
+                         <a href="?lang=fr_CA" class="dropdown-item">Français</a>
                       </div>
                     </div>  
               </ul>

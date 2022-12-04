@@ -36,8 +36,8 @@ class Seller extends \app\core\Controller{
 	}
 
 
-	//#[\app\filters\Seller2fa]
-	//#[\app\filters\Check2fa]
+	#[\app\filters\Seller2fa]
+	#[\app\filters\Check2fa]
 	#[\app\filters\Login]
 	#[\app\filters\CheckSellerRole]
 	public function home(){
@@ -185,7 +185,7 @@ class Seller extends \app\core\Controller{
 			$user->user_id = $_SESSION['user_id'];             
 			$user->secret_key = $_SESSION['secretkey'];             
 			$user->update2fa();             
-			header('location:Seller/home');         
+			header('location:/Seller/home');         
 		}else{             
 			header('location:Seller/setup2fa?error=token not verified!');//reload         
 		}     
