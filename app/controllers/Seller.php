@@ -28,7 +28,7 @@ class Seller extends \app\core\Controller{
 					header('location:/Seller/index?error=Invalid seller info!');
 				}
 			}else{
-				header('location:/Seller/index?error=Wrong username/password combination!');
+				header('location:/Seller/index?error='._('Wrong username/password combination!'));
 			}
 		}else{
 			$this->view('Seller/index');
@@ -62,7 +62,7 @@ class Seller extends \app\core\Controller{
 				$product->insert();
 				header('location:/Seller/checkProducts');
 			}else{
-				header('location:/Seller/addProduct?error=The product name "'.$_POST['name'].'" is already in use. Select another.');
+				header('location:/Seller/addProduct?error='._('The product name "').$_POST['name']._(' is already in use. Select another.'));
 			}
 		}else{
 			$category = new \app\models\Category();

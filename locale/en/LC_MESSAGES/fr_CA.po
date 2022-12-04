@@ -1,0 +1,785 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-04 15:32-0500\n"
+"PO-Revision-Date: 2022-12-04 16:32-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.2\n"
+
+#: app/controllers/Cart.php:26
+msgid "Order can not be empty"
+msgstr "La commande ne peut pas être vide"
+
+#: app/controllers/Seller.php:31 app/controllers/User.php:41
+msgid "Wrong username/password combination!"
+msgstr "Mauvaise combinaison du nom d'utilisateur/mot de passe!"
+
+#: app/controllers/Seller.php:65
+msgid "The product name \""
+msgstr "Le nom du produit \""
+
+#: app/controllers/Seller.php:65 app/controllers/User.php:16
+msgid " is already in use. Select another."
+msgstr " est déjà utilisé. Sélectionnez-en un autre."
+
+#: app/controllers/User.php:16
+msgid "The username \""
+msgstr "Le nom d'utilisateur \""
+
+#: app/controllers/User.php:19
+msgid "Passwords do not match."
+msgstr "Les mots de passe ne correspondent pas."
+
+#: app/controllers/User.php:38
+msgid "Invalid User info!"
+msgstr "Infos utilisateur non valides!"
+
+#: app/views/Cart/cart.php:3 app/views/Cart/cart.php:74
+msgid "Shopping cart"
+msgstr "Panier d'achat"
+
+#: app/views/Cart/cart.php:25 app/views/Cart/orders.php:17
+#: app/views/Feedback/leaveFeedback.php:19
+#: app/views/Feedback/viewFeedback.php:25 app/views/Main/index.php:24
+#: app/views/Order/checkout.php:17 app/views/Order/confirmation.php:17
+#: app/views/Product/Bread.php:18 app/views/Product/Cakes.php:18
+#: app/views/Product/Cookies.php:18 app/views/Product/customizeCake.php:30
+#: app/views/Product/Pastries.php:18 app/views/Product/Pies.php:18
+#: app/views/Product/shopAll.php:18 app/views/Seller/addProduct.php:25
+#: app/views/Seller/checkProducts.php:17 app/views/Seller/home.php:24
+#: app/views/Seller/index.php:16 app/views/Seller/messageCenter.php:20
+#: app/views/Seller/modifyProduct.php:17 app/views/Seller/response.php:24
+#: app/views/Seller/viewOrders.php:18 app/views/Shipping/trackingforUser.php:25
+#: app/views/Shipping/trackingInfo.php:25 app/views/Shipping/viewDetails.php:25
+#: app/views/User/contactUs.php:23 app/views/User/home.php:24
+#: app/views/User/index.php:16 app/views/User/messages.php:17
+#: app/views/User/myAccount.php:17 app/views/User/register.php:16
+msgid "Pink Bakery"
+msgstr "Boulangerie Rose"
+
+#: app/views/Cart/cart.php:29 app/views/Cart/orders.php:21
+#: app/views/Feedback/leaveFeedback.php:23 app/views/Order/checkout.php:21
+#: app/views/Order/confirmation.php:21 app/views/Product/Bread.php:22
+#: app/views/Product/Cakes.php:22 app/views/Product/Cookies.php:22
+#: app/views/Product/customizeCake.php:34 app/views/Product/Pastries.php:22
+#: app/views/Product/Pies.php:22 app/views/Product/shopAll.php:3
+#: app/views/Product/shopAll.php:22 app/views/Shipping/trackingforUser.php:29
+#: app/views/User/contactUs.php:27 app/views/User/home.php:28
+#: app/views/User/messages.php:21 app/views/User/myAccount.php:21
+msgid "Shop All"
+msgstr "Tous les Produits"
+
+#: app/views/Cart/cart.php:32 app/views/Cart/orders.php:24
+#: app/views/Feedback/leaveFeedback.php:26 app/views/Order/checkout.php:24
+#: app/views/Order/confirmation.php:24 app/views/Product/Bread.php:25
+#: app/views/Product/Cakes.php:25 app/views/Product/Cookies.php:25
+#: app/views/Product/customizeCake.php:37 app/views/Product/Pastries.php:25
+#: app/views/Product/Pies.php:25 app/views/Product/shopAll.php:25
+#: app/views/Shipping/trackingforUser.php:32 app/views/User/contactUs.php:30
+#: app/views/User/home.php:31 app/views/User/messages.php:24
+#: app/views/User/myAccount.php:24
+msgid "Shop By Category"
+msgstr "Acheter par Catégorie"
+
+#: app/views/Cart/cart.php:34 app/views/Cart/orders.php:26
+#: app/views/Feedback/leaveFeedback.php:28 app/views/Order/checkout.php:26
+#: app/views/Order/confirmation.php:26 app/views/Product/Bread.php:3
+#: app/views/Product/Bread.php:27 app/views/Product/Bread.php:78
+#: app/views/Product/Cakes.php:27 app/views/Product/Cookies.php:27
+#: app/views/Product/customizeCake.php:39 app/views/Product/Pastries.php:27
+#: app/views/Product/Pies.php:27 app/views/Product/shopAll.php:27
+#: app/views/Product/shopAll.php:127 app/views/Shipping/trackingforUser.php:34
+#: app/views/User/contactUs.php:32 app/views/User/home.php:33
+#: app/views/User/messages.php:26 app/views/User/myAccount.php:26
+msgid "Bread"
+msgstr "Pain"
+
+#: app/views/Cart/cart.php:35 app/views/Cart/orders.php:27
+#: app/views/Feedback/leaveFeedback.php:29 app/views/Order/checkout.php:27
+#: app/views/Order/confirmation.php:27 app/views/Product/Bread.php:28
+#: app/views/Product/Cakes.php:28 app/views/Product/Cookies.php:3
+#: app/views/Product/Cookies.php:28 app/views/Product/Cookies.php:78
+#: app/views/Product/customizeCake.php:40 app/views/Product/Pastries.php:28
+#: app/views/Product/Pies.php:28 app/views/Product/shopAll.php:28
+#: app/views/Product/shopAll.php:173 app/views/Shipping/trackingforUser.php:35
+#: app/views/User/contactUs.php:33 app/views/User/home.php:34
+#: app/views/User/messages.php:27 app/views/User/myAccount.php:27
+msgid "Cookies"
+msgstr "Biscuits"
+
+#: app/views/Cart/cart.php:36 app/views/Cart/orders.php:28
+#: app/views/Feedback/leaveFeedback.php:30 app/views/Order/checkout.php:28
+#: app/views/Order/confirmation.php:28 app/views/Product/Bread.php:29
+#: app/views/Product/Cakes.php:29 app/views/Product/Cookies.php:29
+#: app/views/Product/customizeCake.php:41 app/views/Product/Pastries.php:29
+#: app/views/Product/Pies.php:3 app/views/Product/Pies.php:29
+#: app/views/Product/Pies.php:78 app/views/Product/shopAll.php:29
+#: app/views/Product/shopAll.php:217 app/views/Shipping/trackingforUser.php:36
+#: app/views/User/contactUs.php:34 app/views/User/home.php:35
+#: app/views/User/messages.php:28 app/views/User/myAccount.php:28
+msgid "Pies"
+msgstr "Tartes"
+
+#: app/views/Cart/cart.php:37 app/views/Cart/orders.php:29
+#: app/views/Feedback/leaveFeedback.php:31 app/views/Order/checkout.php:29
+#: app/views/Order/confirmation.php:29 app/views/Product/Bread.php:30
+#: app/views/Product/Cakes.php:30 app/views/Product/Cookies.php:30
+#: app/views/Product/customizeCake.php:42 app/views/Product/Pastries.php:3
+#: app/views/Product/Pastries.php:30 app/views/Product/Pastries.php:78
+#: app/views/Product/Pies.php:30 app/views/Product/shopAll.php:30
+#: app/views/Product/shopAll.php:261 app/views/Shipping/trackingforUser.php:37
+#: app/views/User/contactUs.php:35 app/views/User/home.php:36
+#: app/views/User/messages.php:29 app/views/User/myAccount.php:29
+msgid "Pastries"
+msgstr "Pâtisseries"
+
+#: app/views/Cart/cart.php:38 app/views/Cart/orders.php:30
+#: app/views/Feedback/leaveFeedback.php:32 app/views/Order/checkout.php:30
+#: app/views/Order/confirmation.php:30 app/views/Product/Bread.php:31
+#: app/views/Product/Cakes.php:3 app/views/Product/Cakes.php:31
+#: app/views/Product/Cakes.php:78 app/views/Product/Cookies.php:31
+#: app/views/Product/customizeCake.php:43 app/views/Product/Pastries.php:31
+#: app/views/Product/Pies.php:31 app/views/Product/shopAll.php:31
+#: app/views/Product/shopAll.php:305 app/views/Shipping/trackingforUser.php:38
+#: app/views/User/contactUs.php:36 app/views/User/home.php:37
+#: app/views/User/messages.php:30 app/views/User/myAccount.php:30
+msgid "Cakes"
+msgstr "Gâteaux "
+
+#: app/views/Cart/cart.php:42 app/views/Cart/orders.php:34
+#: app/views/Feedback/leaveFeedback.php:36 app/views/Order/checkout.php:34
+#: app/views/Order/confirmation.php:34 app/views/Product/Bread.php:35
+#: app/views/Product/Cakes.php:35 app/views/Product/Cookies.php:35
+#: app/views/Product/customizeCake.php:3 app/views/Product/customizeCake.php:48
+#: app/views/Product/Pastries.php:35 app/views/Product/Pies.php:35
+#: app/views/Product/shopAll.php:35 app/views/Shipping/trackingforUser.php:42
+#: app/views/User/contactUs.php:40 app/views/User/home.php:41
+#: app/views/User/messages.php:34 app/views/User/myAccount.php:34
+msgid "Customize Cake"
+msgstr "Personnaliser le Gâteau"
+
+#: app/views/Cart/cart.php:45 app/views/Cart/orders.php:37
+#: app/views/Feedback/leaveFeedback.php:39 app/views/Order/checkout.php:37
+#: app/views/Order/confirmation.php:37 app/views/Product/Bread.php:38
+#: app/views/Product/Cakes.php:38 app/views/Product/Cookies.php:38
+#: app/views/Product/customizeCake.php:51 app/views/Product/Pastries.php:38
+#: app/views/Product/Pies.php:38 app/views/Product/shopAll.php:38
+#: app/views/Shipping/trackingforUser.php:45 app/views/User/contactUs.php:3
+#: app/views/User/contactUs.php:43 app/views/User/home.php:44
+#: app/views/User/messages.php:37 app/views/User/myAccount.php:37
+msgid "Contact Us"
+msgstr "Contactez-nous"
+
+#: app/views/Cart/cart.php:48 app/views/Cart/orders.php:40
+#: app/views/Feedback/leaveFeedback.php:42 app/views/Order/checkout.php:40
+#: app/views/Order/confirmation.php:40 app/views/Product/Bread.php:50
+#: app/views/Product/Cakes.php:50 app/views/Product/Cookies.php:50
+#: app/views/Product/customizeCake.php:54 app/views/Product/Pastries.php:50
+#: app/views/Product/Pies.php:50 app/views/Product/shopAll.php:50
+#: app/views/Shipping/trackingforUser.php:48 app/views/User/contactUs.php:46
+#: app/views/User/home.php:47 app/views/User/messages.php:3
+#: app/views/User/messages.php:40 app/views/User/myAccount.php:3
+#: app/views/User/myAccount.php:40
+msgid "My Account"
+msgstr "Mon compte"
+
+#: app/views/Cart/cart.php:51 app/views/Cart/orders.php:43
+#: app/views/Feedback/leaveFeedback.php:45 app/views/Order/checkout.php:43
+#: app/views/Order/confirmation.php:43 app/views/Product/Bread.php:53
+#: app/views/Product/Cakes.php:53 app/views/Product/Cookies.php:53
+#: app/views/Product/customizeCake.php:57 app/views/Product/Pastries.php:53
+#: app/views/Product/Pies.php:53 app/views/Product/shopAll.php:53
+#: app/views/Shipping/trackingforUser.php:51 app/views/User/contactUs.php:49
+#: app/views/User/home.php:50 app/views/User/messages.php:43
+#: app/views/User/myAccount.php:43
+msgid "Shopping Cart"
+msgstr "Panier d'achat"
+
+#: app/views/Cart/cart.php:54 app/views/Cart/orders.php:46
+#: app/views/Feedback/leaveFeedback.php:48
+#: app/views/Feedback/viewFeedback.php:42 app/views/Order/checkout.php:46
+#: app/views/Order/confirmation.php:46 app/views/Product/Bread.php:56
+#: app/views/Product/Cakes.php:56 app/views/Product/Cookies.php:56
+#: app/views/Product/customizeCake.php:60 app/views/Product/Pastries.php:56
+#: app/views/Product/Pies.php:56 app/views/Product/shopAll.php:56
+#: app/views/Seller/addProduct.php:42 app/views/Seller/checkProducts.php:34
+#: app/views/Seller/home.php:41 app/views/Seller/messageCenter.php:37
+#: app/views/Seller/modifyProduct.php:34 app/views/Seller/response.php:41
+#: app/views/Seller/viewOrders.php:35 app/views/Shipping/trackingforUser.php:54
+#: app/views/Shipping/trackingInfo.php:42 app/views/Shipping/viewDetails.php:42
+#: app/views/User/contactUs.php:52 app/views/User/home.php:53
+#: app/views/User/messages.php:46 app/views/User/myAccount.php:46
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: app/views/Cart/cart.php:57 app/views/Cart/orders.php:49
+#: app/views/Feedback/leaveFeedback.php:51
+#: app/views/Feedback/viewFeedback.php:45 app/views/Main/index.php:41
+#: app/views/Order/checkout.php:49 app/views/Order/confirmation.php:49
+#: app/views/Product/Bread.php:59 app/views/Product/Cakes.php:59
+#: app/views/Product/Cookies.php:59 app/views/Product/customizeCake.php:63
+#: app/views/Product/Pastries.php:59 app/views/Product/Pies.php:59
+#: app/views/Product/shopAll.php:59 app/views/Seller/addProduct.php:45
+#: app/views/Seller/checkProducts.php:37 app/views/Seller/home.php:44
+#: app/views/Seller/index.php:33 app/views/Seller/messageCenter.php:40
+#: app/views/Seller/modifyProduct.php:37 app/views/Seller/response.php:44
+#: app/views/Seller/viewOrders.php:38 app/views/Shipping/trackingforUser.php:57
+#: app/views/Shipping/trackingInfo.php:45 app/views/Shipping/viewDetails.php:45
+#: app/views/User/contactUs.php:55 app/views/User/home.php:56
+#: app/views/User/index.php:33 app/views/User/messages.php:49
+#: app/views/User/myAccount.php:49 app/views/User/register.php:33
+msgid "Language"
+msgstr "Langue"
+
+#: app/views/Cart/cart.php:79 app/views/Cart/orders.php:90
+#: app/views/Cart/orders.php:145 app/views/Product/Bread.php:80
+#: app/views/Product/Cakes.php:80 app/views/Product/Cookies.php:80
+#: app/views/Product/Pastries.php:80 app/views/Product/Pies.php:80
+#: app/views/Product/shopAll.php:129 app/views/Product/shopAll.php:175
+#: app/views/Product/shopAll.php:219 app/views/Product/shopAll.php:263
+#: app/views/Product/shopAll.php:307 app/views/Seller/addProduct.php:67
+#: app/views/Seller/checkProducts.php:59 app/views/Seller/modifyProduct.php:59
+#: app/views/Seller/response.php:71 app/views/User/contactUs.php:78
+msgid "Name"
+msgstr "Nom "
+
+#: app/views/Cart/cart.php:79 app/views/Cart/orders.php:90
+#: app/views/Cart/orders.php:145 app/views/Product/Bread.php:80
+#: app/views/Product/Cakes.php:80 app/views/Product/Cookies.php:80
+#: app/views/Product/Pastries.php:80 app/views/Product/Pies.php:80
+#: app/views/Product/shopAll.php:129 app/views/Product/shopAll.php:175
+#: app/views/Product/shopAll.php:219 app/views/Product/shopAll.php:263
+#: app/views/Product/shopAll.php:307 app/views/Seller/checkProducts.php:59
+#: app/views/Seller/viewOrders.php:65 app/views/Seller/viewOrders.php:109
+#: app/views/Seller/viewOrders.php:159 app/views/Seller/viewOrders.php:213
+msgid "Image"
+msgstr "Image"
+
+#: app/views/Cart/cart.php:79 app/views/Cart/orders.php:90
+#: app/views/Cart/orders.php:145 app/views/Seller/viewOrders.php:65
+#: app/views/Seller/viewOrders.php:159
+msgid "Quantity"
+msgstr "Quantité"
+
+#: app/views/Cart/cart.php:79 app/views/Cart/orders.php:90
+#: app/views/Cart/orders.php:145 app/views/Product/Bread.php:80
+#: app/views/Product/Cakes.php:80 app/views/Product/Cookies.php:80
+#: app/views/Product/Pastries.php:80 app/views/Product/Pies.php:80
+#: app/views/Product/shopAll.php:129 app/views/Product/shopAll.php:175
+#: app/views/Product/shopAll.php:219 app/views/Product/shopAll.php:263
+#: app/views/Product/shopAll.php:307 app/views/Seller/addProduct.php:138
+#: app/views/Seller/modifyProduct.php:140 app/views/Seller/viewOrders.php:213
+msgid "Price"
+msgstr "Prix"
+
+#: app/views/Cart/cart.php:121
+msgid "Product Total Price"
+msgstr "Produit Prix total"
+
+#: app/views/Cart/cart.php:177 app/views/Order/checkout.php:3
+msgid "Checkout"
+msgstr "Commander"
+
+#: app/views/Cart/orders.php:3 app/views/Cart/orders.php:68
+#: app/views/Cart/orders.php:84 app/views/User/messages.php:69
+#: app/views/User/myAccount.php:69
+msgid "Order History"
+msgstr "Historique des Commandes"
+
+#: app/views/Cart/orders.php:51
+msgid "English"
+msgstr "English"
+
+#: app/views/Cart/orders.php:67 app/views/User/messages.php:68
+#: app/views/User/myAccount.php:68
+msgid "View Messages"
+msgstr "Voir les messages"
+
+#: app/views/Cart/orders.php:87
+msgid "Paid Items"
+msgstr "Articles Payés"
+
+#: app/views/Cart/orders.php:142
+msgid "Shipped Items"
+msgstr "Articles Livrés"
+
+#: app/views/Feedback/leaveFeedback.php:3
+msgid "Leave Feedback"
+msgstr "Laissez un Commentaire"
+
+#: app/views/Feedback/leaveFeedback.php:68
+msgid "Leave Your Feedback"
+msgstr "Laissez vos Commentaires"
+
+#: app/views/Feedback/leaveFeedback.php:71
+msgid "Please rate this product"
+msgstr "Veuillez Évaluer ce Produit"
+
+#: app/views/Feedback/leaveFeedback.php:74
+msgid "Good"
+msgstr "Bon"
+
+#: app/views/Feedback/leaveFeedback.php:77
+msgid "Ok"
+msgstr "Ok"
+
+#: app/views/Feedback/leaveFeedback.php:80
+msgid "Poor"
+msgstr "Mauvais"
+
+#: app/views/Feedback/leaveFeedback.php:84
+#: app/views/Feedback/viewFeedback.php:69
+msgid "Comment"
+msgstr "Commentaire"
+
+#: app/views/Feedback/leaveFeedback.php:88 app/views/User/contactUs.php:93
+msgid "Submit"
+msgstr "Soumettre"
+
+#: app/views/Feedback/viewFeedback.php:3 app/views/Feedback/viewFeedback.php:62
+msgid "View Feedback"
+msgstr "Voir les Commentaires"
+
+#: app/views/Feedback/viewFeedback.php:29 app/views/Seller/addProduct.php:29
+#: app/views/Seller/checkProducts.php:21 app/views/Seller/home.php:28
+#: app/views/Seller/messageCenter.php:24 app/views/Seller/modifyProduct.php:21
+#: app/views/Seller/response.php:28 app/views/Seller/viewOrders.php:22
+#: app/views/Shipping/trackingInfo.php:29 app/views/Shipping/viewDetails.php:29
+msgid "Product"
+msgstr "Produit"
+
+#: app/views/Feedback/viewFeedback.php:31 app/views/Seller/addProduct.php:31
+#: app/views/Seller/addProduct.php:63 app/views/Seller/checkProducts.php:23
+#: app/views/Seller/home.php:30 app/views/Seller/messageCenter.php:26
+#: app/views/Seller/modifyProduct.php:23 app/views/Seller/response.php:30
+#: app/views/Seller/viewOrders.php:24 app/views/Shipping/trackingInfo.php:31
+#: app/views/Shipping/viewDetails.php:31
+msgid "Add Product"
+msgstr "Ajouter un Produit"
+
+#: app/views/Feedback/viewFeedback.php:32 app/views/Seller/addProduct.php:32
+#: app/views/Seller/checkProducts.php:24 app/views/Seller/checkProducts.php:54
+#: app/views/Seller/home.php:31 app/views/Seller/messageCenter.php:27
+#: app/views/Seller/modifyProduct.php:24 app/views/Seller/response.php:31
+#: app/views/Seller/viewOrders.php:25 app/views/Shipping/trackingInfo.php:32
+#: app/views/Shipping/viewDetails.php:32
+msgid "Check Products"
+msgstr "Vérifier les Produits"
+
+#: app/views/Feedback/viewFeedback.php:36 app/views/Seller/addProduct.php:36
+#: app/views/Seller/checkProducts.php:28 app/views/Seller/home.php:35
+#: app/views/Seller/messageCenter.php:31 app/views/Seller/modifyProduct.php:28
+#: app/views/Seller/response.php:35 app/views/Seller/viewOrders.php:29
+#: app/views/Shipping/trackingInfo.php:36 app/views/Shipping/viewDetails.php:36
+msgid "View Orders"
+msgstr "Voir les Commandes"
+
+#: app/views/Feedback/viewFeedback.php:39 app/views/Seller/addProduct.php:39
+#: app/views/Seller/checkProducts.php:31 app/views/Seller/home.php:38
+#: app/views/Seller/messageCenter.php:3 app/views/Seller/messageCenter.php:34
+#: app/views/Seller/messageCenter.php:57 app/views/Seller/modifyProduct.php:31
+#: app/views/Seller/response.php:38 app/views/Seller/viewOrders.php:32
+#: app/views/Shipping/trackingInfo.php:39 app/views/Shipping/viewDetails.php:39
+#: app/views/User/messages.php:82
+msgid "Message Center"
+msgstr "Centre de Messages"
+
+#: app/views/Feedback/viewFeedback.php:64
+msgid "Rate"
+msgstr "Évaluer"
+
+#: app/views/Feedback/viewFeedback.php:74 app/views/Seller/messageCenter.php:62
+#: app/views/User/messages.php:87
+msgid "Date"
+msgstr "Date"
+
+#: app/views/Main/index.php:3
+msgid "Welcome"
+msgstr "Bienvenue"
+
+#: app/views/Main/index.php:28 app/views/Seller/index.php:20
+#: app/views/User/index.php:20 app/views/User/register.php:20
+#: app/views/User/register.php:78
+msgid "Register"
+msgstr "Enregistrez"
+
+#: app/views/Main/index.php:30 app/views/Main/index.php:37
+#: app/views/Seller/index.php:22 app/views/Seller/index.php:29
+#: app/views/User/index.php:22 app/views/User/index.php:29
+#: app/views/User/register.php:22 app/views/User/register.php:29
+msgid "As User"
+msgstr "Comme Utilisateur"
+
+#: app/views/Main/index.php:34 app/views/Seller/index.php:3
+#: app/views/Seller/index.php:61 app/views/User/index.php:3
+#: app/views/User/index.php:26 app/views/User/index.php:58
+#: app/views/User/register.php:26
+msgid "Login"
+msgstr "Connexion"
+
+#: app/views/Main/index.php:36 app/views/Seller/index.php:28
+#: app/views/User/index.php:28 app/views/User/register.php:28
+msgid "As Seller"
+msgstr "Comme Vendeur"
+
+#: app/views/Main/index.php:57 app/views/Seller/home.php:60
+#: app/views/User/home.php:72 app/views/User/myAccount.php:96
+msgid "Welcome to Pink Bakery"
+msgstr "Bienvenue à la Boulangerie Rose"
+
+#: app/views/Main/index.php:58 app/views/Seller/home.php:61
+#: app/views/User/home.php:73
+msgid "By Jiamin Yuan & Dinal Patel"
+msgstr "Par Jiamin Yuan & Dinal Patel"
+
+#: app/views/Order/checkout.php:67
+msgid "Total Price"
+msgstr "Prix Total"
+
+#: app/views/Order/checkout.php:69
+msgid "Shipping Methods"
+msgstr "Méthodes d'Expédition"
+
+#: app/views/Order/checkout.php:80 app/views/Order/checkout.php:92
+#: app/views/Shipping/trackingforUser.php:83
+#: app/views/Shipping/trackingInfo.php:71 app/views/Shipping/viewDetails.php:71
+msgid "Address"
+msgstr "Adresse"
+
+#: app/views/Order/checkout.php:82 app/views/Shipping/trackingforUser.php:78
+#: app/views/Shipping/trackingInfo.php:66 app/views/Shipping/viewDetails.php:66
+msgid "Full Name"
+msgstr "Nom complet"
+
+#: app/views/Order/checkout.php:87 app/views/Seller/messageCenter.php:62
+#: app/views/Seller/response.php:76 app/views/User/contactUs.php:83
+msgid "Email"
+msgstr "Courriel"
+
+#: app/views/Order/checkout.php:97 app/views/Shipping/trackingforUser.php:88
+#: app/views/Shipping/trackingInfo.php:76 app/views/Shipping/viewDetails.php:76
+msgid "Phone Number"
+msgstr "Numéro de Téléphone"
+
+#: app/views/Order/checkout.php:115
+msgid "Card holder"
+msgstr "Porte Carte"
+
+#: app/views/Order/checkout.php:120
+msgid "Credit card number"
+msgstr "Numéro du Carte"
+
+#: app/views/Order/checkout.php:125
+msgid "Expire date"
+msgstr "Date d'Expiration"
+
+#: app/views/Order/checkout.php:130
+msgid "CVV"
+msgstr "CVV"
+
+#: app/views/Order/checkout.php:135
+msgid "Place Order"
+msgstr "Passer la Commande"
+
+#: app/views/Order/confirmation.php:3
+msgid "Confirmation"
+msgstr "Confirmation"
+
+#: app/views/Order/confirmation.php:66
+msgid "THANK YOU"
+msgstr "MERCI"
+
+#: app/views/Order/confirmation.php:69
+msgid "Your order has been placed"
+msgstr "Votre Commande a été Passée"
+
+#: app/views/Order/confirmation.php:70
+msgid ""
+"Once it has shipped, tracking information will be available in My Account -> "
+"Order History"
+msgstr ""
+"Une fois la commande expédiée, les informations de suivi seront disponibles "
+"dans Mon compte -> Historique de la commande."
+
+#: app/views/Order/confirmation.php:75
+msgid "Continue Shopping"
+msgstr "Continuer aux Achats"
+
+#: app/views/Product/Bread.php:45 app/views/Product/Cakes.php:45
+#: app/views/Product/Cookies.php:45 app/views/Product/Pastries.php:45
+#: app/views/Product/shopAll.php:45
+msgid "Search"
+msgstr "Recherche"
+
+#: app/views/Product/customizeCake.php:44
+msgid "New Arrivals"
+msgstr "Nouvelles Arrivées"
+
+#: app/views/Product/customizeCake.php:79
+msgid "Customize cake"
+msgstr "Personnaliser le Gâteau"
+
+#: app/views/Product/customizeCake.php:84 app/views/Seller/addProduct.php:72
+#: app/views/Seller/modifyProduct.php:64
+msgid "Select Picture"
+msgstr "Sélectionner une image"
+
+#: app/views/Product/customizeCake.php:88
+msgid "Descrption"
+msgstr "Description"
+
+#: app/views/Product/customizeCake.php:93 app/views/Seller/viewOrders.php:109
+#: app/views/Seller/viewOrders.php:213
+msgid "Layer"
+msgstr "Niveaux"
+
+#: app/views/Product/customizeCake.php:98 app/views/Seller/viewOrders.php:109
+#: app/views/Seller/viewOrders.php:213
+msgid "Serving"
+msgstr "Portion"
+
+#: app/views/Product/customizeCake.php:103 app/views/Seller/viewOrders.php:109
+#: app/views/Seller/viewOrders.php:213
+msgid "Flavor"
+msgstr "Saveur"
+
+#: app/views/Product/customizeCake.php:109
+msgid "Confirm"
+msgstr "Confirmer"
+
+#: app/views/Seller/addProduct.php:3
+msgid "Add product"
+msgstr "Ajouter un Produit"
+
+#: app/views/Seller/addProduct.php:84 app/views/Seller/modifyProduct.php:77
+msgid "Choose a Category"
+msgstr "Choisissez une Catégorie"
+
+#: app/views/Seller/addProduct.php:96 app/views/Seller/modifyProduct.php:91
+#: app/views/Seller/viewOrders.php:109 app/views/Seller/viewOrders.php:213
+msgid "Description"
+msgstr "Description"
+
+#: app/views/Seller/addProduct.php:101 app/views/Seller/modifyProduct.php:96
+msgid "Size"
+msgstr "Taille"
+
+#: app/views/Seller/addProduct.php:125
+msgid "Pastry"
+msgstr "Pâtisserie"
+
+#: app/views/Seller/check2fa.php:3
+msgid "2fa Check"
+msgstr "Vérification 2fa"
+
+#: app/views/Seller/check2fa.php:6
+msgid "Hi"
+msgstr "Salut"
+
+#: app/views/Seller/check2fa.php:6
+msgid "Provide your 2-factor authentication code"
+msgstr "Fournissez votre code d'authentification à 2 facteurs"
+
+#: app/views/Seller/check2fa.php:8 app/views/Seller/twofasetup.php:9
+msgid "Current code"
+msgstr "Code Courant"
+
+#: app/views/Seller/checkProducts.php:3 app/views/Seller/viewOrders.php:63
+#: app/views/Seller/viewOrders.php:157
+msgid "Products"
+msgstr "Produits"
+
+#: app/views/Seller/home.php:3 app/views/User/home.php:3
+msgid "Home"
+msgstr "Page d'Accueil"
+
+#: app/views/Seller/index.php:66 app/views/Seller/messageCenter.php:62
+#: app/views/User/index.php:63 app/views/User/register.php:63
+msgid "Username"
+msgstr "Nom d'Utilisateur"
+
+#: app/views/Seller/index.php:71 app/views/User/index.php:68
+#: app/views/User/register.php:68
+msgid "Password"
+msgstr "Mot de Passe"
+
+#: app/views/Seller/index.php:76 app/views/User/index.php:73
+msgid "Get Started"
+msgstr "Commencer"
+
+#: app/views/Seller/index.php:78 app/views/User/index.php:75
+msgid "New here"
+msgstr "Nouveau Ici"
+
+#: app/views/Seller/index.php:79 app/views/User/index.php:76
+msgid "Create an Account"
+msgstr "Créer un Compte"
+
+#: app/views/Seller/messageCenter.php:62 app/views/User/contactUs.php:89
+msgid "Message"
+msgstr "Message"
+
+#: app/views/Seller/modifyProduct.php:3
+msgid "Modify product"
+msgstr "Modifier un Produit"
+
+#: app/views/Seller/modifyProduct.php:54
+msgid "Modify Product"
+msgstr "Modifier un Produit"
+
+#: app/views/Seller/modifyProduct.php:141
+msgid "product"
+msgstr "produit"
+
+#: app/views/Seller/response.php:3
+msgid "Message Response"
+msgstr "Réponse au Message"
+
+#: app/views/Seller/response.php:61
+msgid "Reply to"
+msgstr "Répondre à"
+
+#: app/views/Seller/response.php:62 app/views/User/contactUs.php:73
+msgid "Fill in the information"
+msgstr "Remplissez les Informations"
+
+#: app/views/Seller/response.php:64 app/views/User/contactUs.php:76
+msgid "User Info"
+msgstr "Info Utilisateur"
+
+#: app/views/Seller/response.php:66
+msgid "Id"
+msgstr "Id"
+
+#: app/views/Seller/response.php:82
+msgid "Message Recieved"
+msgstr "Message Reçu"
+
+#: app/views/Seller/response.php:88 app/views/User/messages.php:87
+msgid "Response"
+msgstr "Réponse"
+
+#: app/views/Seller/twofasetup.php:3
+msgid "2fa set up"
+msgstr "Mise en Place de 2fa"
+
+#: app/views/Seller/twofasetup.php:7
+msgid ""
+"Please scan the QR-code on the screen with your favorite Authenticator "
+"software, such as Google Authenticator. The authenticator software will "
+"generate codes that are valid for 30 seconds only. Enter such a code while "
+"and submit it while it is still valid to confirm that the 2-factor "
+"authentication can be applied to your account"
+msgstr ""
+"Veuillez scanner le code QR affiché à l'écran avec votre logiciel "
+"d'authentification préféré, tel que Google Authenticator. Le logiciel "
+"d'authentification génère des codes qui ne sont valables que pendant 30 "
+"secondes. Saisissez ce code et soumettez-le pendant qu'il est encore valide "
+"pour confirmer que l'authentification à deux facteurs peut être appliquée à "
+"votre compte."
+
+#: app/views/Seller/viewOrders.php:3
+msgid "Orders"
+msgstr "Commandes"
+
+#: app/views/Seller/viewOrders.php:59
+msgid "Unshipped Items"
+msgstr "Articles non Expédiés"
+
+#: app/views/Seller/viewOrders.php:65 app/views/Seller/viewOrders.php:159
+msgid "Product Name"
+msgstr "Nom du Produit"
+
+#: app/views/Seller/viewOrders.php:107 app/views/Seller/viewOrders.php:211
+msgid "Custom Cake"
+msgstr "Gâteau Personnalisé"
+
+#: app/views/Seller/viewOrders.php:155
+msgid "Shipped Order"
+msgstr "Commande Expédiée"
+
+#: app/views/Shipping/trackingforUser.php:3
+#: app/views/Shipping/trackingforUser.php:74
+msgid "Tracking"
+msgstr "Suivi"
+
+#: app/views/Shipping/trackingforUser.php:76
+#: app/views/Shipping/trackingInfo.php:64 app/views/Shipping/viewDetails.php:64
+msgid "Reciever Info"
+msgstr "Informations sur les Récepteurs"
+
+#: app/views/Shipping/trackingforUser.php:93
+#: app/views/Shipping/trackingInfo.php:82 app/views/Shipping/viewDetails.php:81
+msgid "Tracking Number"
+msgstr "Numéro de Suivi"
+
+#: app/views/Shipping/trackingforUser.php:98
+#: app/views/Shipping/viewDetails.php:86
+msgid "Date Shipped"
+msgstr "Date d'Expédition"
+
+#: app/views/Shipping/trackingInfo.php:3 app/views/Shipping/trackingInfo.php:62
+msgid "Shipping"
+msgstr "Expédition"
+
+#: app/views/Shipping/viewDetails.php:3 app/views/Shipping/viewDetails.php:62
+msgid "Shipping Details"
+msgstr "Détails d'Expédition"
+
+#: app/views/User/messages.php:87
+msgid "From"
+msgstr "De"
+
+#: app/views/User/messages.php:87
+msgid "Message Sent"
+msgstr "Message Envoyé"
+
+#: app/views/User/myAccount.php:91
+msgid "Hello"
+msgstr "Bonjour"
+
+#: app/views/User/myAccount.php:92
+msgid "Online"
+msgstr "En Ligne"
+
+#: app/views/User/myAccount.php:97
+msgid "If you need more assistance, feel free to contact us"
+msgstr ""
+"Si vous avez besoin d'une assistance supplémentaire, n'hésitez pas à nous "
+"contacter."
+
+#: app/views/User/myAccount.php:100
+msgid "Joined December 2022"
+msgstr "Rejoint en décembre 2022"
+
+#: app/views/User/register.php:3
+msgid "Registeration"
+msgstr "Enregistrement"
+
+#: app/views/User/register.php:58
+msgid "Create an account"
+msgstr "Créer un Compte"
+
+#: app/views/User/register.php:73
+msgid "Password Confirmation"
+msgstr "Confirmation du mot de Passe"
+
+#: app/views/User/register.php:81
+msgid "Already a user"
+msgstr "Déjà un Utilisateur"
+
+#: app/views/User/register.php:82
+msgid "Login here"
+msgstr "Connectez-Vous Ici"

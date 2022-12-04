@@ -23,7 +23,7 @@ class Cart extends \app\core\Controller{
             if($total_price>0 || $customCake_price>0){
                 header('location:/Order/checkout');
             }else{
-                header('location:/Cart/cart?error=Order can not be empty');
+                header('location:/Cart/cart?error='._('Order can not be empty'));
             }
         }
 		$this->view('Cart/cart', ['cartUser'=>$cartUser, 'total_price'=>$total_price, 'customCake'=>$customCakeList, 'customCake_price'=>$customCake_price]);

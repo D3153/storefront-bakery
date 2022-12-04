@@ -13,10 +13,10 @@ class User extends \app\core\Controller{
                     $user->insert();
                     header('location:/User/index');
                 }else{
-                    header('location:/User/register?error=The username "'.$_POST['username'].'" is already in use. Select another.');
+                    header('location:/User/register?error='._('The username "').$_POST['username']._(' is already in use. Select another.'));
                 }
             }else{
-                header('location:/User/register?error=Passwords do not match.');
+                header('location:/User/register?error='._('Passwords do not match.'));
             }
         }else{
             $this->view('User/register');
@@ -35,10 +35,10 @@ class User extends \app\core\Controller{
 				if($_SESSION['role']=="user"){
 					header('location:/User/home');		
 				}else{
-					header('location:/User/index?error=Invalid User info!');
+					header('location:/User/index?error='._('Invalid User info!'));
 				}
 			}else{
-				header('location:/User/index?error=Wrong username/password combination!');
+				header('location:/User/index?error='._('Wrong username/password combination!'));
 			}
 		}else{
 			$this->view('User/index');
