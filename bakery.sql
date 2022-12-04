@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2022 at 05:17 AM
+-- Generation Time: Dec 04, 2022 at 02:28 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -52,7 +52,6 @@ CREATE TABLE `cart` (
 
 INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `custom_cake_id`, `quantity`, `unit_price`, `shipping_id`, `full_name`, `email`, `address`, `phone_num`, `status`, `feedback_id`) VALUES
 (16, 2, 21, NULL, 1, '5.99', 9, 'Mimi', 'mimi@gmail.com', '7126 Boul de la cote vertu', '213-313-123', 'shipped', 0),
-(22, 3, 17, NULL, 1, '24.99', 4, 'Dinal Patel', 'dinal@gmail.com', '1129 somewhere', '718-232-211', 'shipped', 5),
 (26, 3, NULL, 10, 1, '324.75', 5, 'Dinal Patel', 'dinal@gmail.com', '1129 somewhere', '718-232-211', 'shipped', 6),
 (27, 3, 18, NULL, 1, '21.98', 6, 'Dinal Patel', 'dinal@gmail.com', '1129 somewhere', '718-232-211', 'shipped', 0),
 (30, 3, 19, NULL, 2, '15.94', NULL, 'Jiamin Yuan', 'jiamin@hotmail.com', '1150 Boulevard', '124-141-412', 'paid', 0),
@@ -62,7 +61,6 @@ INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `custom_cake_id`, `quant
 (34, 3, NULL, 14, 1, '104.95', NULL, 'Dinal Patel', 'd123@gmail.com', '2498 rue Ontario Ouest', '123-213-123', 'paid', 0),
 (35, 3, 23, NULL, 1, '39.99', NULL, NULL, NULL, NULL, NULL, 'cart', 0),
 (36, 3, 26, NULL, 1, '7.68', NULL, NULL, NULL, NULL, NULL, 'cart', 0),
-(37, 3, 22, NULL, 1, '5.99', NULL, NULL, NULL, NULL, NULL, 'cart', 0),
 (38, 3, NULL, 15, 1, '54.97', NULL, NULL, NULL, NULL, NULL, 'cart', 0),
 (39, 5, 31, NULL, 1, '6.99', NULL, 'Bob', 'bob@hotmail.com', 'Atwater 3123', '221-212-321', 'paid', 0),
 (40, 5, NULL, 16, 1, '54.97', 8, 'Bob', 'bob@hotmail.com', 'Atwater 3123', '221-212-321', 'shipped', 7);
@@ -195,12 +193,10 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`product_id`, `category_id`, `name`, `description`, `image`, `size`, `price`) VALUES
 (16, 1, 'Matcha Bread', 'matcha flavor 8 pieces', '636859c35065a.jpg', 'smallBread', '35.68'),
-(17, 2, 'Fruit Macaron', 'Pack of 10 macarons, each filled with delicious fruit flavor.', '636d2a99b8857.jpg', 'Small (6x3 inches)', '26.99'),
 (18, 3, 'Fruit Tart', 'Freshly baked fruit tart with a creamy mouse filling and topped with organic fruits. ', '6377a0e23b37c.jpg', 'Small (4 inches)', '21.98'),
 (19, 4, 'Croissant', 'A French delicacy, with a flaky outside and soft inside. Perfect with a cup of coffee.', '6377a0ea444f2.jpg', 'default', '7.97'),
 (20, 5, 'Floral cake', 'Edible Flower Cake', '6377a202d7825.jpg', 'Large (10 inches)', '87.22'),
 (21, 6, 'Brownies', 'A bag of 8 pieces chocolate brownies', '6377a20b4cf52.jpg', 'default', '5.99'),
-(22, 4, 'Strawberry Donut', 'It filled with fresh strawberries, chopped small, and topped with a fresh strawberry glaze.', '638c1d364432b.jpg.jpg', 'default', '6.99'),
 (23, 6, 'Limit Edition Gift Set', 'Three chocolate donuts and three ice cream shaped cookie pops.', '638bf2b2c8c93.jpg', 'default', '39.99'),
 (24, 6, 'Limit Edition for Halloween ', 'Three ice cream shaped cookie pops and a cute ghost donut. ', '638bf31bd7dcd.jpg', 'default', '30.73'),
 (25, 1, 'Basic white bread', 'A bag of white bread, around 12 pieces.', '638bf3ae67208.jpg', 'mediumBread', '12.73'),

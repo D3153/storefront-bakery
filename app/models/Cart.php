@@ -141,6 +141,12 @@ class Cart extends \app\core\Model{
 						'status'=>'cart']);
 	}
 
+	public function deleteProductById(){
+		$SQL = "DELETE FROM cart WHERE product_id = :product_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['product_id'=>$this->product_id]);
+	}
+
 	public function deleteCake(){
 		$SQL = "DELETE FROM cart WHERE custom_cake_id = :custom_cake_id";
 		$STMT = self::$_connection->prepare($SQL);

@@ -77,6 +77,9 @@ class Seller extends \app\core\Controller{
 		$product = new \app\models\Product();
 		$product = $product->get($product_id);
 		unlink("images/$product->image");
+		$cart = new \app\models\Cart();
+		$cart->product_id=$product_id;
+		$cart->deleteProductById();
 		$product->delete();
 		header('location:/Seller/checkProducts');
 	}
