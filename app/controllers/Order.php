@@ -6,7 +6,7 @@ class Order extends \app\core\Controller{
 	#[\app\filters\Login]
 	public function checkout(){
 		$cartTemp = new \app\models\Cart();
-		$cartUser = $cartTemp->getAllFromUser($_SESSION['user_id']);
+		$cartUser = $cartTemp->getAllItemsUnpaidForUser($_SESSION['user_id']);
 		$total_price = 0;
 		foreach ($cartUser as $data){
 			$total_price += $data->unit_price;

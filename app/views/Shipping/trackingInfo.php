@@ -8,7 +8,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
       body{
-           background-image: url('../../images/d.jpg');
+           background-image: url('../../images/food.jpg');
           height: 100%;
           background-position: center;
           background-repeat: no-repeat;
@@ -20,7 +20,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+    <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" style="z-index: 2000;">
         <div class="container-fluid">
           <a class="navbar-brand nav-link" href="/Seller/home"><strong>Pink Bakery</strong></a>
             <div class="collapse navbar-collapse" id="navbarExample01">
@@ -57,17 +57,17 @@
                     <legend><i class="bi bi-info-circle-fill"></i> Reciever Info</legend>
                     <div class="form-group form-inline">
                          <label for="name">Full Name</label>
-                         &nbsp;
+                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
                          <input type="text" class="form-control" name="name"  value="<?= $data['recieverInfo']->full_name ?>" readonly>
                     </div>
                     <div class="form-group form-inline">
                          <label for="address">Address</label>
-                         &nbsp;&nbsp;
+                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
                          <input type="text" class="form-control" name="address"  value="<?= $data['recieverInfo']->address ?>" readonly>
                     </div>
                     <div class="form-group form-inline">
                          <label for="phone">Phone Number</label>
-                         &nbsp;
+                         &nbsp;&nbsp;&nbsp;&nbsp;
                          <input type="text" class="form-control" name="phone"  value="<?= $data['recieverInfo']->phone_num ?>" readonly>
                     </div>
                     <div class="alert alert-primary" role="alert">Fill in the information </div>

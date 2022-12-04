@@ -74,47 +74,17 @@
         <div class="col-12 col-md-9 col-lg-7 col-xl-6" >
           <div class="card " style="border-radius: 20px; width: 1000px;">
             <div class="card-body p-5">
-              
-
+              <h1><center>Order History</center></h1>
                 <form action='' enctype="multipart/form-data" method='post'>
-
-                  <h2 class='text-center mb-5'>Shopping Cart</h2>
-                              <div class='form-outline mb-4'>
-                                <table width="100%" border="1" cellpadding="5" cellspacing="5">
-                                <tr><th>Name</th><th>Image</th><th>Quantity</th><th>Price</th></tr>
-
-                               
-                  <?php 
-
-                      foreach ($data as $order_history) {
-                        if($order_history->status == 'cart'){
-                            echo "
-                                    <tr>
-                                          <td type=name id='prName'>$order_history->name</td>
-                                          <td> <img src='/images/".$order_history->image."'style='max-width:200px;max-height:100px'/></td>
-                                          <td type=name>$order_history->quantity</td>
-                                          <td type=name>$order_history->unit_price</td>
-                                          </td>
-                                          </tr>
-
-                                         ";
-                           }
-                           
-                      }
-
-                    ?>
-                    </table>
-                    <br>
-
+                  <br>
                     <h2 class='text-center mb-5'>Paid Items</h2>
                               <div class='form-outline mb-4'>
                                 <table width="100%" border="1" cellpadding="5" cellspacing="5">
                                 <tr><th>Name</th><th>Image</th><th>Quantity</th><th>Price</th></tr>
-
                                
                   <?php 
 
-                      foreach ($data as $order_history) {
+                      foreach ($data ['order_history'] as $order_history) {
                         if($order_history->status == 'paid'){
                             echo "
                                     <tr>
@@ -132,17 +102,45 @@
 
                     ?>
                     </table>
+
+                  
+                               
+                  <?php 
+                      if(count($data['paidCakes']) >0){
+                     echo"<table width= '100%' border='1' cellpadding='5' cellspacing='5'>
+                                <tr><th>Image</th><th>Description</th><th>Layer</th><th>Serving</th><th>Flavor</th><th>Price</th></tr>";      
+                      foreach ($data['paidCakes'] as $cakeOrder) {
+                        if($cakeOrder->status=='paid'){
+                            echo "
+                                    <tr>
+                                           <td> <img src='/images/".$cakeOrder->cake_image."'style='max-width:200px;max-height:100px'/></td>
+                                          <td type=name>$cakeOrder->description</td>
+                                          <td type=name>$cakeOrder->layer</td>
+                                          <td type=name>$cakeOrder->serving</td>
+                                          <td type=name>$cakeOrder->flavor</td>
+                                          <td type=name>$cakeOrder->price</td>
+                                          </tr>
+
+                                         ";
+                           }
+                           
+                      }
+                    }
+
+                    ?>
+                    </table>
+
                     <br>
 
                     <h2 class='text-center mb-5'>Shipped Items</h2>
                               <div class='form-outline mb-4'>
                                 <table width="100%" border="1" cellpadding="5" cellspacing="5">
-                                <tr><th>Name</th><th>Image</th><th>Quantity</th><th>Price</th></tr>
+                                <tr><th>Name</th><th>Image</th><th>Quantity</th><th>Price</th><th> </th><th> </th></tr>
 
                                
                   <?php 
 
-                      foreach ($data as $order_history) {
+                      foreach ($data['order_history'] as $order_history) {
                         if($order_history->status == 'shipped'){
                             echo "
                                     <tr>
@@ -150,7 +148,12 @@
                                           <td> <img src='/images/".$order_history->image."'style='max-width:200px;max-height:100px'/></td>
                                           <td type=name>$order_history->quantity</td>
                                           <td type=name>$order_history->unit_price</td>
-                                          </td>
+                                           <td type=action>
+                                            <button class='btn btn-primary  '><a class='nav-link' href='/Shipping/trackingforUser/$order_history->cart_id'>Tracking</a></button>
+                                            </td>
+                                            <td type=action>
+                                            <button class='btn btn-success'><a class='nav-link' href='/Feedback/leaveFeedback/$order_history->cart_id'>Comment</a></button>
+                                            </td>
                                           </tr>
 
                                          ";
@@ -162,6 +165,37 @@
                     
                     
                   </table>
+                  <?php 
+                      if(count($data['shippedCakes']) >0){
+                     echo"<table width= '100%' border='1' cellpadding='5' cellspacing='5'>
+                                <tr><th>Image</th><th>Description</th><th>Layer</th><th>Serving</th><th>Flavor</th><th>Price</th><th></th></tr>";      
+
+                      foreach ($data['shippedCakes'] as $cakeOrder) {
+                        if($cakeOrder->status=='shipped'){
+                            echo "
+                                    <tr>
+                                           <td> <img src='/images/".$cakeOrder->cake_image."'style='max-width:200px;max-height:100px'/></td>
+                                          <td type=name>$cakeOrder->description</td>
+                                          <td type=name>$cakeOrder->layer</td>
+                                          <td type=name>$cakeOrder->serving</td>
+                                          <td type=name>$cakeOrder->flavor</td>
+                                          <td type=name>$cakeOrder->price</td>
+                                          <td type=action>
+                                            <button class='btn btn-primary'><a class='nav-link' href='/Shipping/trackingforUser/$cakeOrder->cart_id'>Tracking</a></button>
+                                            </td>
+                                          <td type=action>
+                                            <button class='btn btn-success'><a class='nav-link' href='/Feedback/leaveFeedback/$cakeOrder->cart_id'>Comment</a></button>
+                                            </td>
+                                          </tr>
+
+                                         ";
+                           }
+                           
+                      }
+                    }
+
+                    ?>
+                    </table>
                 </div>
               
                 </div>

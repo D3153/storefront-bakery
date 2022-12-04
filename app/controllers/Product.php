@@ -94,7 +94,7 @@ class Product extends \app\core\Controller{
 			$cart->shipping_id=null;
 			$cart->insertIntoCart();
 
-			header('location:/Product/shopAll');
+			header('location:/Cart/cart');
 		}else{
 			$this->view('Product/customizeCake');
 		}

@@ -20,6 +20,14 @@ class Cart extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
+	public function getAllItemsUnpaidForUser($user_id){
+		$SQL = "SELECT * FROM cart WHERE user_id = :user_id AND status=:status";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['user_id'=>$user_id, 'status'=>'cart']);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Cart');
+		return $STMT->fetchAll();
+	}
+
 	public function getByCartId($cart_id){
 		$SQL = "SELECT * FROM cart WHERE cart_id = :cart_id";
 		$STMT = self::$_connection->prepare($SQL);
@@ -74,6 +82,13 @@ class Cart extends \app\core\Model{
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['status'=>'shipped',
 						'shipping_id'=>$this->shipping_id,
+						'cart_id'=>$this->cart_id]);
+	}
+
+	public function updateComment(){
+		$SQL = "UPDATE cart SET feedback_id=:feedback_id WHERE cart_id = :cart_id";
+		$STMT = self::$_connection->prepare($SQL);	
+		$STMT->execute(['feedback_id'=>$this->feedback_id,
 						'cart_id'=>$this->cart_id]);
 	}
 

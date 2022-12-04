@@ -85,9 +85,6 @@
                               <td type=name>$message->reply_date</td>
                               <td type=name>$message->response</td>
                               <td type=name>$message->message</td>
-                              <td type=action>
-                              <button class='btn btn-primary'><a class='nav-link' href=''>Reply</a></button>
-                              </td>
                               </tr>";
                       }
                     ?>

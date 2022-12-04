@@ -11,7 +11,24 @@ class CustomizeCake extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
-	public function getByUserId($user_id){
+	public function getAllPaidCakesByUserId($user_id){
+		$SQL = "SELECT * FROM custom_cake CROSS JOIN cart on custom_cake.custom_cake_id=cart.custom_cake_id WHERE custom_cake.user_id = :user_id AND status=:status";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['user_id'=>$user_id, 'status'=>'paid']);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\CustomizeCake');
+		return $STMT->fetchAll();
+	}
+
+	public function getAllShippedCakesByUserId($user_id){
+		$SQL = "SELECT * FROM custom_cake CROSS JOIN cart on custom_cake.custom_cake_id=cart.custom_cake_id WHERE custom_cake.user_id = :user_id AND status=:status";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['user_id'=>$user_id, 'status'=>'shipped']);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\CustomizeCake');
+		return $STMT->fetchAll();
+	}
+
+
+	public function getCartByUserId($user_id){
 		$SQL = "SELECT * FROM custom_cake CROSS JOIN cart on custom_cake.custom_cake_id=cart.custom_cake_id WHERE custom_cake.user_id = :user_id AND status = :status";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['user_id'=>$user_id,

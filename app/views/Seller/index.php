@@ -5,17 +5,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <style>
   body{
-     background-image: url('../../images/r.png');
-      height: 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+     background-color: beige;
   }
 </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+  <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" style="z-index: 2000;">
         <div class="container-fluid">
           <a class="navbar-brand nav-link" href="/Main/index"><strong>Pink Bakery</strong></a>
             <div class="collapse navbar-collapse" id="navbarExample01">

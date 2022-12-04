@@ -32,4 +32,14 @@ class Shipping extends \app\core\Controller{
 		$this->view("Shipping/viewDetails",['recieverInfo'=>$recieverInfo, 'shipDetail'=>$shipDetail]);
 
 	}
+
+	#[\app\filters\Login]
+	public function trackingforUser($cart_id){
+		$recieverInfo = new \app\models\Cart();
+		$recieverInfo = $recieverInfo->getByCartId($cart_id);
+		$shipDetail = new \app\models\Shipping();
+		$shipDetail = $shipDetail->getByShippingId($recieverInfo->shipping_id);
+		$this->view("Shipping/trackingforUser",['recieverInfo'=>$recieverInfo, 'shipDetail'=>$shipDetail]);
+
+	}
 }

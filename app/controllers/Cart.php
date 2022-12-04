@@ -13,14 +13,14 @@ class Cart extends \app\core\Controller{
 		}
 		
 		$customCake = new \app\models\CustomizeCake();
-		$customCakeList = $customCake->getByUserId($_SESSION['user_id']);
+		$customCakeList = $customCake->getCartByUserId($_SESSION['user_id']);
 		$customCake_price = 0;
 		foreach($customCakeList as $data){
 			$customCake_price += $data->price;
 		}
 
 		if(isset($_POST['action'])){
-            if($total_price>0){
+            if($total_price>0 || $customCake_price>0){
                 header('location:/Order/checkout');
             }else{
                 header('location:/Cart/cart?error=Order can not be empty');
@@ -33,29 +33,18 @@ class Cart extends \app\core\Controller{
 	public function orders(){
 		$order = new \app\models\Cart();
 		$order_history = $order->getByUser($_SESSION['user_id']);
-		// $cartUser[] = array();
-		// $userPaid[] = array();
-		// $userShip[] = array();
-		// foreach($order_history as $data){
-		// 	if($data->status = 'cart'){
-		// 		array_push($cartUser, $data);
-		// 	}
-		// 	if($data->status = 'paid'){
-		// 		array_push($cartPaid, $data);
-		// 	}
-		// 	if($data->status = 'shipped'){
-		// 		array_push($cartShip, $data);
-		// 	}
-		// }
 
-		// // var_dump($cartPaid);
-		$this->view('Cart/orders', $order_history);
+		$paidCake = new \app\models\CustomizeCake();
+		$paidCakes = $paidCake->getAllPaidCakesByUserId($_SESSION['user_id']);
+
+		$shippedCake = new \app\models\CustomizeCake();
+		$shippedCakes = $shippedCake->getAllShippedCakesByUserId($_SESSION['user_id']);
+		$this->view('Cart/orders', ['order_history'=>$order_history,'paidCakes'=>$paidCakes, 'shippedCakes'=>$shippedCakes]);
 	}
 
 	#[\app\filters\Login]
 	public function addCartProduct($product_id)
 		{
-			//user_id, product_id, custom_cake_id, quantity, unit_price, shipping_id, status) VALUES (:user_id, :product_id, :custom_cake_id, :quantity, :unit_price, :shipping_id, :status
 			$cart = new \app\models\Cart();
 			$product = new \app\models\Product();
 			$product = $product->get($product_id);
@@ -76,7 +65,7 @@ class Cart extends \app\core\Controller{
 				$cart->shipping_id = null;
 				$cart->insertIntoCart();
 			}
-			header('location:/Product/shopAll');
+			header('location:/Cart/cart');
 		}
 
 	#[\app\filters\Login]

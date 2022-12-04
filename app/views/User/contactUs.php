@@ -18,7 +18,7 @@
     </style>
     </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+    <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" style="z-index: 2000;">
         <div class="container-fluid">
           <a class="navbar-brand nav-link" href="/User/home"><strong>Pink Bakery</strong></a>
             <div class="collapse navbar-collapse" id="navbarExample01">
