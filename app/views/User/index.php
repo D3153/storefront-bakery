@@ -29,6 +29,13 @@
                           <a href="/User/index" class="dropdown-item">As User</a>
                       </div>
                     </div>
+                    <div class="dropdown">
+                        <a class="nav-link" data-bs-toggle="dropdown">Language</a>
+                        <div class="dropdown-menu">
+                          <a href="" class="dropdown-item">English</a>
+                          <a href="" class="dropdown-item">French</a>
+                      </div>
+                    </div>  
               </ul>
             </div>
         </div>
