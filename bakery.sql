@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2022 at 02:28 PM
+-- Generation Time: Dec 04, 2022 at 03:36 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -61,7 +61,6 @@ INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `custom_cake_id`, `quant
 (34, 3, NULL, 14, 1, '104.95', NULL, 'Dinal Patel', 'd123@gmail.com', '2498 rue Ontario Ouest', '123-213-123', 'paid', 0),
 (35, 3, 23, NULL, 1, '39.99', NULL, NULL, NULL, NULL, NULL, 'cart', 0),
 (36, 3, 26, NULL, 1, '7.68', NULL, NULL, NULL, NULL, NULL, 'cart', 0),
-(38, 3, NULL, 15, 1, '54.97', NULL, NULL, NULL, NULL, NULL, 'cart', 0),
 (39, 5, 31, NULL, 1, '6.99', NULL, 'Bob', 'bob@hotmail.com', 'Atwater 3123', '221-212-321', 'paid', 0),
 (40, 5, NULL, 16, 1, '54.97', 8, 'Bob', 'bob@hotmail.com', 'Atwater 3123', '221-212-321', 'shipped', 7);
 
@@ -144,7 +143,6 @@ INSERT INTO `custom_cake` (`custom_cake_id`, `user_id`, `description`, `cake_ima
 (10, 3, 'cake', '638a7a9a98080.jpg', 5, 25, 'vanilla', '324.75'),
 (13, 3, 'White wedding cake with roses', '638bb44757373.jpg', 5, 50, 'Fruit', '449.50'),
 (14, 3, 'Cheese cake for birthday', '638bee2adaac5.jpg', 2, 5, 'Cheese', '104.95'),
-(15, 3, 'bear cake', '638bfc38b8e41.jpg', 1, 3, 'White Chocolcate', '54.97'),
 (16, 5, 'cat birthday cake', '638c15afe0f74.jpg', 1, 3, 'Chocolcate', '54.97');
 
 -- --------------------------------------------------------
@@ -192,22 +190,23 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `category_id`, `name`, `description`, `image`, `size`, `price`) VALUES
-(16, 1, 'Matcha Bread', 'matcha flavor 8 pieces', '636859c35065a.jpg', 'smallBread', '35.68'),
+(16, 1, 'Matcha Bread', 'matcha flavor 6 pieces', '638cab4364acf.jpg', 'Medium (8x4 inches)', '37.68'),
 (18, 3, 'Fruit Tart', 'Freshly baked fruit tart with a creamy mouse filling and topped with organic fruits. ', '6377a0e23b37c.jpg', 'Small (4 inches)', '21.98'),
 (19, 4, 'Croissant', 'A French delicacy, with a flaky outside and soft inside. Perfect with a cup of coffee.', '6377a0ea444f2.jpg', 'default', '7.97'),
 (20, 5, 'Floral cake', 'Edible Flower Cake', '6377a202d7825.jpg', 'Large (10 inches)', '87.22'),
 (21, 6, 'Brownies', 'A bag of 8 pieces chocolate brownies', '6377a20b4cf52.jpg', 'default', '5.99'),
 (23, 6, 'Limit Edition Gift Set', 'Three chocolate donuts and three ice cream shaped cookie pops.', '638bf2b2c8c93.jpg', 'default', '39.99'),
 (24, 6, 'Limit Edition for Halloween ', 'Three ice cream shaped cookie pops and a cute ghost donut. ', '638bf31bd7dcd.jpg', 'default', '30.73'),
-(25, 1, 'Basic white bread', 'A bag of white bread, around 12 pieces.', '638bf3ae67208.jpg', 'mediumBread', '12.73'),
-(26, 1, 'Classic Baguette', 'Crisp and crunchy crust', '638bf428ad2cd.jpg', 'largeBread', '7.68'),
-(27, 2, 'Christmas Cookies', 'Random 8 pieces Christmas theme cookies.', '638bf4af72206.jpg', 'mediumCookie', '26.13'),
-(28, 2, 'Heart Shape Cookies', 'A bag of heart shape cookies with white chocolate topping', '638bf56446d8a.jpg', 'smallCookie', '15.73'),
-(29, 3, 'Pecan Pie', 'Organic pecan pie', '638bf5df85f59.jpg', 'smallPie', '37.29'),
-(30, 3, 'Apple Pie', '6 mini apple pie', '638bf7259c976.jpg', 'smallPie', '25.72'),
+(25, 1, 'Basic White Bread', 'A bag of white bread, around 12 pieces.', '638cae08cd6aa.jpg', 'Medium (8x4 inches)', '12.73'),
+(26, 1, 'Classic Baguette', 'Crisp and crunchy crust', '638cae5481aa7.jpg', 'Large (9x5 inches)', '7.68'),
+(27, 2, 'Christmas Cookies', 'Random 8 pieces Christmas theme cookies.', '638cae9ac187d.jpg', 'Small (3 inches)', '26.13'),
+(28, 2, 'Heart Shape Cookies', 'A bag of heart shape cookies with white chocolate topping', '638caee927444.jpg', 'Small (3 inches)', '15.73'),
+(29, 3, 'Pecan Pie', 'Organic pecan pie', '638cad2454270.jpg', 'Small (4 inches)', '37.29'),
+(30, 3, 'Apple Pie', '6 mini apple pie', '638cad9dc4d3f.jpg', 'Small (4 inches)', '25.72'),
 (31, 4, 'Berry and Cream Puff Pastry', '1 Puff pastry filled with cream and berry topping', '638bf876d4571.jpg', 'default', '6.99'),
-(32, 5, 'Pink Drip Cake', 'Hot pink drip cake with lollipop decoration', '638bf9261f1e6.jpg', 'mediumCake', '64.97'),
-(33, 5, 'Raspberry and Coconut Cake', 'It is a cake frosted with a purple frosting and covered in coconut flakes.', '638bfa0c0f41c.jpg', 'mediumCake', '70.21');
+(32, 5, 'Pink Drip Cake', 'Hot pink drip cake with lollipop decoration', '638cac692d921.jpg', 'Medium (8 inches)', '64.97'),
+(33, 5, 'Coconut Cake', 'It is a cake frosted with a white frosting and covered in coconut flakes.', '638cabb1d3123.jpg', 'Large (10 inches)', '99.21'),
+(34, 2, 'Fruit Macaroon', 'A bag of 8 fruit flavor macaroons', '638cafb3a018f.jpg', 'Small (3 inches)', '35.86');
 
 -- --------------------------------------------------------
 
@@ -358,7 +357,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `shipping`
