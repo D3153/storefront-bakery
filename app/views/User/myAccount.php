@@ -49,7 +49,7 @@
                         <a class="nav-link" data-bs-toggle="dropdown">Language</a>
                         <div class="dropdown-menu">
                           <a href="" class="dropdown-item">English</a>
-                          <a href="" class="dropdown-item">French</a>
+                          <a href="" class="dropdown-item">Français</a>
                       </div>
                     </div>  
               </ul>
