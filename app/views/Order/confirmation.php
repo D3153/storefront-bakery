@@ -60,7 +60,8 @@
                 <center><img src="../images/shopping-bag.png" width="120" height="120"></center>
                 <br>
                 <center><h6>Your order has been placed.</h6></center>
-                  <center><h6>A message with be sent containing information about your purchase.</h6></center>
+                  <center><h6>Once it has shipped, tracking information will be available in My Account -> Order History.</h6></center>
+                                      <br>
 
                   <form action='' enctype="multipart/form-data" method='post'>
                   <div class="d-flex justify-content-center">

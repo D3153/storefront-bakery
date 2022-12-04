@@ -2,6 +2,7 @@
 namespace app\controllers;
 
 class Feedback extends \app\core\Controller{
+	#[\app\filters\Login]
 	public function leaveFeedback($cart_id){
 		$recieverInfo = new \app\models\Cart();
 		$recieverInfo = $recieverInfo->getByCartId($cart_id);
@@ -21,6 +22,8 @@ class Feedback extends \app\core\Controller{
 		$this->view('Feedback/leaveFeedback');
 	}
 
+	#[\app\filters\Login]
+	#[\app\filters\CheckSellerRole]
 	public function viewFeedback($feedback_id){
 		$feedback = new \app\models\Feedback();
 		$feedback = $feedback->getByFeedbackId($feedback_id);
