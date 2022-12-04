@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2022 at 02:49 AM
+-- Generation Time: Dec 04, 2022 at 05:17 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -43,7 +43,7 @@ CREATE TABLE `cart` (
   `address` varchar(128) DEFAULT NULL,
   `phone_num` varchar(50) DEFAULT NULL,
   `status` enum('cart','paid','shipped') NOT NULL DEFAULT 'cart',
-  `feedback_id` int(11) DEFAULT NULL
+  `feedback_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -51,21 +51,21 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `custom_cake_id`, `quantity`, `unit_price`, `shipping_id`, `full_name`, `email`, `address`, `phone_num`, `status`, `feedback_id`) VALUES
-(15, 2, 18, NULL, 1, '21.98', NULL, NULL, NULL, NULL, NULL, 'cart', 0),
-(16, 2, 21, NULL, 4, '23.96', NULL, NULL, NULL, NULL, NULL, 'cart', 0),
-(17, 2, 15, NULL, 1, '99.77', NULL, NULL, NULL, NULL, NULL, 'cart', 0),
+(16, 2, 21, NULL, 1, '5.99', 9, 'Mimi', 'mimi@gmail.com', '7126 Boul de la cote vertu', '213-313-123', 'shipped', 0),
 (22, 3, 17, NULL, 1, '24.99', 4, 'Dinal Patel', 'dinal@gmail.com', '1129 somewhere', '718-232-211', 'shipped', 5),
 (26, 3, NULL, 10, 1, '324.75', 5, 'Dinal Patel', 'dinal@gmail.com', '1129 somewhere', '718-232-211', 'shipped', 6),
 (27, 3, 18, NULL, 1, '21.98', 6, 'Dinal Patel', 'dinal@gmail.com', '1129 somewhere', '718-232-211', 'shipped', 0),
 (30, 3, 19, NULL, 2, '15.94', NULL, 'Jiamin Yuan', 'jiamin@hotmail.com', '1150 Boulevard', '124-141-412', 'paid', 0),
 (31, 3, 20, NULL, 1, '87.22', 7, 'Jiamin Yuan', 'jiamin@hotmail.com', '1150 Boulevard', '124-141-412', 'shipped', 0),
-(32, 3, NULL, 13, 1, '449.50', NULL, 'Dinal Patel', 'dinal@hotmail.com', '1328 Saint Laurent', '122-213-122', 'paid', 0),
+(32, 3, NULL, 13, 1, '449.50', 10, 'Dinal Patel', 'dinal@hotmail.com', '1328 Saint Laurent', '122-213-122', 'shipped', 0),
 (33, 3, 21, NULL, 1, '5.99', NULL, 'Dinal Patel', 'dinal@hotmail.com', '1328 Saint Laurent', '122-213-122', 'paid', 0),
-(34, 3, NULL, 14, 1, '104.95', NULL, 'Dinal Patel', 'd123@gmail.com', '2498 rue Ontario Ouest', '123-213-123', 'paid', NULL),
-(35, 3, 23, NULL, 1, '39.99', NULL, NULL, NULL, NULL, NULL, 'cart', NULL),
-(36, 3, 26, NULL, 1, '7.68', NULL, NULL, NULL, NULL, NULL, 'cart', NULL),
-(37, 3, 22, NULL, 1, '5.99', NULL, NULL, NULL, NULL, NULL, 'cart', NULL),
-(38, 3, NULL, 15, 1, '54.97', NULL, NULL, NULL, NULL, NULL, 'cart', NULL);
+(34, 3, NULL, 14, 1, '104.95', NULL, 'Dinal Patel', 'd123@gmail.com', '2498 rue Ontario Ouest', '123-213-123', 'paid', 0),
+(35, 3, 23, NULL, 1, '39.99', NULL, NULL, NULL, NULL, NULL, 'cart', 0),
+(36, 3, 26, NULL, 1, '7.68', NULL, NULL, NULL, NULL, NULL, 'cart', 0),
+(37, 3, 22, NULL, 1, '5.99', NULL, NULL, NULL, NULL, NULL, 'cart', 0),
+(38, 3, NULL, 15, 1, '54.97', NULL, NULL, NULL, NULL, NULL, 'cart', 0),
+(39, 5, 31, NULL, 1, '6.99', NULL, 'Bob', 'bob@hotmail.com', 'Atwater 3123', '221-212-321', 'paid', 0),
+(40, 5, NULL, 16, 1, '54.97', 8, 'Bob', 'bob@hotmail.com', 'Atwater 3123', '221-212-321', 'shipped', 7);
 
 -- --------------------------------------------------------
 
@@ -117,7 +117,8 @@ CREATE TABLE `contact_us` (
 INSERT INTO `contact_us` (`contact_us_id`, `user_id`, `name`, `email`, `message`, `send_date`, `sender`, `reply_date`, `response`) VALUES
 (5, 1, 'Mimi', 'mimi@gmail.com', 'Hello! This is a message from mimi', '2022-11-28', '', NULL, NULL),
 (6, 3, 'Dinal', 'dinal@hotmail.com', 'Test sending a second message', '2022-11-28', 'Seller', '2022-12-01', 'hello dinal'),
-(8, 2, 'Mimi', 'mimi@gmail.com', 'test', '2022-12-01', 'Seller', '2022-12-01', 'reply');
+(8, 2, 'Mimi', 'mimi@gmail.com', 'test', '2022-12-01', 'Seller', '2022-12-01', 'reply'),
+(10, 5, 'Bob', 'bob@hotmail.com', 'I ordered a custom cake. Can u change the flavor to mango? ', '2022-12-04', 'Seller', '2022-12-04', 'No Problem.');
 
 -- --------------------------------------------------------
 
@@ -145,7 +146,8 @@ INSERT INTO `custom_cake` (`custom_cake_id`, `user_id`, `description`, `cake_ima
 (10, 3, 'cake', '638a7a9a98080.jpg', 5, 25, 'vanilla', '324.75'),
 (13, 3, 'White wedding cake with roses', '638bb44757373.jpg', 5, 50, 'Fruit', '449.50'),
 (14, 3, 'Cheese cake for birthday', '638bee2adaac5.jpg', 2, 5, 'Cheese', '104.95'),
-(15, 3, 'bear cake', '638bfc38b8e41.jpg', 1, 3, 'White Chocolcate', '54.97');
+(15, 3, 'bear cake', '638bfc38b8e41.jpg', 1, 3, 'White Chocolcate', '54.97'),
+(16, 5, 'cat birthday cake', '638c15afe0f74.jpg', 1, 3, 'Chocolcate', '54.97');
 
 -- --------------------------------------------------------
 
@@ -167,7 +169,8 @@ CREATE TABLE `feedback` (
 
 INSERT INTO `feedback` (`feedback_id`, `rate`, `comment`, `comment_date`) VALUES
 (5, 'Good', 'The best macaroon ever!', '2022-12-03'),
-(6, 'Good', 'Absolutely Delicious!!', '2022-12-04');
+(6, 'Good', 'Absolutely Delicious!!', '2022-12-04'),
+(7, 'Good', 'Fresh mango', '2022-12-04');
 
 -- --------------------------------------------------------
 
@@ -191,14 +194,13 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `category_id`, `name`, `description`, `image`, `size`, `price`) VALUES
-(15, 5, 'Black forest', 'black forest cake 8 inches, freshly made', '63642b635ba6c.jpg', 'mediumCake', '99.77'),
 (16, 1, 'Matcha Bread', 'matcha flavor 8 pieces', '636859c35065a.jpg', 'smallBread', '35.68'),
-(17, 2, 'Fruit Macaron', 'Pack of 8 macarons, each filled with delicious fruit flavor.', '636d2a99b8857.jpg', 'smallCookie', '24.99'),
+(17, 2, 'Fruit Macaron', 'Pack of 10 macarons, each filled with delicious fruit flavor.', '636d2a99b8857.jpg', 'Small (6x3 inches)', '26.99'),
 (18, 3, 'Fruit Tart', 'Freshly baked fruit tart with a creamy mouse filling and topped with organic fruits. ', '6377a0e23b37c.jpg', 'Small (4 inches)', '21.98'),
 (19, 4, 'Croissant', 'A French delicacy, with a flaky outside and soft inside. Perfect with a cup of coffee.', '6377a0ea444f2.jpg', 'default', '7.97'),
 (20, 5, 'Floral cake', 'Edible Flower Cake', '6377a202d7825.jpg', 'Large (10 inches)', '87.22'),
 (21, 6, 'Brownies', 'A bag of 8 pieces chocolate brownies', '6377a20b4cf52.jpg', 'default', '5.99'),
-(22, 4, 'Strawberry Donut', 'It filled with fresh strawberries, chopped small, and topped with a fresh strawberry glaze.', '638bf21bbb037.jpg', 'default', '5.99'),
+(22, 4, 'Strawberry Donut', 'It filled with fresh strawberries, chopped small, and topped with a fresh strawberry glaze.', '638c1d364432b.jpg.jpg', 'default', '6.99'),
 (23, 6, 'Limit Edition Gift Set', 'Three chocolate donuts and three ice cream shaped cookie pops.', '638bf2b2c8c93.jpg', 'default', '39.99'),
 (24, 6, 'Limit Edition for Halloween ', 'Three ice cream shaped cookie pops and a cute ghost donut. ', '638bf31bd7dcd.jpg', 'default', '30.73'),
 (25, 1, 'Basic white bread', 'A bag of white bread, around 12 pieces.', '638bf3ae67208.jpg', 'mediumBread', '12.73'),
@@ -232,7 +234,10 @@ INSERT INTO `shipping` (`shipping_id`, `tracking_info`, `time_stamp`) VALUES
 (4, 'UNIAS3066812540YQ', '2022-12-03'),
 (5, 'UNIAS235235YP', '2022-12-03'),
 (6, 'UNIAS2352563687ZQ', '2022-12-03'),
-(7, 'UNIAS124262325BV', '2022-12-03');
+(7, 'UNIAS124262325BV', '2022-12-03'),
+(8, 'UNIAS35152351TD', '2022-12-04'),
+(9, 'UNIAS38423536ZZ', '2022-12-04'),
+(10, 'UNIAS25125125AQ', '2022-12-04');
 
 -- --------------------------------------------------------
 
@@ -256,7 +261,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`user_id`, `username`, `password_hash`, `role`, `secret_key`) VALUES
 (1, 'jiamin', '$2y$10$l4cjJzx.gmnimTMOchP0/OnyNo.8odtHgAKu27j6zfFyPGKli9Tci', 'seller', 'XU5VVZTETBDMM7VC'),
 (2, 'mimi', '$2y$10$pJGdhHXasC17oR7zlGv.P.7TClzRAKD6cIqXbOuWLfsSXojP44chG', 'user', NULL),
-(3, 'dinal', '$2y$10$RHs9cWP.bNeELbaEQrVECu/1lISkS8xi5JWsYsfO.uN21SoXST9Cm', 'user', NULL);
+(3, 'dinal', '$2y$10$RHs9cWP.bNeELbaEQrVECu/1lISkS8xi5JWsYsfO.uN21SoXST9Cm', 'user', NULL),
+(5, 'bob', '$2y$10$t7LKn..Sbz9DaSBVnq/sneaG8aFlxqO1KfB3UBdzcD4Q6E7wvXmMi', 'user', NULL);
 
 --
 -- Indexes for dumped tables
@@ -326,7 +332,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -338,19 +344,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `contact_us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `contact_us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `custom_cake`
 --
 ALTER TABLE `custom_cake`
-  MODIFY `custom_cake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `custom_cake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -362,13 +368,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `shipping`
 --
 ALTER TABLE `shipping`
-  MODIFY `shipping_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `shipping_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
