@@ -1,6 +1,6 @@
 <html>
   <head>
-       <title>View Feedback</title>
+       <title><?= _("View Feedback")?></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -22,30 +22,30 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" style="z-index: 2000;">
         <div class="container-fluid">
-          <a class="navbar-brand nav-link" href="/Seller/home"><strong>Pink Bakery</strong></a>
+          <a class="navbar-brand nav-link" href="/Seller/home"><strong><?= _("Pink Bakery")?></strong></a>
             <div class="collapse navbar-collapse" id="navbarExample01">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <div class="dropdown">
-                      <a class="nav-link" data-bs-toggle="dropdown">Product</a>
+                      <a class="nav-link" data-bs-toggle="dropdown"><?= _("Product")?></a>
                       <div class="dropdown-menu">
-                          <a href="/Seller/addProduct" class="dropdown-item">Add Product</a>
-                          <a href="/Seller/checkProducts" class="dropdown-item">Check Products</a>
+                          <a href="/Seller/addProduct" class="dropdown-item"><?= _("Add Product")?></a>
+                          <a href="/Seller/checkProducts" class="dropdown-item"><?= _("Check Products")?></a>
                       </div>
                     </div>
                     <li class="nav-item">
-                      <a class="nav-link" href="/Seller/viewOrders">View Orders</a>
+                      <a class="nav-link" href="/Seller/viewOrders"><?= _("View Orders")?></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/Seller/messagecenter">Message Center</a>
+                      <a class="nav-link" href="/Seller/messagecenter"><?= _("Message Center")?></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/Seller/index" id="logout">Logout</a>
+                      <a class="nav-link" href="/Seller/index" id="logout"><?= _("Logout")?></a>
                     </li>
                     <div class="dropdown">
-                        <a class="nav-link" data-bs-toggle="dropdown">Language</a>
+                        <a class="nav-link" data-bs-toggle="dropdown"><?= _("Language")?></a>
                         <div class="dropdown-menu">
                           <a href="" class="dropdown-item">English</a>
-                          <a href="" class="dropdown-item">French</a>
+                          <a href="" class="dropdown-item">Français</a>
                       </div>
                     </div>  
               </ul>
@@ -59,19 +59,19 @@
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 20px;">
             <div class="card-body p-5">
-                <h1><center>View Feedback</center></h1>
+                <h1><center><?= _("View Feedback")?></center></h1>
                     <div class="form-group form-inline">
-                         <label for="rate">Rate</label>
+                         <label for="rate"><?= _("Rate")?></label>
                          &nbsp;
                          <input type="text" class="form-control" name="rate"  value="<?= $data['feedback']->rate ?>" readonly>
                     </div>
                    <div class="form-group form-inline">
-                         <label for="recivedMessage">Comment</label>
+                         <label for="recivedMessage"><?= _("Comment")?></label>
                          <br>
                          <textarea name="recivedMessage" rows="4" cols="50" readonly> <?= $data['feedback']->comment ?></textarea>
                     </div>
                     <div class="form-group form-inline">
-                         <label for="date">Date</label>
+                         <label for="date"><?= _("Date")?></label>
                          &nbsp;
                          <input type="text" class="form-control" name="date"  value="<?= $data['feedback']->comment_date ?>" readonly>
                     </div>
