@@ -137,7 +137,7 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                  <label><?= _("Price"_?></label>
+                  <label><?= _("Price")?></label>
                   <input type="number" name="price" step="any" min="0" value="<?= $data['product']->price ?>" required>
                 </div>
                 

@@ -135,9 +135,9 @@
                                     <div class='modal-body'>
                                       <p>Name: $cake->description</p>
                                       <p>Image: <img src='/images/".$cake->cake_image."'style='max-width:200px;max-height:100px'/></p>
-                                      <p>Size: $cake->layer</p>
-                                      <p>Size: $cake->serving</p>
-                                      <p>Size: $cake->flavor</p>
+                                      <p>Layer: $cake->layer</p>
+                                      <p>Serving: $cake->serving</p>
+                                      <p>Flavor: $cake->flavor</p>
                                       <p>Price: $cake->price</p>
 
                             </div>
