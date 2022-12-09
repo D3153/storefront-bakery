@@ -28,6 +28,6 @@ MUJI: https://muji.ca/
 5. Place an order (1 feature). ✓
 6. Rating and leave feedback on a product after purchasing it (1 feature). ✓
 7. View order history including order details and shipping status(1 feature). ✓
-8. Customize cake with specific sizing, inspire image and descrption (1 feature).✓
+8. Customize cake with specific sizing, inspiration image and description (1 feature).✓
 9. Send a message through "contact us" page (1 feature).✓
 10. Recieve Seller response in message center (1 feature). ✓
