@@ -1,11 +1,11 @@
 # Pink Bakery
-
+### An online store using storefront model to sell bakery products at a set price.
 ## Team Composition
 * Dinal Patel
 * Jiamin Yuan
 
 ## Project Description
-An online bakery store using storefront model to sell bakery products at a set price. The benefit is to sell and promote the brand's own products while maintaining the brand's uniqueness. Our target client are buyers who are looking for special products and home delivery services. We will model our solution based on the Uniqlo and MUJI online store. We estimate that we will spend a total of 140 hours building this product, i.e. 70 hours per team member. The project will be completed by the week 15. 
+The benefit of using a storefront model is to sell and promote the brand's own products while maintaining the brand's uniqueness. Our target client are buyers who are looking for special products and home delivery services. We will model our solution based on the Uniqlo and MUJI online store. We estimate that we will spend a total of 140 hours building this product, i.e. 70 hours per team member. The project will be completed by the week 15. 
 <br>
 Uniqlo: https://www.uniqlo.com/us/en/
 <br>
