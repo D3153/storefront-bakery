@@ -1,5 +1,7 @@
 # Pink Bakery
-### An online store using storefront model to sell bakery products at a set price.
+### An online store using storefront model to sell bakery products at a set price
+![image](https://user-images.githubusercontent.com/82058058/213079812-566bd2ce-3bb3-4629-a87d-fb489a909d0d.png)
+
 ## Team Composition
 * Dinal Patel
 * Jiamin Yuan
